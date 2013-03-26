@@ -14,8 +14,8 @@ public class OhtuController {
     @Autowired
     ReferenceService references;
 
-    @RequestMapping("*")
-    public String login() {
-        return "login";
+    @RequestMapping("*")                
+    public String login() {             
+        return "login";                 //Palauttaa WEB-INF/jsp/login.jsp:n 
     }
 }
