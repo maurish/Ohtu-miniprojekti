@@ -7,5 +7,10 @@
     </head>
     <body>
         <h1>Tässä lisätään lähteitä, huraa!</h1>
+        <form action="" method="post">
+            <p>Kirjailija: <br> <input type="text" name="author"></p>
+            <p>Teoksen nimi: <br> <input type="text" name="refName"></p>
+            <p><input type="submit" value="Lisää"></p>
+        </form>
     </body>
 </html>
