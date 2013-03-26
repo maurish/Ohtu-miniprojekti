@@ -1,8 +1,4 @@
-<%-- 
-    Document   : logiun
-    Created on : 26-Mar-2013, 14:29:38
-    Author     : pperala
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
