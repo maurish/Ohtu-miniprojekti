@@ -23,6 +23,6 @@
     
     <!--<context:annotation-config />-->
     
-    
+    <import resource="database.xml" />
     
 </beans>
