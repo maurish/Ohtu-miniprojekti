@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,11 +8,14 @@
         <title>Add Page</title>
     </head>
     <body>
+        <%@include file="naviBar.jsp" %>
         <h1>Tässä lisätään lähteitä, huraa!</h1>
-        <form action="" method="post">
-            <p>Kirjailija: <br> <input type="text" name="author"></p>
-            <p>Teoksen nimi: <br> <input type="text" name="refName"></p>
-            <p><input type="submit" value="Lisää"></p>
-        </form>
+        <form:form commandName="reference" action="addRef" method="POST">
+            <p>Kirjailija: </p>
+            <form:input path="author" /><form:errors path="author" /><br/>
+            <p>Teoksen nimi: </p>
+            <form:input path="name" /><form:errors path="name" /><br/>
+            <input type="submit">
+        </form:form>
     </body>
 </html>

@@ -1,21 +1,24 @@
 package ohtu.domain;
 
 public class Reference {
-    
+
     private String author;
-    private String refName;
+    private String name;
 
     public Reference(String author, String name) {
         this.author = author;
-        this.refName = name;
+        this.name = name;
+    }
+
+    public Reference() {
     }
 
     public void setName(String name) {
-        this.refName = name;
+        this.name = name;
     }
 
     public String getName() {
-        return refName;
+        return name;
     }
 
     @Override
