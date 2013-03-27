@@ -7,6 +7,9 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%@include file="naviBar.jsp" %>
+        
         <h1>Hello World! ohtu miniprojekti</h1>
+
     </body>
 </html>
