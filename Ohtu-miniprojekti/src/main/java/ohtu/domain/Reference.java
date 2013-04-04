@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table
@@ -15,8 +17,20 @@ public class Reference {
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
-    private String author;
-    private String name;
+    @NotBlank(message = "author must be defined")
+    @Length(max=5, min=1)
+            
+    String author;
+    @NotBlank(message = "title must be defined")
+    String title;
+
+    public Reference(String author, String title) {
+        this.author = author;
+        this.title = title;
+    }
+
+    public Reference() {
+    }
 
     public Long getId() {
         return id;
@@ -26,20 +40,12 @@ public class Reference {
         this.id = id;
     }
 
-    public Reference(String author, String name) {
-        this.author = author;
-        this.name = name;
+    public String getTitle() {
+        return title;
     }
 
-    public Reference() {
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     @Override
@@ -48,10 +54,9 @@ public class Reference {
     }
 
     public String toBibtex() {
-        return "author:"+author;
+        return "author:" + author;
     }
-    
-    
+
     public String getAuthor() {
         return author;
     }

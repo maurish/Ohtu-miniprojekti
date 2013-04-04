@@ -20,7 +20,7 @@
                 <ul>
 
                     <li>${reference.author}</li>
-                    <li>${reference.name}</li>
+                    <li>${reference.title}</li>
                 </ul>
             </c:forEach>
         </div>

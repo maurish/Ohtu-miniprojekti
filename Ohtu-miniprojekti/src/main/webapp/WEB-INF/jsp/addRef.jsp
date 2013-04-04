@@ -14,7 +14,7 @@
             <p>Kirjailija: </p>
             <form:input path="author" /><form:errors path="author" /><br/>
             <p>Teoksen nimi: </p>
-            <form:input path="name" /><form:errors path="name" /><br/>
+            <form:input path="title" /><form:errors path="title" /><br/>
             <input type="submit">
         </form:form>
     </body>
