@@ -47,6 +47,11 @@ public class Reference {
         return "Reference{" + "author=" + author + '}';
     }
 
+    public String toBibtex() {
+        return "author:"+author;
+    }
+    
+    
     public String getAuthor() {
         return author;
     }
