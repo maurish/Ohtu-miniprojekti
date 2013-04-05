@@ -15,4 +15,14 @@ import javax.persistence.Table;
 @Table
 public class Article extends Reference {
     
+    String journal;
+
+    public String getJournal() {
+        return journal;
+    }
+
+    public void setJournal(String journal) {
+        this.journal = journal;
+    }
+    
 }

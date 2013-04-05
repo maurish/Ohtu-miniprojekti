@@ -15,4 +15,14 @@ import javax.persistence.Table;
 @Table
 public class Inproceedings extends Reference {
     
+    String bookTitle;
+
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
+    
 }
