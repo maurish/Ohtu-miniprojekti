@@ -3,8 +3,10 @@ function displayForm(index) {
 }
 
 jQuery(function(){
-    jQuery('.formDrop option').click(function() {
-        displayForm(jQuery(this).index())
+    
+    jQuery('.formDrop').change(function(){
+        displayForm($(this).find(':selected').index())
     })
+
     displayForm(0)
 })
