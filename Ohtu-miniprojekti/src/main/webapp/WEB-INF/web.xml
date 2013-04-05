@@ -18,16 +18,7 @@
         <servlet-name>front-controller</servlet-name>
         <url-pattern>/app/*</url-pattern>
     </servlet-mapping>
-    
-<!--    <servlet-mapping>
-        <servlet-name>front-controller</servlet-name>
-        <url-pattern>*.css</url-pattern>
-    </servlet-mapping>
-    
-    <servlet-mapping>
-        <servlet-name>front-controller</servlet-name>
-        <url-pattern>*.js</url-pattern>
-    </servlet-mapping>-->
+
     
     <session-config>
         <session-timeout>30</session-timeout>
