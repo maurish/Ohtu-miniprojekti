@@ -1,6 +1,9 @@
 
 package seleniumTests;
 
+import ohtu.domain.Reference;
+import ohtu.service.ReferenceServiceImpl;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,11 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"file:src/main/webapp/WEB-INF/front-controller-servlet.xml"})
-public class ProcessTests {
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/front-controller-servlet.xml"})
+public class ProcessTest {
 
     private WebDriver driver;
     private String port;
@@ -30,12 +32,18 @@ public class ProcessTests {
         baseUrl = "http://localhost:" + port + "/app";
     }
     
-  
+  @Test
+  public void testContextBeans(){
+        ReferenceServiceImpl bean = applicationContext.getBean(ohtu.service.ReferenceServiceImpl.class);
+        bean.add(new Reference("iluaP", "Pauli"));
+        assertTrue(bean.listAll().get(0).getAuthor().equals("iluaP"));
+  }
+    
+    
     @Test
     public void someSiteIsUp(){
-        fail(baseUrl);
-        driver.get(baseUrl+"/list/");
-        fail(driver.getPageSource());
-       
+        String url = baseUrl+"/list";
+        driver.get(url);
+        assertTrue(driver.getPageSource().contains("JSP"));
     }
 }
