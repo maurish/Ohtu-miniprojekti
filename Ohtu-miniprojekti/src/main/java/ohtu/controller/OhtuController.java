@@ -2,6 +2,7 @@ package ohtu.controller;
 
 import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.validation.Valid;
 import ohtu.domain.Reference;
 import ohtu.service.ReferenceService;
 import ohtu.service.UserService;
@@ -19,8 +20,8 @@ public class OhtuController {
 
     @PostConstruct
     public void init() {
-        references.add(new Reference("Pauli", "Paulin kirja"));
-        references.add(new Reference("anniina", "coding for masters"));
+//        references.add(new Reference("Pauli", "Paulin kirja"));
+//        references.add(new Reference("anniina", "coding for masters"));
     }
     
     
@@ -35,7 +36,11 @@ public class OhtuController {
     }
 
     @RequestMapping(value = "addRef", method = RequestMethod.POST)
-    public String createRef(@ModelAttribute(value = "reference") Reference ref, BindingResult bindingresult) {
+    public String createRef(@ModelAttribute(value = "reference") @Valid Reference ref, BindingResult bindingresult, Model model) {
+        if (bindingresult.hasErrors()){
+            model.addAttribute("reference", ref);
+            return "addRef"; 
+        }
         references.add(ref);
         return "redirect:list";
     }

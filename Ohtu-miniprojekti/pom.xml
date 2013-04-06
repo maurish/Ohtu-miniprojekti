@@ -23,19 +23,132 @@
 
     <dependencies>           
         <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.9</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-instrument</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.1.0.RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-jdbc</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-orm</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-tx</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>eclipselink</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>javax.persistence</artifactId>
+            <version>2.0.3</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.3.168</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.8</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+ 
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
-        <!-- Selenium -->     
+ 
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.2</version>
+        </dependency>
+ 
+        <!-- Spring testing -->
+        <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-test</artifactId>
+          <version>3.1.1.RELEASE</version>
+          <scope>test</scope>
+        </dependency>
+ 
+        <dependency>
+          <groupId>org.easytesting</groupId>
+          <artifactId>fest-reflect</artifactId>
+          <version>1.4</version>
+          <scope>test</scope>
+        </dependency>
+ 
+        <!-- Selenium -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>2.13.0</version>
             <scope>test</scope>
         </dependency>
-
+ 
         <!-- Mockito -->
         <dependency>
             <groupId>org.mockito</groupId>
@@ -43,21 +156,28 @@
             <version>1.9.0</version>
             <scope>test</scope>
         </dependency>
-
+ 
         <!-- Jetty, le palvelin! -->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlet</artifactId>
             <version>${jetty.maven.plugin.version}</version>
         </dependency>
-        
+ 
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>test-jetty-servlet</artifactId>
             <version>${jetty.maven.plugin.version}</version>
             <scope>test</scope>
         </dependency>
-        
+ 
+        <dependency>
+            <groupId>com.jayway.restassured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>1.6.2</version>
+            <scope>test</scope>
+        </dependency>
+ 
         <!-- servlet ja jsp api -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -71,14 +191,14 @@
             <version>2.1</version>
             <scope>provided</scope>
         </dependency>
-
+ 
         <!-- jstl -->
         <dependency>
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-        
+ 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -86,14 +206,15 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>3.1.2.RELEASE</version>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
+            <version>2.3.2</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.12</version>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>4.3.0.Final</version>
         </dependency>
     </dependencies>
 
@@ -126,7 +247,8 @@
                 <configuration>
                                                
                     <scanIntervalSeconds>5</scanIntervalSeconds>
-                    
+                    <stopPort>9966</stopPort>
+                    <stopKey>jetty-stop</stopKey>
                     <systemProperties>
                         <systemProperty>
                             <name>jetty.port</name>
@@ -207,4 +329,12 @@
             </plugin>
         </plugins>
     </build>
+    <repositories>
+        <repository>
+            <url>http://download.eclipse.org/rt/eclipselink/maven.repo/</url>
+            <id>eclipselink</id>
+            <layout>default</layout>
+            <name>Repository for library EclipseLink (JPA 2.0)</name>
+        </repository>
+    </repositories>
 </project>
