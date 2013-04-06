@@ -25,4 +25,9 @@ public class Article extends Reference {
         this.journal = journal;
     }
     
+     public String toBibtex() {
+        return "@article"+super.toBibtex()+ ", \n "
+                + "journal = " + '"' + journal + '"' + " }";
+    }
+    
 }

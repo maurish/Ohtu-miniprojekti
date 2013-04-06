@@ -6,6 +6,6 @@ import ohtu.domain.Reference;
 
 
 public interface BibtexService {
-    void generate(Reference reference);
-    void generate(List<Reference> references);
+    String generate(Reference reference);
+    List<String> generate(List<Reference> references);
 }
