@@ -24,8 +24,8 @@ public class Inproceedings extends Reference {
     public void setBookTitle(String bookTitle) {
         this.bookTitle = bookTitle;
     }
-     public String toBibtex() {
-        return "@inproceeding"+super.toBibtex()+ ", \n "
-                + "book title = " + '"' + bookTitle + '"' + " }";
-    }
+//     public String toBibtex() {
+//        return "@inproceeding"+super.toBibtex()+ ", \n "
+//                + "book title = " + '"' + bookTitle + '"' + " }";
+//    }
 }

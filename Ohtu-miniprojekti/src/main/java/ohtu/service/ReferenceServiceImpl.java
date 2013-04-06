@@ -19,8 +19,6 @@ public class ReferenceServiceImpl implements ReferenceService {         //Käyte
 
     @Override
     public List<Reference> listAll() {
-        Reference test = new Reference("Anniina", "koettelemukset");
-        System.out.println(test.toString());
         return repo.findAll();
     }
 }
