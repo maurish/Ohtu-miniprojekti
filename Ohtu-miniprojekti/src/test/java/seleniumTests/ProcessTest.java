@@ -31,14 +31,7 @@ public class ProcessTest {
         port = System.getProperty("jetty.port", "8090");
         baseUrl = "http://localhost:" + port + "/app";
     }
-    
-  @Test
-  public void testContextBeans(){
-        ReferenceServiceImpl bean = applicationContext.getBean(ohtu.service.ReferenceServiceImpl.class);
-        bean.add(new Reference("iluaP", "Pauli"));
-        assertTrue(bean.listAll().get(0).getAuthor().equals("iluaP"));
-  }
-    
+
     
     @Test
     public void someSiteIsUp(){

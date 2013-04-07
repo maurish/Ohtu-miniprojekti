@@ -18,7 +18,7 @@ public class Reference {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
     @NotBlank(message = "author must be defined")
-    @Length(max = 5, min = 1)
+    @Length(max = 250, min = 1)
     String author;
     @NotBlank(message = "title must be defined")
     String title;
