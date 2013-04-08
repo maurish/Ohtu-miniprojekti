@@ -6,10 +6,7 @@
          version="2.4">
     <display-name>Ohtu-miniprojekti</display-name>
 
-   
-    
-  
-   
+
 
     <servlet>
         <servlet-name>front-controller</servlet-name>
@@ -21,6 +18,7 @@
         <servlet-name>front-controller</servlet-name>
         <url-pattern>/app/*</url-pattern>
     </servlet-mapping>
+
     
     <session-config>
         <session-timeout>30</session-timeout>

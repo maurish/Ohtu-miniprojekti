@@ -4,6 +4,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 import ohtu.domain.Reference;
+import ohtu.service.BibtexService;
+import ohtu.service.BibtexServiceImpl;
 import ohtu.service.ReferenceService;
 import ohtu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +27,8 @@ public class OhtuController {
 //        references.add(new Reference("anniina", "coding for masters"));
     }
     
-    
+    @Autowired
+    BibtexService bibtex;
     @Autowired
     UserService users;
     @Autowired
@@ -45,6 +48,12 @@ public class OhtuController {
         references.add(ref);
         return "redirect:list";
     }
+    
+    @RequestMapping(value="listBibtex") 
+    public String createBibtex(Model model) {
+        model.addAttribute("bibtexs", bibtex.generate(references.listAll()));
+        return "bibtex";
+}
 
     @RequestMapping(value = "addRef", method = RequestMethod.GET)
     public String addRef(Model model) {

@@ -1,9 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ohtu.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import ohtu.domain.Reference;
 import org.springframework.stereotype.Service;
@@ -12,13 +10,17 @@ import org.springframework.stereotype.Service;
 public class BibtexServiceImpl implements BibtexService{
     
     @Override
-    public void generate(Reference reference) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public String generate(Reference reference) {
+        return reference.toBibtex();
     }
 
     @Override
-    public void generate(List<Reference> references) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public List<String> generate(List<Reference> references) {
+        List<String> bibtexList = new ArrayList<String>();
+        for (Reference ref : references) {
+            bibtexList.add(ref.toBibtex());
+        }
+        return bibtexList;
     }
     
 }

@@ -16,6 +16,9 @@
                             http://www.springframework.org/schema/jdbc
                             http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd">
     <mvc:annotation-driven />
+   
+    
+    <mvc:resources mapping="/resources/**" location="/public-resources/"/>
  
     <context:component-scan base-package="ohtu" />
  
