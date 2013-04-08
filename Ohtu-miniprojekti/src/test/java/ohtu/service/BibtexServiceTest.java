@@ -7,6 +7,7 @@ package ohtu.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import ohtu.domain.Book;
 import ohtu.domain.Reference;
 import org.eclipse.persistence.internal.jpa.parsing.ConcatNode;
 import org.junit.After;
@@ -48,8 +49,8 @@ public class BibtexServiceTest {
 
     @Test
     public void generatingAndAddingIncreasesSize() {
-        Reference ref1 = createRef();
-        Reference ref2 = createRef();
+        Reference ref1 = createBook();
+        Reference ref2 = createBook();
         list.add(ref2);
         list.add(ref1);
         List<String> bibtexs = service.generate(list);
@@ -63,22 +64,39 @@ public class BibtexServiceTest {
     }
     
     @Test
-    public void bibtexSyntaxContainsRightElements() {
-        Reference ref1 = createRef();
-        String bibtex = ref1.toBibtex();
+    public void bookBibtexSyntaxContainsTagAndBrackets() {
+        Reference ref1 = createBook();
+        String bibtex = service.generate(ref1);
         System.out.println(bibtex);
-        checkParam(bibtex,"author","testAuthor");
+        checkTagAndBrackets(bibtex, "book");
+        
+    }
+      
+    
+    @Test
+    public void bookBibtexSyntaxContainsAuthorAndTitle() {
+        Reference ref1 = createBook();
+        String bibtex = service.generate(ref1);
+        checkAuthorAndTitle(bibtex,"author","testAuthor");
+        checkAuthorAndTitle(bibtex, "title", "testTitle");
     }
     
-    private void checkParam(String bibtex, String name, String value){
+    private void checkAuthorAndTitle(String bibtex, String name, String value){
         assertTrue(bibtex.matches("[\\s\\S]*"+name+"\\s+=\\s+\""+value+"\\s[0-9a-z\\-]*\"[\\s\\S]*"));
         // [\s\S]*author\s+=\s+"testAuthor\s[0-9a-z\-]*"[\s\S]*
     }
+    
+    private void checkTagAndBrackets(String bibtex, String tag){
+        assertTrue(bibtex.matches("@"+tag+"\\{[\\s\\S]*\\}"));
+        // [\s\S]*author\s+=\s+"testAuthor\s[0-9a-z\-]*"[\s\S]*
+    }
 
-    private Reference createRef() {
-        Reference ref = new Reference();
+    private Reference createBook() {
+        Reference ref = new Book();
         ref.setAuthor("testAuthor " + UUID.randomUUID());
         ref.setTitle("testTitle " + UUID.randomUUID());
         return ref;
     }
+    
+    
 }

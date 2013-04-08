@@ -47,11 +47,6 @@ public class Reference {
         this.title = title;
     }
 
-    @Override
-    public String toString() {
-        return "Reference{" + "author=" + author + '}';
-    }
-
     public String toBibtex() {
         return "{ \n"
                 + "author = "+ '"' + author+ '"' + ",\n"
