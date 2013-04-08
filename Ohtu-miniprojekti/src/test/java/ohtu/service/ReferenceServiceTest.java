@@ -12,18 +12,18 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/front-controller-servlet.xml"})
+@RunWith(SpringJUnit4ClassRunner.class)                             //PAKOLLISIA
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/front-controller-servlet.xml"}) //PAKOLLISIA
 public class ReferenceServiceTest {
 
     @Autowired
     ApplicationContext context;
     ReferenceService repo;
-    int preSize;
+    int preSize;                                            //Kertoo kuinka paljon kamaa ennenku lisättii jtn
 
     @Before
     public void setUp() {
-        repo = context.getBean(ReferenceService.class);
+        repo = context.getBean(ReferenceService.class);             //spring kontekstista hakee "olion"
         preSize = repo.listAll().size();
     }
 
@@ -69,7 +69,7 @@ public class ReferenceServiceTest {
         assertFalse(list.get(preSize).equals(list.get(preSize + 1)));
     }
 
-    private Reference createReference() {
+    private Reference createReference() {           //Luo uuden referencen jolle se antaa testauthorin ja titlen
         Reference ref = new Reference();
         ref.setAuthor("testAuthor " + UUID.randomUUID());
         ref.setTitle("testTitle " + UUID.randomUUID());
