@@ -3,10 +3,39 @@
         <action>
             <actionName>build</actionName>
             <goals>
+                <goal>clean</goal>
                 <goal>install</goal>
             </goals>
             <properties>
                 <skipTests>true</skipTests>
+            </properties>
+        </action>
+        <action>
+            <actionName>test</actionName>
+            <goals>
+                <goal>clean</goal>
+                <goal>test</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>run</actionName>
+            <goals>
+                <goal>clean</goal>
+                <goal>package</goal>
+            </goals>
+            <properties>
+                <netbeans.deploy>true</netbeans.deploy>
+            </properties>
+        </action>
+        <action>
+            <actionName>test.single</actionName>
+            <goals>
+                <goal>clean</goal>
+                <goal>test-compile</goal>
+                <goal>surefire:test</goal>
+            </goals>
+            <properties>
+                <test>${packageClassName}</test>
             </properties>
         </action>
     </actions>
