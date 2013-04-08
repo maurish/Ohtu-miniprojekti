@@ -25,12 +25,12 @@ public class ProcessTest {
     @Autowired
     private ApplicationContext applicationContext;
 
-    @Before
-    public void setUp() throws Throwable {
-        driver = new HtmlUnitDriver();
-        port = System.getProperty("jetty.port", "8090");
-        baseUrl = "http://localhost:" + port + "/app";
-    }
+//    @Before
+//    public void setUp() throws Throwable {
+//        driver = new HtmlUnitDriver();
+//        port = System.getProperty("jetty.port", "8090");
+//        baseUrl = "http://localhost:" + port + "/app";
+//    }
 
     
 //    @Test
