@@ -3,6 +3,7 @@ package ohtu.controller;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.validation.Valid;
+import ohtu.domain.Book;
 import ohtu.domain.Reference;
 import ohtu.service.BibtexService;
 import ohtu.service.BibtexServiceImpl;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class OhtuController {
 
-    @PostConstruct
+   // @PostConstruct
     public void init() {
 //        references.add(new Reference("Pauli", "Paulin kirja"));
 //        references.add(new Reference("anniina", "coding for masters"));
@@ -40,12 +41,21 @@ public class OhtuController {
     }
 
     @RequestMapping(value = "addRef", method = RequestMethod.POST)
-    public String createRef(@ModelAttribute(value = "reference") @Valid Reference ref, BindingResult bindingresult, Model model) {
+    public String createBook(@ModelAttribute(value = "reference") @Valid Reference ref, BindingResult bindingresult, Model model) {
         if (bindingresult.hasErrors()){
             model.addAttribute("reference", ref);
             return "addRef"; 
         }
         references.add(ref);
+        return "redirect:list";
+    }
+    @RequestMapping(value = "addBook", method = RequestMethod.POST)
+    public String createBook(@ModelAttribute(value = "reference") @Valid Book book, BindingResult bindingresult, Model model) {
+        if (bindingresult.hasErrors()){
+            model.addAttribute("reference", book);
+            return "addRef"; 
+        }
+        references.add(book);
         return "redirect:list";
     }
     
@@ -58,6 +68,7 @@ public class OhtuController {
     @RequestMapping(value = "addRef", method = RequestMethod.GET)
     public String addRef(Model model) {
         model.addAttribute("reference", new Reference());
+        model.addAttribute("book",new Book());
         return "addRef";
     }
 

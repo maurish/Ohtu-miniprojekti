@@ -26,7 +26,7 @@ public class Book extends Reference {
     }
     
     public String toBibtex() {
-        return "@book"+super.toBibtex()+ ", }";
+        return "@book"+super.toBibtex()+ "\n}";
     }
     
 

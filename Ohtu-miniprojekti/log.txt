@@ -1,0 +1,296 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Ohtu-miniprojekti 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.3:clean (default-clean) @ Ohtu-miniprojekti ---
+[INFO] Deleting file set: /cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/target (included: [**], excluded: [])
+[INFO] 
+[INFO] >>> cobertura-maven-plugin:2.5.2:cobertura (default-cli) @ Ohtu-miniprojekti >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ Ohtu-miniprojekti ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ Ohtu-miniprojekti ---
+[INFO] Compiling 13 source files to /cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/target/classes
+[INFO] 
+[INFO] --- cobertura-maven-plugin:2.5.2:instrument (default-cli) @ Ohtu-miniprojekti ---
+[INFO] Cobertura 1.9.4.1 - GNU GPL License (NO WARRANTY) - See COPYRIGHT file
+Instrumenting 17 files to /cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/target/generated-classes/cobertura
+Cobertura: Saved information on 17 classes.
+Instrument time: 219ms
+
+[INFO] Instrumentation was successful.
+[INFO] NOT adding cobertura ser file to attached artifacts list.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:testResources (default-testResources) @ Ohtu-miniprojekti ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ Ohtu-miniprojekti ---
+[INFO] Compiling 4 source files to /cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/target/test-classes
+[INFO] 
+[INFO] >>> jetty-maven-plugin:8.1.5.v20120716:start (start-jetty) @ Ohtu-miniprojekti >>>
+[INFO] 
+[INFO] <<< jetty-maven-plugin:8.1.5.v20120716:start (start-jetty) @ Ohtu-miniprojekti <<<
+[INFO] 
+[INFO] --- jetty-maven-plugin:8.1.5.v20120716:start (start-jetty) @ Ohtu-miniprojekti ---
+[INFO] Configuring Jetty for project: Ohtu-miniprojekti
+[INFO] webAppSourceDirectory /cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/src/main/webapp does not exist. Defaulting to /cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/src/main/webapp
+[INFO] Reload Mechanic: automatic
+[INFO] Classes = /cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/target/generated-classes/cobertura
+[INFO] Context path = /
+[INFO] Tmp directory = /cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/target/tmp
+[INFO] Web defaults = org/eclipse/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] web.xml file = file:/cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/src/main/webapp/WEB-INF/web.xml
+[INFO] Webapp directory = /cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/src/main/webapp
+[EL Config]: 2013-04-10 13:00:14.002--ServerSession(1743983580)--Thread(Thread[main,5,main])--The access type for the persistent class [class ohtu.domain.Reference] is set to [FIELD].
+[EL Config]: 2013-04-10 13:00:14.032--ServerSession(1743983580)--Thread(Thread[main,5,main])--The access type for the persistent class [class ohtu.domain.Book] is set to [FIELD].
+[EL Config]: 2013-04-10 13:00:14.032--ServerSession(1743983580)--Thread(Thread[main,5,main])--The access type for the persistent class [class ohtu.domain.Article] is set to [FIELD].
+[EL Config]: 2013-04-10 13:00:14.032--ServerSession(1743983580)--Thread(Thread[main,5,main])--The access type for the persistent class [class ohtu.domain.Inproceedings] is set to [FIELD].
+[EL Config]: 2013-04-10 13:00:14.033--ServerSession(1743983580)--Thread(Thread[main,5,main])--The alias name for the entity class [class ohtu.domain.Book] is being defaulted to: Book.
+[EL Config]: 2013-04-10 13:00:14.033--ServerSession(1743983580)--Thread(Thread[main,5,main])--The alias name for the entity class [class ohtu.domain.Reference] is being defaulted to: Reference.
+[EL Config]: 2013-04-10 13:00:14.035--ServerSession(1743983580)--Thread(Thread[main,5,main])--The table name for entity [class ohtu.domain.Reference] is being defaulted to: REFERENCE.
+[EL Config]: 2013-04-10 13:00:14.05--ServerSession(1743983580)--Thread(Thread[main,5,main])--The column name for element [author] is being defaulted to: AUTHOR.
+[EL Config]: 2013-04-10 13:00:14.05--ServerSession(1743983580)--Thread(Thread[main,5,main])--The column name for element [title] is being defaulted to: TITLE.
+[EL Config]: 2013-04-10 13:00:14.055--ServerSession(1743983580)--Thread(Thread[main,5,main])--The discriminator column name for the root inheritance class [ohtu.domain.Reference] is being defaulted to: DTYPE.
+[EL Config]: 2013-04-10 13:00:14.056--ServerSession(1743983580)--Thread(Thread[main,5,main])--The column name for element [publisher] is being defaulted to: PUBLISHER.
+[EL Config]: 2013-04-10 13:00:14.056--ServerSession(1743983580)--Thread(Thread[main,5,main])--The alias name for the entity class [class ohtu.domain.Article] is being defaulted to: Article.
+[EL Config]: 2013-04-10 13:00:14.056--ServerSession(1743983580)--Thread(Thread[main,5,main])--The column name for element [journal] is being defaulted to: JOURNAL.
+[EL Config]: 2013-04-10 13:00:14.056--ServerSession(1743983580)--Thread(Thread[main,5,main])--The alias name for the entity class [class ohtu.domain.Inproceedings] is being defaulted to: Inproceedings.
+[EL Config]: 2013-04-10 13:00:14.056--ServerSession(1743983580)--Thread(Thread[main,5,main])--The column name for element [bookTitle] is being defaulted to: BOOKTITLE.
+[INFO] Started Jetty Server
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.5:test (default-test) @ Ohtu-miniprojekti ---
+[INFO] Surefire report directory: /cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running ohtu.service.ReferenceServiceTest
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[EL Config]: 2013-04-10 13:00:17.109--ServerSession(1817599109)--Thread(Thread[main,5,main])--The access type for the persistent class [class ohtu.domain.Reference] is set to [FIELD].
+[EL Config]: 2013-04-10 13:00:17.143--ServerSession(1817599109)--Thread(Thread[main,5,main])--The access type for the persistent class [class ohtu.domain.Book] is set to [FIELD].
+[EL Config]: 2013-04-10 13:00:17.144--ServerSession(1817599109)--Thread(Thread[main,5,main])--The access type for the persistent class [class ohtu.domain.Article] is set to [FIELD].
+[EL Config]: 2013-04-10 13:00:17.144--ServerSession(1817599109)--Thread(Thread[main,5,main])--The access type for the persistent class [class ohtu.domain.Inproceedings] is set to [FIELD].
+[EL Config]: 2013-04-10 13:00:17.144--ServerSession(1817599109)--Thread(Thread[main,5,main])--The alias name for the entity class [class ohtu.domain.Book] is being defaulted to: Book.
+[EL Config]: 2013-04-10 13:00:17.144--ServerSession(1817599109)--Thread(Thread[main,5,main])--The alias name for the entity class [class ohtu.domain.Reference] is being defaulted to: Reference.
+[EL Config]: 2013-04-10 13:00:17.146--ServerSession(1817599109)--Thread(Thread[main,5,main])--The table name for entity [class ohtu.domain.Reference] is being defaulted to: REFERENCE.
+[EL Config]: 2013-04-10 13:00:17.163--ServerSession(1817599109)--Thread(Thread[main,5,main])--The column name for element [author] is being defaulted to: AUTHOR.
+[EL Config]: 2013-04-10 13:00:17.164--ServerSession(1817599109)--Thread(Thread[main,5,main])--The column name for element [title] is being defaulted to: TITLE.
+[EL Config]: 2013-04-10 13:00:17.168--ServerSession(1817599109)--Thread(Thread[main,5,main])--The discriminator column name for the root inheritance class [ohtu.domain.Reference] is being defaulted to: DTYPE.
+[EL Config]: 2013-04-10 13:00:17.169--ServerSession(1817599109)--Thread(Thread[main,5,main])--The column name for element [publisher] is being defaulted to: PUBLISHER.
+[EL Config]: 2013-04-10 13:00:17.169--ServerSession(1817599109)--Thread(Thread[main,5,main])--The alias name for the entity class [class ohtu.domain.Article] is being defaulted to: Article.
+[EL Config]: 2013-04-10 13:00:17.169--ServerSession(1817599109)--Thread(Thread[main,5,main])--The column name for element [journal] is being defaulted to: JOURNAL.
+[EL Config]: 2013-04-10 13:00:17.169--ServerSession(1817599109)--Thread(Thread[main,5,main])--The alias name for the entity class [class ohtu.domain.Inproceedings] is being defaulted to: Inproceedings.
+[EL Config]: 2013-04-10 13:00:17.169--ServerSession(1817599109)--Thread(Thread[main,5,main])--The column name for element [bookTitle] is being defaulted to: BOOKTITLE.
+huhti 10, 2013 1:00:17 IP. org.hibernate.validator.internal.util.Version <clinit>
+INFO: HV000001: Hibernate Validator 4.3.0.Final
+[EL Info]: 2013-04-10 13:00:17.87--ServerSession(1817599109)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.3.2.v20111125-r10461
+[EL Fine]: 2013-04-10 13:00:17.991--Thread(Thread[main,5,main])--Detected database platform: org.eclipse.persistence.platform.database.H2Platform
+[EL Config]: 2013-04-10 13:00:18.002--ServerSession(1817599109)--Connection(2128253962)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=>H2Platform
+	user name=> ""
+	connector=>JNDIConnector datasource name=>null
+))
+[EL Config]: 2013-04-10 13:00:18.004--ServerSession(1817599109)--Connection(1458958776)--Thread(Thread[main,5,main])--Connected: jdbc:h2:mem:dataSource
+	User: SA
+	Database: H2  Version: 1.3.168 (2012-07-13)
+	Driver: H2 JDBC Driver  Version: 1.3.168 (2012-07-13)
+[EL Config]: 2013-04-10 13:00:18.004--ServerSession(1817599109)--Connection(751866786)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=>H2Platform
+	user name=> ""
+	connector=>JNDIConnector datasource name=>null
+))
+[EL Config]: 2013-04-10 13:00:18.004--ServerSession(1817599109)--Connection(18793296)--Thread(Thread[main,5,main])--Connected: jdbc:h2:mem:dataSource
+	User: SA
+	Database: H2  Version: 1.3.168 (2012-07-13)
+	Driver: H2 JDBC Driver  Version: 1.3.168 (2012-07-13)
+[EL Info]: 2013-04-10 13:00:18.051--ServerSession(1817599109)--Thread(Thread[main,5,main])--file:/cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/target/generated-classes/cobertura/_persistenceUnit login successful
+[EL Fine]: 2013-04-10 13:00:18.065--ServerSession(1817599109)--Connection(400963208)--Thread(Thread[main,5,main])--DROP TABLE REFERENCE
+[EL Fine]: 2013-04-10 13:00:18.069--ServerSession(1817599109)--Thread(Thread[main,5,main])--SELECT 1
+[EL Warning]: 2013-04-10 13:00:18.071--ServerSession(1817599109)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.2.v20111125-r10461): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: org.h2.jdbc.JdbcSQLException: Table "REFERENCE" not found; SQL statement:
+DROP TABLE REFERENCE [42102-168]
+Error Code: 42102
+Call: DROP TABLE REFERENCE
+Query: DataModifyQuery(sql="DROP TABLE REFERENCE")
+[EL Fine]: 2013-04-10 13:00:18.073--ServerSession(1817599109)--Connection(306225822)--Thread(Thread[main,5,main])--CREATE TABLE REFERENCE (id BIGINT NOT NULL, DTYPE VARCHAR(31), AUTHOR VARCHAR, TITLE VARCHAR, JOURNAL VARCHAR, BOOKTITLE VARCHAR, PUBLISHER VARCHAR, PRIMARY KEY (id))
+[EL Fine]: 2013-04-10 13:00:18.074--ServerSession(1817599109)--Connection(1925753586)--Thread(Thread[main,5,main])--CREATE TABLE SEQUENCE (SEQ_NAME VARCHAR(50) NOT NULL, SEQ_COUNT NUMERIC(38), PRIMARY KEY (SEQ_NAME))
+[EL Fine]: 2013-04-10 13:00:18.075--ServerSession(1817599109)--Connection(453571465)--Thread(Thread[main,5,main])--DELETE FROM SEQUENCE WHERE SEQ_NAME = SEQ_GEN
+[EL Fine]: 2013-04-10 13:00:18.077--ServerSession(1817599109)--Connection(1761113996)--Thread(Thread[main,5,main])--SELECT * FROM SEQUENCE WHERE SEQ_NAME = SEQ_GEN
+[EL Fine]: 2013-04-10 13:00:18.078--ServerSession(1817599109)--Connection(1278121623)--Thread(Thread[main,5,main])--INSERT INTO SEQUENCE(SEQ_NAME, SEQ_COUNT) values (SEQ_GEN, 0)
+[EL Fine]: 2013-04-10 13:00:18.253--ServerSession(1817599109)--Connection(992554479)--Thread(Thread[main,5,main])--SELECT id, DTYPE, AUTHOR, TITLE, BOOKTITLE, JOURNAL, PUBLISHER FROM REFERENCE
+[EL Fine]: 2013-04-10 13:00:18.258--ServerSession(1817599109)--Connection(1147518830)--Thread(Thread[main,5,main])--SELECT id, DTYPE, AUTHOR, TITLE, BOOKTITLE, JOURNAL, PUBLISHER FROM REFERENCE
+[EL Fine]: 2013-04-10 13:00:18.259--ServerSession(1817599109)--Connection(2053522966)--Thread(Thread[main,5,main])--SELECT id, DTYPE, AUTHOR, TITLE, BOOKTITLE, JOURNAL, PUBLISHER FROM REFERENCE
+[EL Fine]: 2013-04-10 13:00:18.26--ServerSession(1817599109)--Connection(1198862601)--Thread(Thread[main,5,main])--SELECT id, DTYPE, AUTHOR, TITLE, BOOKTITLE, JOURNAL, PUBLISHER FROM REFERENCE
+[EL Fine]: 2013-04-10 13:00:18.262--ServerSession(1817599109)--Connection(1361801059)--Thread(Thread[main,5,main])--SELECT id, DTYPE, AUTHOR, TITLE, BOOKTITLE, JOURNAL, PUBLISHER FROM REFERENCE
+[EL Fine]: 2013-04-10 13:00:18.282--ClientSession(509495333)--Connection(1070761142)--Thread(Thread[main,5,main])--UPDATE SEQUENCE SET SEQ_COUNT = SEQ_COUNT + ? WHERE SEQ_NAME = ?
+	bind => [50, SEQ_GEN]
+[EL Fine]: 2013-04-10 13:00:18.284--ClientSession(509495333)--Connection(1070761142)--Thread(Thread[main,5,main])--SELECT SEQ_COUNT FROM SEQUENCE WHERE SEQ_NAME = ?
+	bind => [SEQ_GEN]
+[EL Fine]: 2013-04-10 13:00:18.344--ClientSession(509495333)--Connection(1070761142)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [1, testAuthor ae2e764d-dd65-408d-8200-cf369343751f, testTitle 13830743-cb50-4341-a3fe-c4f5925ee73c, Reference]
+[EL Fine]: 2013-04-10 13:00:18.354--ServerSession(1817599109)--Connection(495550128)--Thread(Thread[main,5,main])--SELECT id, DTYPE, AUTHOR, TITLE, BOOKTITLE, JOURNAL, PUBLISHER FROM REFERENCE
+[EL Fine]: 2013-04-10 13:00:18.356--ServerSession(1817599109)--Connection(1260142277)--Thread(Thread[main,5,main])--SELECT id, DTYPE, AUTHOR, TITLE, BOOKTITLE, JOURNAL, PUBLISHER FROM REFERENCE
+[EL Fine]: 2013-04-10 13:00:18.358--ServerSession(1817599109)--Connection(400717395)--Thread(Thread[main,5,main])--SELECT id, DTYPE, AUTHOR, TITLE, BOOKTITLE, JOURNAL, PUBLISHER FROM REFERENCE
+[EL Fine]: 2013-04-10 13:00:18.36--ClientSession(1625026602)--Connection(125077268)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [2, testAuthor 9e45d102-3005-41ab-8e74-c6a740f3bcf9, testTitle 41e9633f-5aaf-408b-a80f-30aec84bbb34, Reference]
+[EL Fine]: 2013-04-10 13:00:18.361--ClientSession(1006793209)--Connection(1149808950)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [3, testAuthor 6e2b2734-1b92-4039-9e54-62950be71910, testTitle b990dfca-8d97-4c4b-b590-b12cf7cb3484, Reference]
+[EL Fine]: 2013-04-10 13:00:18.363--ClientSession(267911296)--Connection(1659427760)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [4, testAuthor 36efd3a0-18c7-4143-9362-90d703385dc4, testTitle 0c88a57a-f6d8-4e67-80a1-85833e5131ce, Reference]
+[EL Fine]: 2013-04-10 13:00:18.365--ClientSession(88978713)--Connection(816611079)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [5, testAuthor 5e793ac9-1382-4602-a148-b18b387926d8, testTitle e7cf957a-db00-480e-9546-1c8673c7a2d9, Reference]
+[EL Fine]: 2013-04-10 13:00:18.366--ClientSession(243739969)--Connection(1286344154)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [6, testAuthor 4bbde6f4-502a-481d-be10-e7dfc724aff6, testTitle 56717f3e-6358-43a0-ba24-54a2382dc62d, Reference]
+[EL Fine]: 2013-04-10 13:00:18.368--ClientSession(1999431327)--Connection(618204633)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [7, testAuthor 7bd97bbf-3c04-40cc-84b1-7fb8303f7d37, testTitle 26a73243-34c6-41c6-8cc4-0467c144d367, Reference]
+[EL Fine]: 2013-04-10 13:00:18.37--ClientSession(914689975)--Connection(1506464599)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [8, testAuthor 15c9426d-2197-4271-b558-b826074f3d99, testTitle 5ac29c44-90bd-497a-a0a0-39dc2b92394b, Reference]
+[EL Fine]: 2013-04-10 13:00:18.371--ClientSession(148941153)--Connection(1435509716)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [9, testAuthor 725945bb-cab4-440f-af13-e59241f2a4fb, testTitle 26fd02ff-61de-4ba5-8114-cdc5c84c555f, Reference]
+[EL Fine]: 2013-04-10 13:00:18.373--ClientSession(1333143288)--Connection(1442352265)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [10, testAuthor 96c9cde6-a0f9-4181-981e-04f93b379589, testTitle 95273bae-e3c4-4216-9938-ff1ff94b5e25, Reference]
+[EL Fine]: 2013-04-10 13:00:18.375--ClientSession(1336456138)--Connection(1286847393)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [11, testAuthor e2c0fed3-7fbd-4d47-8c2f-7213a37fb7c2, testTitle 52b04296-a5b7-48e7-9bd0-a16fb6ca0cb6, Reference]
+[EL Fine]: 2013-04-10 13:00:18.376--ClientSession(1212891872)--Connection(1158915380)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [12, testAuthor 8908fce4-b175-40de-ba80-a03325369167, testTitle ff60d9ba-51ab-4bbb-8721-4b8464207bfd, Reference]
+[EL Fine]: 2013-04-10 13:00:18.377--ClientSession(1986667963)--Connection(852710585)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [13, testAuthor 377f770e-3fa5-49d0-b4b8-42c9dd8e3ad5, testTitle c7bcd779-3aae-40a1-94c0-137bea153f74, Reference]
+[EL Fine]: 2013-04-10 13:00:18.379--ClientSession(650197096)--Connection(1465796536)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [14, testAuthor 7cf33f47-d4d4-4067-804b-a6b70218db66, testTitle 9d0b0c18-55de-42bf-b1e1-cff776ef0174, Reference]
+[EL Fine]: 2013-04-10 13:00:18.38--ClientSession(1308536910)--Connection(199817443)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [15, testAuthor c28f7880-35ab-4248-9256-93821805314b, testTitle 4aba757d-01f7-4bb7-91d4-a8fb4fa814f6, Reference]
+[EL Fine]: 2013-04-10 13:00:18.382--ClientSession(981746319)--Connection(1093523532)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [16, testAuthor 48ebf971-a344-44db-9e4d-dc5e53752a27, testTitle 2d26d11f-485b-4f6b-a6dd-3f0e467e2597, Reference]
+[EL Fine]: 2013-04-10 13:00:18.384--ClientSession(457835392)--Connection(405526143)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [17, testAuthor 51941c5e-2b31-446c-850d-7a56c89e25c5, testTitle 78d7d4da-f914-46a3-b2da-c0ed3086c747, Reference]
+[EL Fine]: 2013-04-10 13:00:18.385--ClientSession(2116039248)--Connection(1942446816)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [18, testAuthor 19809020-d4a9-4360-aa51-e9648dc9e79e, testTitle d971ca03-5fa1-4e89-8321-892289c06c62, Reference]
+[EL Fine]: 2013-04-10 13:00:18.387--ClientSession(886232192)--Connection(2105358999)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [19, testAuthor 0cf1d34a-5cd3-4756-a242-5512175b9710, testTitle c283c420-6cfe-46cd-a42b-507a4e4989f5, Reference]
+[EL Fine]: 2013-04-10 13:00:18.389--ClientSession(1369173588)--Connection(1413215911)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [20, testAuthor ecc7a6f5-c200-4aa5-b7a2-467f0978ecb8, testTitle 36678556-0c27-41ba-a566-717e6d8dac9f, Reference]
+[EL Fine]: 2013-04-10 13:00:18.39--ClientSession(35363830)--Connection(1654404238)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [21, testAuthor a36368c5-529f-4c04-9be4-910fd111326c, testTitle 9340d7d6-ed49-4af5-9351-fa8ea7d2547e, Reference]
+[EL Fine]: 2013-04-10 13:00:18.392--ClientSession(28805470)--Connection(949713715)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [22, testAuthor 35a7f737-85c9-4e62-8b7c-e5d754acb962, testTitle cf72958f-c7b8-43f7-af1b-9d33ab46a55b, Reference]
+[EL Fine]: 2013-04-10 13:00:18.393--ClientSession(1447960430)--Connection(586259206)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [23, testAuthor f9d61169-70cf-4d86-b8b6-6d5369f78bbc, testTitle 3d2aa2e8-8217-4cec-923b-751dd6cc9552, Reference]
+[EL Fine]: 2013-04-10 13:00:18.395--ClientSession(372022834)--Connection(1262874621)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [24, testAuthor 7ecdcb72-9181-4137-aad1-b85bb056a1ae, testTitle 5d29e173-73ad-4416-8675-5229e762d024, Reference]
+[EL Fine]: 2013-04-10 13:00:18.396--ClientSession(1126196301)--Connection(60366249)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [25, testAuthor 7587a702-27aa-46a2-9e1c-cce3f52300e6, testTitle fdfcaabb-52cc-409e-9f30-f855f4b83521, Reference]
+[EL Fine]: 2013-04-10 13:00:18.398--ClientSession(145113606)--Connection(1530436697)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [26, testAuthor d03fd069-cd5b-4c89-bc89-4bec6fb813f5, testTitle db94b2ec-e434-481d-b6d4-15b0640c1b4d, Reference]
+[EL Fine]: 2013-04-10 13:00:18.399--ClientSession(2103541802)--Connection(203785653)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [27, testAuthor 16bcbfed-17df-4d1a-a2e3-ff2b00536905, testTitle 889ad091-5b3a-42f3-81bf-6660af90c898, Reference]
+[EL Fine]: 2013-04-10 13:00:18.401--ClientSession(1358404222)--Connection(801107897)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [28, testAuthor 5b8deec3-6cc9-46f8-8843-a93eabdd0dd6, testTitle 6bdca95c-bce2-4cb6-b51f-362823af5386, Reference]
+[EL Fine]: 2013-04-10 13:00:18.402--ClientSession(1382908652)--Connection(330202683)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [29, testAuthor 34821fde-25ac-4ad7-84ae-0242b0a5db70, testTitle 6416ff3d-1221-4d70-9083-d6e8efa1d89f, Reference]
+[EL Fine]: 2013-04-10 13:00:18.404--ClientSession(256467326)--Connection(446668553)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [30, testAuthor d722826a-8957-473f-ba55-e0bb11dbe9a3, testTitle be01f466-f5e5-48ed-8a4a-ec4ce0215ef4, Reference]
+[EL Fine]: 2013-04-10 13:00:18.405--ClientSession(1631027144)--Connection(44455253)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [31, testAuthor 729b5c65-c3ea-450e-bf49-a077db60473d, testTitle 629b7e34-b16d-4cbb-bd2f-7041454dc46b, Reference]
+[EL Fine]: 2013-04-10 13:00:18.406--ClientSession(1402608145)--Connection(707099896)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [32, testAuthor 4d71c5db-0aa3-4210-9329-65da91844aea, testTitle 3a88e88b-15e8-46b6-bc1c-87b20dbf37b5, Reference]
+[EL Fine]: 2013-04-10 13:00:18.408--ClientSession(1252964948)--Connection(357238554)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [33, testAuthor b0e334ee-3c82-4e1e-ba8e-32150b8743fe, testTitle e9f22901-a842-42dc-ba02-193a9421011f, Reference]
+[EL Fine]: 2013-04-10 13:00:18.409--ClientSession(1976205209)--Connection(1098863161)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [34, testAuthor db3c10bd-dabc-4fd0-a2ee-d790016ac8bf, testTitle f562f91a-e9ca-4b14-a67a-b7a34d3e7752, Reference]
+[EL Fine]: 2013-04-10 13:00:18.41--ClientSession(1628798687)--Connection(1245484100)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [35, testAuthor 1a5034ac-c344-4632-a0f3-8372e63276d9, testTitle a6ab34e4-84e7-48e9-9a8d-0e9c03364bb9, Reference]
+[EL Fine]: 2013-04-10 13:00:18.411--ClientSession(1661204238)--Connection(424733419)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [36, testAuthor 79b897e7-a9ed-4add-b6b8-b54358c13db2, testTitle 98870e66-65da-455f-bcca-1e1f546b1375, Reference]
+[EL Fine]: 2013-04-10 13:00:18.413--ClientSession(1410140116)--Connection(595401320)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [37, testAuthor 7bd1c3ea-ee40-43c1-890e-fb83248727bb, testTitle 9243ee22-9c0b-4fa8-8cb1-9a20e3a57d5d, Reference]
+[EL Fine]: 2013-04-10 13:00:18.414--ClientSession(2073171789)--Connection(876085148)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [38, testAuthor fd1afb1e-b673-4dd4-8264-11f58fe25e7f, testTitle 8d1dbaf4-44e2-4c29-9f3f-b7ee12173c87, Reference]
+[EL Fine]: 2013-04-10 13:00:18.415--ClientSession(1516927888)--Connection(81156432)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [39, testAuthor 970b9835-1824-4f6f-885c-15a81c5fe15e, testTitle 1ffa12bd-2767-44df-a94c-4b829e148b28, Reference]
+[EL Fine]: 2013-04-10 13:00:18.417--ClientSession(522346280)--Connection(160779024)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [40, testAuthor c521af7e-272d-42f8-9382-640ee10ca70f, testTitle 9166917b-8e89-4604-9f40-7435da19cd01, Reference]
+[EL Fine]: 2013-04-10 13:00:18.418--ClientSession(1220035752)--Connection(967022308)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [41, testAuthor 0be5ba19-cdd2-4f72-9e85-77c68345cc54, testTitle b11d03e8-0fc5-40ea-9ce0-79082e522a05, Reference]
+[EL Fine]: 2013-04-10 13:00:18.419--ClientSession(294459541)--Connection(1179182899)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [42, testAuthor ca6de6f3-df23-4d37-ba92-17fa67701567, testTitle 4de48e9a-25f1-4c4a-9b57-7a36267b473e, Reference]
+[EL Fine]: 2013-04-10 13:00:18.421--ClientSession(404210918)--Connection(1082123365)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [43, testAuthor 68cc463c-93a3-4076-88ef-f35bf55fc342, testTitle 4af46803-363e-4dd2-b095-03a8459a4f9c, Reference]
+[EL Fine]: 2013-04-10 13:00:18.422--ClientSession(246309642)--Connection(1525165325)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [44, testAuthor 3589a391-9798-49c5-87d1-002d5d3adfee, testTitle 36c87583-7f71-4b1d-82fb-4694534df9c1, Reference]
+[EL Fine]: 2013-04-10 13:00:18.423--ClientSession(1108789631)--Connection(1711723198)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [45, testAuthor e4d84ecd-d135-49c1-8bd2-e4adaa501d58, testTitle 64924009-010c-454d-b4cc-6d0c0c09bf3c, Reference]
+[EL Fine]: 2013-04-10 13:00:18.425--ClientSession(1243668994)--Connection(886445907)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [46, testAuthor 720d8ded-059f-4a40-8876-a9ae21d21092, testTitle 3e9f5293-fac0-44b3-8250-bce7254fd9f0, Reference]
+[EL Fine]: 2013-04-10 13:00:18.426--ClientSession(404911602)--Connection(2121101118)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [47, testAuthor d368186e-9d8f-488e-90f6-e5b25593c6a9, testTitle 28142a0b-4d7c-4c7b-adcd-121278b69b74, Reference]
+[EL Fine]: 2013-04-10 13:00:18.427--ClientSession(1274909015)--Connection(1951468986)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [48, testAuthor a6a8a12a-79a0-4719-8e22-7f8a3c6dc497, testTitle fc151580-27b2-4b26-9470-b2d1766a9d79, Reference]
+[EL Fine]: 2013-04-10 13:00:18.429--ClientSession(1875654759)--Connection(1217080200)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [49, testAuthor e55863d0-3a13-45ac-be0e-39410721bbdf, testTitle bc28816d-a2a8-435f-a67f-cfd76c402f54, Reference]
+[EL Fine]: 2013-04-10 13:00:18.43--ClientSession(625815482)--Connection(1853386615)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [50, testAuthor 88c1fa19-e5f9-4a1b-9fc6-953c6b8cdadc, testTitle 2b732b70-b06e-4358-8028-88e73e0cbbb6, Reference]
+[EL Fine]: 2013-04-10 13:00:18.431--ClientSession(813975765)--Connection(1019850965)--Thread(Thread[main,5,main])--UPDATE SEQUENCE SET SEQ_COUNT = SEQ_COUNT + ? WHERE SEQ_NAME = ?
+	bind => [50, SEQ_GEN]
+[EL Fine]: 2013-04-10 13:00:18.431--ClientSession(813975765)--Connection(1019850965)--Thread(Thread[main,5,main])--SELECT SEQ_COUNT FROM SEQUENCE WHERE SEQ_NAME = ?
+	bind => [SEQ_GEN]
+[EL Fine]: 2013-04-10 13:00:18.432--ClientSession(813975765)--Connection(1019850965)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [51, testAuthor b81aa2f9-3261-482b-b71d-e3375c0fed17, testTitle 13182de2-7698-47e2-9643-9156d20fcda1, Reference]
+[EL Fine]: 2013-04-10 13:00:18.433--ServerSession(1817599109)--Connection(1014294641)--Thread(Thread[main,5,main])--SELECT id, DTYPE, AUTHOR, TITLE, BOOKTITLE, JOURNAL, PUBLISHER FROM REFERENCE
+[EL Fine]: 2013-04-10 13:00:18.452--ServerSession(1817599109)--Connection(1734639741)--Thread(Thread[main,5,main])--SELECT id, DTYPE, AUTHOR, TITLE, BOOKTITLE, JOURNAL, PUBLISHER FROM REFERENCE
+[EL Fine]: 2013-04-10 13:00:18.471--ServerSession(1817599109)--Connection(2006552492)--Thread(Thread[main,5,main])--SELECT id, DTYPE, AUTHOR, TITLE, BOOKTITLE, JOURNAL, PUBLISHER FROM REFERENCE
+[EL Fine]: 2013-04-10 13:00:18.489--ClientSession(531551041)--Connection(246374567)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [52, testAuthor da639eb8-15c3-4eb9-9b94-11d54a924785, testTitle 6eef39db-7240-4c30-8b10-fc96219259d0, Reference]
+[EL Fine]: 2013-04-10 13:00:18.49--ClientSession(1411181717)--Connection(921720151)--Thread(Thread[main,5,main])--INSERT INTO REFERENCE (id, AUTHOR, TITLE, DTYPE) VALUES (?, ?, ?, ?)
+	bind => [53, testAuthor 08d41dcd-bcd1-4484-a2b7-4c88c8f2ecf8, testTitle cd152ea3-92bb-47a3-bc00-5e02b2102898, Reference]
+[EL Fine]: 2013-04-10 13:00:18.491--ServerSession(1817599109)--Connection(1106807624)--Thread(Thread[main,5,main])--SELECT id, DTYPE, AUTHOR, TITLE, BOOKTITLE, JOURNAL, PUBLISHER FROM REFERENCE
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.305 sec
+Running ohtu.domain.ReferenceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec
+Running seleniumTests.ProcessTest
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.786 sec <<< FAILURE!
+Running ohtu.service.BibtexServiceTest
+@book{ 
+author = "testAuthor 51914bd3-a6fd-4cdf-9c9c-21809fdd723a",
+ title = "testTitle 85e9709a-c1a2-4d00-a6b6-c0b12c1cb284" , }
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec
+
+Results :
+
+Failed tests: 
+  someSiteIsUp(seleniumTests.ProcessTest)
+
+Tests run: 13, Failures: 1, Errors: 0, Skipped: 0
+
+Flushing results...
+[EL Config]: 2013-04-10 13:00:19.425--ServerSession(1817599109)--Connection(1355605612)--Thread(Thread[Thread-3,5,main])--disconnect
+[EL Info]: 2013-04-10 13:00:19.426--ServerSession(1817599109)--Thread(Thread[Thread-3,5,main])--file:/cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/target/generated-classes/cobertura/_persistenceUnit logout successful
+Flushing results done
+Cobertura: Loaded information on 17 classes.
+Cobertura: Saved information on 17 classes.
+[ERROR] There are test failures.
+
+Please refer to /cs/fs/home/pperala/Projects/ohtu/Ohtu-miniprojekti/Ohtu-miniprojekti/target/surefire-reports for the individual test results.
+[INFO] 
+[INFO] <<< cobertura-maven-plugin:2.5.2:cobertura (default-cli) @ Ohtu-miniprojekti <<<
+[INFO] 
+[INFO] --- cobertura-maven-plugin:2.5.2:cobertura (default-cli) @ Ohtu-miniprojekti ---
+[INFO] Cobertura 1.9.4.1 - GNU GPL License (NO WARRANTY) - See COPYRIGHT file
+Cobertura: Loaded information on 17 classes.
+Report time: 734ms
+
+[INFO] Cobertura Report generation was successful.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 26.479s
+[INFO] Finished at: Wed Apr 10 13:00:20 EEST 2013
+[INFO] Final Memory: 36M/270M
+[INFO] ------------------------------------------------------------------------
