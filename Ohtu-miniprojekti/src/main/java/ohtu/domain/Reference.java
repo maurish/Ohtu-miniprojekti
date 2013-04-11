@@ -49,8 +49,8 @@ public class Reference {
 
     public String toBibtex() {
         return "{ \n"
-                + "author = "+ '"' + author+ '"' + ",\n"
-                + " title = " + '"' +title + '"' + " ";
+                + "  author = "+ '"' + author+ '"' + ",\n"
+                + "  title = " + '"' +title + '"' + " ";
     }
 
     public String getAuthor() {

@@ -22,7 +22,7 @@
             </select>
         </nav>
         <div>
-            <form:form id="bookForm" commandName="reference" action="addRef" method="POST">
+            <form:form id="bookForm" commandName="book" action="addBook" method="POST">
                 <p>Kirjailija: </p>
                 <form:input path="author" /><form:errors path="author" /><br/>
                 <p>Teoksen nimi: </p>

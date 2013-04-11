@@ -12,10 +12,11 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%@include file="naviBar.jsp" %>
         <h1>Hello Bibtex</h1>
         <p>
     <c:forEach var="bibtex" items="${bibtexs}">
-       ${bibtex}
+    <pre>${bibtex}</pre>
     </c:forEach>
 </p>
 </body>
