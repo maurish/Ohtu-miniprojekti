@@ -15,7 +15,16 @@ import javax.persistence.Table;
 @Table
 public class Inproceedings extends Reference {
     
-    String bookTitle;
+    private String bookTitle;
+    private int pubYear;
+    
+     public int getpubYear() {
+        return this.pubYear;
+    }
+    
+    public void setpubYear(int year) {
+        this.pubYear=year;
+    }
 
     public String getBookTitle() {
         return bookTitle;

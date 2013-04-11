@@ -15,7 +15,16 @@ import javax.persistence.Table;
 @Table
 public class Book extends Reference {
 
-    String publisher;
+    private String publisher;
+    private int pubYear;
+    
+    public int getpubYear() {
+        return this.pubYear;
+    }
+    
+    public void setpubYear(int year) {
+        this.pubYear=year;
+    }
 
     public String getPublisher() {
         return publisher;

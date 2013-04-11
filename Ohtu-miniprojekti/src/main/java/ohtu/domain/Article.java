@@ -15,7 +15,17 @@ import javax.persistence.Table;
 @Table
 public class Article extends Reference {
     
-    String journal;
+    private String journal;
+    private int pubYear;
+    
+    public int getpubYear() {
+        return this.pubYear;
+    }
+    
+    public void setpubYear(int year) {
+        this.pubYear = year;
+    }
+    
 
     public String getJournal() {
         return journal;
