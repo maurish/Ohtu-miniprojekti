@@ -31,16 +31,16 @@
             </form:form>
         </div>
         <div>
-            <form:form id="articleForm" commandName="reference" action="addRef" method="POST">
+            <form:form id="articleForm" commandName="article" action="addArticle" method="POST">
                 <p>article: </p>
-                <form:input path="author" /><form:errors path="author" /><br/>
+                <form:input path="author" />*<form:errors path="author" /><br/>
                 <p>Teoksen nimi: </p>
                 <form:input path="title" /><form:errors path="title" /><br/>
                 <input type="submit">
             </form:form>
         </div>
         <div>
-            <form:form id="inprocForm" commandName="reference" action="addRef" method="POST">
+            <form:form id="inprocForm" commandName="inproc" action="addInproc" method="POST">
                 <p>inproc: </p>
                 <form:input path="author" /><form:errors path="author" /><br/>
                 <p>Teoksen nimi: </p>
