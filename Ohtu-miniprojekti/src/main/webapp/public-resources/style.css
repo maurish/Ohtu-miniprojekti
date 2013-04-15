@@ -2,4 +2,11 @@ div.hidden {
     display: none;
 }
 
-
+.code{
+    padding:15px;
+    background-color:rgb(230,230,230);
+    border:1px solid black;
+    resize:none;
+    overflow-y:hidden;
+    width:500px;
+}

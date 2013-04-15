@@ -18,7 +18,6 @@
         <div>
             <c:forEach var="reference" items="${references}">
                 <ul>
-
                     <li>${reference.author}</li>
                     <li>${reference.title}</li>
                 </ul>

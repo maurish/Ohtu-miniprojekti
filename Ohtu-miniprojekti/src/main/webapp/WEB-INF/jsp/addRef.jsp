@@ -6,8 +6,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add Page</title>
-        <link rel="stylesheet" href="resources/style.css" type="text/css">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <%@include file="libraries.jsp" %>
+
         <script src="resources/script.js"></script>
         
     </head>
