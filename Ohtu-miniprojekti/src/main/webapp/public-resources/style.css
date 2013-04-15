@@ -6,7 +6,21 @@ div.hidden {
     padding:15px;
     background-color:rgb(230,230,230);
     border:1px solid black;
-    resize:none;
+  /*  resize:none;*/
     overflow-y:hidden;
-    width:500px;
+    overflow-x:hidden;
+    width:100%;
+}
+
+div.wrapper{
+    width:95%;
+}
+
+.ui{
+    font-size:25px;
+    font-weight: bold;
+    float:right;
+    padding-left:15px;
+    padding-right:15px;
+    cursor:pointer;
 }

@@ -1,5 +1,6 @@
 package ohtu.controller;
 
+import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.validation.Valid;
@@ -12,6 +13,10 @@ import ohtu.service.BibtexServiceImpl;
 import ohtu.service.ReferenceService;
 import ohtu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -44,6 +49,12 @@ public class OhtuController {
     @RequestMapping(value="*")
     public String redir(){
         return "redirect:list";
+    }
+    
+    @RequestMapping(value="bibtex")
+    public String pureBibtex(Model model){
+        model.addAttribute("bibtexs", bibtex.generate(references.listAll()));
+        return "purebibtex";
     }
 
     @RequestMapping(value = "addArticle", method = RequestMethod.POST)
@@ -107,6 +118,20 @@ public class OhtuController {
     public String list(Model model) {
         model.addAttribute("references", references.listAll());
         return "listAll";
+    }
+    
+    @RequestMapping(value = "downloadBibtex", method = RequestMethod.GET)
+    public ResponseEntity<byte[]> downloadAttachment() {
+        String ret = "";
+        for (String string : bibtex.generate(references.listAll())) {
+            ret+=string;
+        }
+        byte[] content =ret.getBytes();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentLength(content.length);
+        headers.set("Content-Disposition", "attachment; filename=\"list"+System.currentTimeMillis()+".BIBTEX\"");
+        headers.setContentType(MediaType.parseMediaType("text/plain"));
+        return new ResponseEntity<byte[]>(content, headers, HttpStatus.OK);
     }
 
     @RequestMapping(value = "listAll", method = RequestMethod.GET, produces = "application/json")
