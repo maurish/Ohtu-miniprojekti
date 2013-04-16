@@ -90,6 +90,12 @@ public class Reference {
          ret.put("pubYear", pubYear);
         return ret;
     }
+
+    public Reference(String author, String title, Integer pubYear) {
+        this.author = author;
+        this.title = title;
+        this.pubYear = pubYear;
+    }
     
   
     

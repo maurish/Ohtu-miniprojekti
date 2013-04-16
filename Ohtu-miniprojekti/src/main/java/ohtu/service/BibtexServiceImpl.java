@@ -11,22 +11,25 @@ public class BibtexServiceImpl implements BibtexService {
 
     @Override
     public String generate(Reference reference) {
-        String rakennettava = "@" + reference.getClass().getSimpleName() + "{";
+        String rakennettava = "@" + reference.getClass().getSimpleName() + "{\n";
         Map<String, Object> attributes = reference.attributes();
-        for (String string : attributes.keySet()) {
-            if(attributes.get(string)!=null) {
-                rakennettava+=string+" = \""+attributes.get(string)+"\", \n";
+        for (String key : attributes.keySet()) {
+            Object value = attributes.get(key);
+            if(value != null && !value.equals("")) {
+                rakennettava+=" "+key+" = \""+value+"\", \n";
             }
         }
-        rakennettava+="}";
+        rakennettava+="}\n";
+        
+        rakennettava = rakennettava.replaceAll("ä", "{\"a}").replaceAll("ö", "{\"o}");
         System.out.println(rakennettava);
+        
+        
         return rakennettava;
     }
 
     @Override
     public List<String> generate(List<Reference> references) {
-
-
         List<String> bibtexList = new ArrayList<String>();
         for (Reference ref : references) {
             bibtexList.add(generate(ref));
