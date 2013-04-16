@@ -4,6 +4,7 @@
  */
 package ohtu.domain;
 
+import java.util.Map;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import org.hibernate.validator.constraints.Length;
@@ -83,15 +84,28 @@ public class Article extends Reference {
         this.journal = journal;
     }
     
-     public String toBibtex() {
-        return "@article"+super.toBibtex()
-                + " journal =  \"" + journal + "\", \n"
-                + "  number = \"" + number + "\", \n"
-                + "  publish month = \"" + pubMonth + "\", \n"
-                + "  pages = \"" + pages + "\", \n"
-                + "  publisher = \"" + publisher + "\", \n"
-                + "  address = \"" + address + "\", \n"
-                + "  volume = \"" + volume + "\"}\n";
+//     public String toBibtex() {
+//        return "@article"+super.toBibtex()
+//                + " journal =  \"" + journal + "\", \n"
+//                + "  number = \"" + number + "\", \n"
+//                + "  publish month = \"" + pubMonth + "\", \n"
+//                + "  pages = \"" + pages + "\", \n"
+//                + "  publisher = \"" + publisher + "\", \n"
+//                + "  address = \"" + address + "\", \n"
+//                + "  volume = \"" + volume + "\"}\n";
+//    }
+     
+      @Override
+    public Map<String, Object> attributes() {
+        final Map<String, Object> attributes = super.attributes();
+        attributes.put("journal", journal);
+        attributes.put("publisher", publisher);
+        attributes.put("volume", volume);
+        attributes.put("number", number);
+        attributes.put("pubMonth", pubMonth);
+        attributes.put("pages", pages);
+        attributes.put("address", address);
+        return attributes;
     }
     
 }

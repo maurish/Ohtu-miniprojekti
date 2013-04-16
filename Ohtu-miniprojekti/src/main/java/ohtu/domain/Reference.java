@@ -1,5 +1,7 @@
 package ohtu.domain;
 
+import java.util.HashMap;
+import java.util.Map;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -64,13 +66,13 @@ public class Reference {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    public String toBibtex() {
-        return "{ \n"
-                + "  author = \"" + author+ "\" ,\n"
-                + "  title = \"" +title + "\", \n"
-                + "  publish year = \"" + pubYear + "\", \n ";
-    }
+//
+//    public String toBibtex() {
+//        return "{ \n"
+//                + "  author = \"" + author+ "\" ,\n"
+//                + "  title = \"" +title + "\", \n"
+//                + "  publish year = \"" + pubYear + "\", \n ";
+//    }
 
     public String getAuthor() {
         return author;
@@ -79,4 +81,16 @@ public class Reference {
     public void setAuthor(String author) {
         this.author = author;
     }
+    
+    
+    public Map<String, Object> attributes(){
+         HashMap<String, Object> ret = new HashMap<String, Object>();
+         ret.put("title", title);
+         ret.put("author", author);
+         ret.put("pubYear", pubYear);
+        return ret;
+    }
+    
+  
+    
 }

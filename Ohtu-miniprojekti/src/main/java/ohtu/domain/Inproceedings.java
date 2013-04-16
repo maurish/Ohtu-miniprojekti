@@ -4,6 +4,7 @@
  */
 package ohtu.domain;
 
+import java.util.Map;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import org.hibernate.validator.constraints.Length;
@@ -16,8 +17,9 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Table
 public class Inproceedings extends Reference {
+
     @NotBlank
-    @Length(max=35, min=1)
+    @Length(max = 35, min = 1)
     private String bookTitle;
     private String pubMonth;
     private String organisation;
@@ -38,9 +40,6 @@ public class Inproceedings extends Reference {
         this.organisation = organisation;
     }
 
-    
-  
-
     public String getBookTitle() {
         return bookTitle;
     }
@@ -48,10 +47,20 @@ public class Inproceedings extends Reference {
     public void setBookTitle(String bookTitle) {
         this.bookTitle = bookTitle;
     }
-     public String toBibtex() {
-        return "@inproceeding"+super.toBibtex()+ ", \n "
-                + "book title =  \"" + bookTitle + "\", \n"
-                + "publish month = \"" + pubMonth + "\", \n"
-                + "organisation = \"" + organisation + "\"}\n";
+//
+//    public String toBibtex() {
+//        return "@inproceeding" + super.toBibtex() + ", \n "
+//                + "book title =  \"" + bookTitle + "\", \n"
+//                + "publish month = \"" + pubMonth + "\", \n"
+//                + "organisation = \"" + organisation + "\"}\n";
+//    }
+
+    @Override
+    public Map<String, Object> attributes() {
+        Map<String, Object> attributes = super.attributes();
+        attributes.put("publish month", pubMonth);
+        attributes.put("book title", bookTitle);
+        attributes.put("organisation", organisation);
+        return attributes;
     }
 }
