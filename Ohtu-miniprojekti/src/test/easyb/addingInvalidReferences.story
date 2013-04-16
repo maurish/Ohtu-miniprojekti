@@ -44,20 +44,24 @@ scenario "user can't add a book with invalid parameters", {
  
     then 'correct error messages are visible', {
         driver.getPageSource().contains("Listing of all references").shouldBe false
-        driver.getPageSource().contains("author must be defined").shouldBe true
-        driver.getPageSource().contains("title must be defined").shouldBe true
-        driver.getPageSource().contains("must be greater than or equal to 1900").shouldBe true
-        driver.getPageSource().contains("may not be empty").shouldBe true
+        element = driver.findElement(By.xpath("//*[contains(.,'author must be defined')]"))
+        element.getText().length().shouldNotBe 0;
+        element = driver.findElement(By.xpath("//*[contains(.,'title must be defined')]"))
+        element.getText().length().shouldNotBe 0;
+        element = driver.findElement(By.xpath("//*[contains(.,'must be greater than or equal to 1900')]"))
+        element.getText().length().shouldNotBe 0;
+        element = driver.findElement(By.xpath("//*[contains(.,'may not be empty')]"))
+        element.getText().length().shouldNotBe 0;
     }
 }
 
-scenario "user can't add an improceeding with invalid parameters", {
+scenario "user can't add an inproceeding with invalid parameters", {
 
     given 'improceeding selected as a reference', {
         getAddpageAndSelectReference("Inproceedings")
     }
 
-    when 'valid parameters for an improceeding are given', {
+    when 'valid parameters for an inproceeding are given', {
 
         element = driver.findElement(By.name("author"))
         element.sendKeys("")
@@ -76,11 +80,15 @@ scenario "user can't add an improceeding with invalid parameters", {
     }
     
     then 'correct error messages are visible', {
-
-        driver.getPageSource().contains("Pauli Perala").shouldBe true
-        driver.getPageSource().contains("Improceedings wait what?").shouldBe true
-        driver.getPageSource().contains("2005").shouldBe true
-        driver.getPageSource().contains("Big book of improceedings").shouldBe true
+        driver.getPageSource().contains("Listing of all references").shouldBe false
+        element = driver.findElement(By.xpath("//*[contains(.,'author must be defined')]"))
+        element.getText().length().shouldNotBe 0;
+        element = driver.findElement(By.xpath("//*[contains(.,'title must be defined')]"))
+        element.getText().length().shouldNotBe 0;
+        element = driver.findElement(By.xpath("//*[contains(.,'must be greater than or equal to 1900')]"))
+        element.getText().length().shouldNotBe 0;
+        element = driver.findElement(By.xpath("//*[contains(.,'may not be empty')]"))
+        element.getText().length().shouldNotBe 0;
     }
 }
 
@@ -108,9 +116,14 @@ scenario "user can add an article", {
     }
     
     then 'correct error messages are visible', {
-        driver.getPageSource().contains("must be less than or equal to 2013").shouldBe true
-        driver.getPageSource().contains("author must be defined").shouldBe true
-        driver.getPageSource().contains("title must be defined").shouldBe true
-        driver.getPageSource().contains("length must be between 1 and 35").shouldBe true
+        driver.getPageSource().contains("Listing of all references").shouldBe false
+        element = driver.findElement(By.xpath("//*[contains(.,'author must be defined')]"))
+        element.getText().length().shouldNotBe 0;
+        element = driver.findElement(By.xpath("//*[contains(.,'title must be defined')]"))
+        element.getText().length().shouldNotBe 0;
+        element = driver.findElement(By.xpath("//*[contains(.,'must be less than or equal to 2013')]"))
+        element.getText().length().shouldNotBe 0;
+        element = driver.findElement(By.xpath("//*[contains(.,'length must be between 1 and 35')]"))
+        element.getText().length().shouldNotBe 0;
     }
 }

@@ -50,13 +50,13 @@ scenario "user can add a book", {
     }
 }
 
-scenario "user can add an improceeding", {
+scenario "user can add an inproceeding", {
 
-    given 'improceeding selected as a reference', {
+    given 'inproceeding selected as a reference', {
         getAddpageAndSelectReference("Inproceedings")
     }
 
-    when 'valid parameters for an improceeding are given', {
+    when 'valid parameters for an inproceeding are given', {
 
         element = driver.findElement(By.name("author"))
         element.sendKeys("Pauli Perala")
@@ -74,8 +74,7 @@ scenario "user can add an improceeding", {
         element.submit();
     }
     
-    then 'submitted improceeding will be visible', {
-        System.out.println(driver.getPageSource())
+    then 'submitted inproceeding will be visible', {
         driver.getPageSource().contains("Pauli Perala").shouldBe true
         driver.getPageSource().contains("Improceedings wait what?").shouldBe true
         driver.getPageSource().contains("2005").shouldBe true
