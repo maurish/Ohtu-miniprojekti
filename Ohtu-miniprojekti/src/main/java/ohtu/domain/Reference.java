@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -22,6 +24,18 @@ public class Reference {
     String author;
     @NotBlank(message = "title must be defined")
     String title;
+    @NotBlank
+    @Min(1900)
+    @Max(2013)
+    private Integer pubYear;
+
+    public Integer getPubYear() {
+        return pubYear;
+    }
+
+    public void setPubYear(Integer pubYear) {
+        this.pubYear = pubYear;
+    }
 
     public Reference(String author, String title) {
         this.author = author;
@@ -49,8 +63,9 @@ public class Reference {
 
     public String toBibtex() {
         return "{ \n"
-                + "  author = "+ '"' + author+ '"' + ",\n"
-                + "  title = " + '"' +title + '"' + " ";
+                + "  author = \"" + author+ "\" ,\n"
+                + "  title = \"" +title + "\" \n"
+                + "  publish year = \"" + pubYear + "\"\n ";
     }
 
     public String getAuthor() {

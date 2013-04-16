@@ -6,6 +6,9 @@ package ohtu.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -19,9 +22,6 @@ public class Book extends Reference {
     @NotBlank
     @Length(max=35, min=1)
     private String publisher;
-    @NotBlank
-    @Length(max=4, min=3)
-    private int pubYear;
     private String editor;
 
 
@@ -31,14 +31,6 @@ public class Book extends Reference {
 
     public void setEditor(String editor) {
         this.editor = editor;
-    }
-    
-    public int getpubYear() {
-        return this.pubYear;
-    }
-    
-    public void setpubYear(int year) {
-        this.pubYear=year;
     }
 
     public String getPublisher() {
@@ -50,7 +42,7 @@ public class Book extends Reference {
     }
     
     public String toBibtex() {
-        return "@book"+super.toBibtex()+ "\n}";
+        return "@book"+super.toBibtex()+ "\n}\n";
     }
     
 

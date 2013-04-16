@@ -27,10 +27,10 @@
                 <form:input path="author" />*<form:errors path="author" /><br/>
                 <p>Teoksen nimi: </p>
                 <form:input path="title" />*<form:errors path="title" /><br/>
-                <p>Julkaisija:</p>
-                <form:input path="publisher" />*<form:errors path="publisher" /><br/>
                 <p>Julkaisuvuosi:</p>
                 <form:input path="pubYear" />*<form:errors path="pubYear" /><br/>
+                <p>Julkaisija:</p>
+                <form:input path="publisher" />*<form:errors path="publisher" /><br/>
                 <p>Editoija:</p>
                 <form:input path="editor" /><form:errors path="editor" /><br/>
                 <input type="submit">
@@ -42,20 +42,20 @@
                 <form:input path="author" />*<form:errors path="author" /><br/>
                 <p>Teoksen nimi: </p>
                 <form:input path="title" />*<form:errors path="title" /><br/>
-                <p>Julkaisu (journal):</p>
-                <form:input path="journal" />*<form:errors path="journal" /><br/>
-                <p>Volume:</p>
-                <form:input path="volume" /><form:errors path="volume" /><br/>
-                <p>Numero:</p>
-                <form:input path="number" /><form:errors path="number" /><br/>
+                <p>Julkaisija:</p>
+                <form:input path="publisher" /><form:errors path="publisher" /><br/>
                 <p>Julkaisukuukausi:</p>
                 <form:input path="pubMonth" /><form:errors path="pubMonth" /><br/>
                 <p>Julkaisuvuosi:</p>
                 <form:input path="pubYear" />*<form:errors path="pubYear" /><br/>
                 <p>Sivut (muodossa: alku -- loppu):</p>
                 <form:input path="pages" /><form:errors path="pages" /><br/>
-                <p>Julkaisija:</p>
-                <form:input path="publisher" /><form:errors path="publisher" /><br/>
+                <p>Julkaisu (journal):</p>
+                <form:input path="journal" />*<form:errors path="journal" /><br/>
+                <p>Volume:</p>
+                <form:input path="volume" /><form:errors path="volume" /><br/>
+                <p>Numero:</p>
+                <form:input path="number" /><form:errors path="number" /><br/>
                 <p>Julkaisupaikka:</p>
                 <form:input path="address" /><form:errors path="address" /><br/>
                 <input type="submit">
@@ -67,15 +67,16 @@
                 <form:input path="author" />*<form:errors path="author" /><br/>
                 <p>Teoksen nimi: </p>
                 <form:input path="title" />*<form:errors path="title" /><br/>
-                <p>Kirjan nimi nimi: </p>
-                <form:input path="bookTitle" />*<form:errors path="bookTitle" /><br/>
-                <p>Julkaisuvuosi: </p>
-                <form:input path="pubYear" />*<form:errors path="pubYear" /><br/>
-                <input type="submit">
                 <p>Julkaisukuukausi: </p>
                 <form:input path="pubMonth" /><form:errors path="pubMonth" /><br/>
+                <p>Julkaisuvuosi: </p>
+                <form:input path="pubYear" />*<form:errors path="pubYear" /><br/>
+                <p>Kirjan nimi nimi: </p>
+                <form:input path="bookTitle" />*<form:errors path="bookTitle" /><br/>
                 <p>Organisaatio: </p>
                 <form:input path="organisation" /><form:errors path="organisation" /><br/>
+                <input type="submit">
+                
             </form:form>   
         </div> 
 

@@ -6,6 +6,9 @@ package ohtu.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -20,39 +23,13 @@ public class Article extends Reference {
     @NotBlank
     @Length(max=35, min=1)
     private String journal;
-    @NotBlank
-    @Length(max=4, min=3)
-    private int pubYear;
-    private int volume;
-    private int number;
+    private Integer volume;
+    private Integer number;
     private String pubMonth;
     private String pages;
     private String publisher;
     private String address;
 
-    public int getVolume() {
-        return volume;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public String getPubMonth() {
-        return pubMonth;
-    }
-
-    public void setPubMonth(String pubMonth) {
-        this.pubMonth = pubMonth;
-    }
 
     public String getPages() {
         return pages;
@@ -77,16 +54,22 @@ public class Article extends Reference {
     public void setAddress(String address) {
         this.address = address;
     }
-    
-    
-    public int getpubYear() {
-        return this.pubYear;
+
+    public Integer getVolume() {
+        return volume;
     }
-    
-    public void setpubYear(int year) {
-        this.pubYear = year;
+
+    public void setVolume(Integer volume) {
+        this.volume = volume;
     }
-    
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
 
     public String getJournal() {
         return journal;
@@ -96,9 +79,15 @@ public class Article extends Reference {
         this.journal = journal;
     }
     
-//     public String toBibtex() {
-//        return "@article"+super.toBibtex()+ ", \n "
-//                + "journal = " + '"' + journal + '"' + " }";
-//    }
+     public String toBibtex() {
+        return "@article"+super.toBibtex()+ ", \n "
+                + "journal =  \"" + journal + "\" \n"
+                + "number = \"" + number + "\" "
+                + "publish month = \"" + pubMonth + "\" "
+                + "pages = \"" + pages + "\" "
+                + "publisher = \"" + publisher + "\" "
+                + "address = \"" + address + "\" "
+                + "volume = \"" + volume + "\"}\n";
+    }
     
 }

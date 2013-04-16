@@ -16,41 +16,45 @@
         <%@include file="naviBar.jsp" %>
         <h1>Listing of all References</h1>
         <div>
-            <c:forEach var="book" items="${books}">
+            <c:forEach var="reference" items="${references}">
                 <ul>
                     <li>${book.author}</li>
                     <li>${book.title}</li>
                     <li>${book.publisher}</li>
                     <li>${book.pubYear}</li>
                     <li>${book.editor}</li>
-                    
+                <%--  <li>${reference.volume}</li>
+                    <li>${book.pubMonth}</li>
+                    <li>${reference.number}</li>
+                    <li>${reference.pages}</li>
+                    <li>${reference.address}</li>
+                    <li>${reference.organisation}</li> --%>
                 </ul>
             </c:forEach>
-            <c:forEach var="article" items="${articles}">
+        <%--    <c:forEach var="article" items="${articles}">
                 <ul>
                     <li>${article.author}</li>
                     <li>${article.title}</li>
-                    <li>${article.journal}</li>
-                    <li>${article.pubYear}</li>
-                    <li>${article.pubMonth}</li>
-                    <li>${article.volume}</li>
-                    <li>${article.number}</li>
-                    <li>${article.pages}</li>
-                    <li>${article.publisher}</li>
-                    <li>${article.address}</li>
+                    <li>${reference.journal}</li>
+                    <li>${reference.pubYear}</li>
+                    <li>${reference.pubMonth}</li>
+                    <li>${reference.volume}</li>
+                    <li>${reference.number}</li>
+                    <li>${reference.pages}</li>
+                    <li>${reference.publisher}</li>
+                    <li>${reference.address}</li>
                     
                 </ul>
-            </c:forEach>
+            </c:forEach> 
             <c:forEach var="inproc" items="${inprocs}">
                 <ul>
-                    <li>${book.author}</li>
-                    <li>${book.title}</li>
-                    <li>${book.pubYear}</li>
-                    <li>${book.pubMonth}</li>
-                    <li>${book.organisation}</li>
-                    
+                    <li>${reference.author}</li>
+                    <li>${reference.title}</li>
+                    <li>${reference.pubYear}</li>
+                    <li>${reference.pubMonth}</li>
+                    <li>${reference.organisation}</li>   
                 </ul>
-            </c:forEach>
+            </c:forEach> --%>
         </div>
     </body>
 </html>
