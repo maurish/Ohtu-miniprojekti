@@ -6,9 +6,6 @@ package ohtu.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -26,6 +23,14 @@ public class Article extends Reference {
     private Integer volume;
     private Integer number;
     private String pubMonth;
+
+    public String getPubMonth() {
+        return pubMonth;
+    }
+
+    public void setPubMonth(String pubMonth) {
+        this.pubMonth = pubMonth;
+    }
     private String pages;
     private String publisher;
     private String address;
