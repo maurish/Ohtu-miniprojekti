@@ -84,14 +84,14 @@ public class Article extends Reference {
     }
     
      public String toBibtex() {
-        return "@article"+super.toBibtex()+ ", \n "
-                + "journal =  \"" + journal + "\" \n"
-                + "number = \"" + number + "\" "
-                + "publish month = \"" + pubMonth + "\" "
-                + "pages = \"" + pages + "\" "
-                + "publisher = \"" + publisher + "\" "
-                + "address = \"" + address + "\" "
-                + "volume = \"" + volume + "\"}\n";
+        return "@article"+super.toBibtex()
+                + " journal =  \"" + journal + "\", \n"
+                + "  number = \"" + number + "\", \n"
+                + "  publish month = \"" + pubMonth + "\", \n"
+                + "  pages = \"" + pages + "\", \n"
+                + "  publisher = \"" + publisher + "\", \n"
+                + "  address = \"" + address + "\", \n"
+                + "  volume = \"" + volume + "\"}\n";
     }
     
 }

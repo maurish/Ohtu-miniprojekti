@@ -50,8 +50,8 @@ public class Inproceedings extends Reference {
     }
      public String toBibtex() {
         return "@inproceeding"+super.toBibtex()+ ", \n "
-                + "book title =  \"" + bookTitle + "\" \n"
-                + "publish month = \"" + pubMonth + "\" "
+                + "book title =  \"" + bookTitle + "\", \n"
+                + "publish month = \"" + pubMonth + "\", \n"
                 + "organisation = \"" + organisation + "\"}\n";
     }
 }

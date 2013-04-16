@@ -40,8 +40,8 @@ public class Book extends Reference {
     
     public String toBibtex() {
         return "@book"+super.toBibtex()+ ""
-                + "publisher = \"" + publisher + "\"\n"
-                + "editor = \"" + editor + "\"}\n";
+                + " publisher = \"" + publisher + "\",\n"
+                + " editor = \"" + editor + "\"}\n";
     }
     
 
