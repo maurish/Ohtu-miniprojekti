@@ -18,43 +18,15 @@
         <div>
             <c:forEach var="reference" items="${references}">
                 <ul>
-                    <li>${book.author}</li>
-                    <li>${book.title}</li>
-                    <li>${book.publisher}</li>
-                    <li>${book.pubYear}</li>
-                    <li>${book.editor}</li>
-                <%--  <li>${reference.volume}</li>
-                    <li>${book.pubMonth}</li>
-                    <li>${reference.number}</li>
-                    <li>${reference.pages}</li>
-                    <li>${reference.address}</li>
-                    <li>${reference.organisation}</li> --%>
+                    <c:forEach var="attribute" items="${reference.attributes()}">
+                        <c:if test="${not empty attribute.value}">
+                            <li>${attribute.key} : ${attribute.value}</li>
+                        </c:if>
+
+                    </c:forEach>
                 </ul>
             </c:forEach>
-        <%--    <c:forEach var="article" items="${articles}">
-                <ul>
-                    <li>${article.author}</li>
-                    <li>${article.title}</li>
-                    <li>${reference.journal}</li>
-                    <li>${reference.pubYear}</li>
-                    <li>${reference.pubMonth}</li>
-                    <li>${reference.volume}</li>
-                    <li>${reference.number}</li>
-                    <li>${reference.pages}</li>
-                    <li>${reference.publisher}</li>
-                    <li>${reference.address}</li>
-                    
-                </ul>
-            </c:forEach> 
-            <c:forEach var="inproc" items="${inprocs}">
-                <ul>
-                    <li>${reference.author}</li>
-                    <li>${reference.title}</li>
-                    <li>${reference.pubYear}</li>
-                    <li>${reference.pubMonth}</li>
-                    <li>${reference.organisation}</li>   
-                </ul>
-            </c:forEach> --%>
+
         </div>
     </body>
 </html>
