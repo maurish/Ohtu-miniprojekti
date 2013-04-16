@@ -1,5 +1,5 @@
 function displayForm(index) {
-    jQuery('div').addClass('hidden').eq(index).removeClass('hidden')
+    jQuery('.forms>div').addClass('hidden').eq(index).removeClass('hidden')
     jQuery('.formDrop option').eq(index).prop('selected',true)
 }
 
