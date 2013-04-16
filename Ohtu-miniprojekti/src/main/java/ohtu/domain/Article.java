@@ -23,6 +23,9 @@ public class Article extends Reference {
     private Integer volume;
     private Integer number;
     private String pubMonth;
+    private String pages;
+    private String publisher;
+    private String address;
 
     public String getPubMonth() {
         return pubMonth;
@@ -31,11 +34,7 @@ public class Article extends Reference {
     public void setPubMonth(String pubMonth) {
         this.pubMonth = pubMonth;
     }
-    private String pages;
-    private String publisher;
-    private String address;
-
-
+    
     public String getPages() {
         return pages;
     }

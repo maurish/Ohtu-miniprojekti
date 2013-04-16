@@ -8,8 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
 
 @Entity
 @Table
@@ -21,10 +24,11 @@ public class Reference {
     Long id;
     @NotBlank(message = "author must be defined")
     @Length(max = 250, min = 1)
-    String author;
+    private String author;
     @NotBlank(message = "title must be defined")
-    String title;
-    @NotBlank
+    private String title;
+    @NotNull
+    @NumberFormat(style = Style.NUMBER)
     @Min(1900)
     @Max(2013)
     private Integer pubYear;
