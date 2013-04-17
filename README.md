@@ -12,5 +12,5 @@ https://www.pivotaltracker.com/projects/782633
 Backlog ja meltdown :
 https://docs.google.com/spreadsheet/ccc?key=0AsgqthH8YHFWdGt1emwwb3R5ME5OajlwckZmdUpBa3c&usp=sharing
 
-Hyvää tietoa:
-https://en.wikipedia.org/wiki/BibTeX
+Deployed software:
+t-pperala.users.cs.helsinki.fi/miniprojekti
