@@ -13,6 +13,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>3.1.2.RELEASE</spring.version>
+        <easyb.version>1.5</easyb.version>
+        <slf4j.version>1.6.1</slf4j.version>
         
         <jetty.port>8090</jetty.port>
         <jetty.maven.plugin.version>8.1.5.v20120716</jetty.maven.plugin.version>
@@ -163,6 +165,13 @@
             <version>1.9.0</version>
             <scope>test</scope>
         </dependency>
+        
+        <dependency>
+            <groupId>org.easyb</groupId>
+            <artifactId>easyb-core</artifactId>
+            <version>${easyb.version}</version>
+            <scope>test</scope>        
+        </dependency>
  
         <!-- Jetty, le palvelin! -->
         <dependency>
@@ -295,13 +304,13 @@
                 <executions>
                     <execution>
                         <id>start-jetty</id>
-                        <phase>process-test-classes</phase>
+                        <phase>pre-integration-test</phase>
                         
                         
                         <goals>
                             <!-- <goal>run-exploded</goal> -->
                             <!-- toimii 8.x -versioissa -->
-                            <goal>start</goal>
+                            <goal>run</goal>
                         </goals>
                                                 
                         <configuration>
@@ -351,6 +360,25 @@
                     
                 </configuration>                
                
+            </plugin>
+            
+            <plugin>
+                <groupId>org.easyb</groupId>
+                <artifactId>maven-easyb-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <storyType>html</storyType>
+                    <storyReport>${basedir}/target/easyb/easyb-report.html
+                    </storyReport>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -87,7 +87,7 @@ public class BibtexServiceTest {
     }
     
     private void checkTagAndBrackets(String bibtex, String tag){
-        assertTrue(bibtex.matches("@"+tag+"\\{[\\s\\S]*\\}"));
+        assertTrue(bibtex.toLowerCase().matches("@"+tag+"\\{[\\s\\S]*\\}"));
         // [\s\S]*author\s+=\s+"testAuthor\s[0-9a-z\-]*"[\s\S]*
     }
 

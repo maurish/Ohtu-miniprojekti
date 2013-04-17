@@ -1,12 +1,17 @@
 function displayForm(index) {
-    jQuery('div').addClass('hidden').eq(index).removeClass('hidden')
+    jQuery('.forms>div').addClass('hidden').eq(index).removeClass('hidden')
+    jQuery('.formDrop option').eq(index).prop('selected',true)
 }
 
 jQuery(function(){
     
     jQuery('.formDrop').change(function(){
-        displayForm($(this).find(':selected').index())
+        var index = $(this).find(':selected').index()
+        displayForm(index)
+        window.sessionStorage['index'] = index
     })
 
-    displayForm(0)
+    displayForm(window.sessionStorage['index']||0)
+    
+    
 })

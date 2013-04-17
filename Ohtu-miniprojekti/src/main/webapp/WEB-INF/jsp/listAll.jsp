@@ -18,11 +18,15 @@
         <div>
             <c:forEach var="reference" items="${references}">
                 <ul>
+                    <c:forEach var="attribute" items="${reference.attributes()}">
+                        <c:if test="${not empty attribute.value}">
+                            <li>${attribute.key} : ${attribute.value}</li>
+                        </c:if>
 
-                    <li>${reference.author}</li>
-                    <li>${reference.title}</li>
+                    </c:forEach>
                 </ul>
             </c:forEach>
+
         </div>
     </body>
 </html>
