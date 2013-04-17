@@ -37,12 +37,12 @@ public class ReferenceTest {
         book.setTitle("Kokkauskirja");
         book.setPubYear(2001);
 
-        assertEquals(book.attributes().size(), 5, 0.00001);
-        assertTrue(book.attributes().containsKey("author"));
-        assertTrue(book.attributes().containsKey("title"));
-        assertTrue(book.attributes().containsKey("pubYear"));
-        assertTrue(book.attributes().containsKey("editor"));
-        assertTrue(book.attributes().containsKey("publisher"));
+        assertEquals(book.getAttributes().size(), 5, 0.00001);
+        assertTrue(book.getAttributes().containsKey("author"));
+        assertTrue(book.getAttributes().containsKey("title"));
+        assertTrue(book.getAttributes().containsKey("pubYear"));
+        assertTrue(book.getAttributes().containsKey("editor"));
+        assertTrue(book.getAttributes().containsKey("publisher"));
 
     }
 
@@ -52,17 +52,17 @@ public class ReferenceTest {
         art.setTitle("Kokkauskirja");
         art.setPubYear(2001);
 
-        assertEquals(art.attributes().size(), 10, 0.00001);
-        assertTrue(art.attributes().containsKey("author"));
-        assertTrue(art.attributes().containsKey("title"));
-        assertTrue(art.attributes().containsKey("pubYear"));
-        assertTrue(art.attributes().containsKey("journal"));
-        assertTrue(art.attributes().containsKey("publisher"));
-        assertTrue(art.attributes().containsKey("volume"));
-        assertTrue(art.attributes().containsKey("number"));
-        assertTrue(art.attributes().containsKey("pubMonth"));
-        assertTrue(art.attributes().containsKey("pages"));
-        assertTrue(art.attributes().containsKey("address"));
+        assertEquals(art.getAttributes().size(), 10, 0.00001);
+        assertTrue(art.getAttributes().containsKey("author"));
+        assertTrue(art.getAttributes().containsKey("title"));
+        assertTrue(art.getAttributes().containsKey("pubYear"));
+        assertTrue(art.getAttributes().containsKey("journal"));
+        assertTrue(art.getAttributes().containsKey("publisher"));
+        assertTrue(art.getAttributes().containsKey("volume"));
+        assertTrue(art.getAttributes().containsKey("number"));
+        assertTrue(art.getAttributes().containsKey("pubMonth"));
+        assertTrue(art.getAttributes().containsKey("pages"));
+        assertTrue(art.getAttributes().containsKey("address"));
 
     }
 
@@ -72,13 +72,13 @@ public class ReferenceTest {
         inproc.setTitle("Kokkauskirja");
         inproc.setPubYear(2001);
 
-        assertEquals(inproc.attributes().size(), 6, 0.00001);
-        assertTrue(inproc.attributes().containsKey("author"));
-        assertTrue(inproc.attributes().containsKey("title"));
-        assertTrue(inproc.attributes().containsKey("pubYear"));
-        assertTrue(inproc.attributes().containsKey("publish month"));
-        assertTrue(inproc.attributes().containsKey("book title"));
-        assertTrue(inproc.attributes().containsKey("organisation"));
+        assertEquals(inproc.getAttributes().size(), 6, 0.00001);
+        assertTrue(inproc.getAttributes().containsKey("author"));
+        assertTrue(inproc.getAttributes().containsKey("title"));
+        assertTrue(inproc.getAttributes().containsKey("pubYear"));
+        assertTrue(inproc.getAttributes().containsKey("publish month"));
+        assertTrue(inproc.getAttributes().containsKey("book title"));
+        assertTrue(inproc.getAttributes().containsKey("organisation"));
 
     }
 

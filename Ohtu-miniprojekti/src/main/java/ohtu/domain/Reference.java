@@ -75,7 +75,7 @@ public class Reference {
         this.author = author;
     }
 
-    public Map<String, Object> attributes() {
+    public Map<String, Object> getAttributes() {
         HashMap<String, Object> ret = new HashMap<String, Object>();
         ret.put("title", title);
         ret.put("author", author);

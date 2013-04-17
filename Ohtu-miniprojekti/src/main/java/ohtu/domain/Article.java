@@ -96,8 +96,8 @@ public class Article extends Reference {
 //    }
      
       @Override
-    public Map<String, Object> attributes() {
-        final Map<String, Object> attributes = super.attributes();
+    public Map<String, Object> getAttributes() {
+        final Map<String, Object> attributes = super.getAttributes();
         attributes.put("journal", journal);
         attributes.put("publisher", publisher);
         attributes.put("volume", volume);

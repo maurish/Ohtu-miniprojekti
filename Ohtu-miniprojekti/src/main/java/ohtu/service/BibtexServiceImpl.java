@@ -12,7 +12,7 @@ public class BibtexServiceImpl implements BibtexService {
     @Override
     public String generate(Reference reference) {
         String rakennettava = "@" + reference.getClass().getSimpleName().toLowerCase() + "{\n";
-        Map<String, Object> attributes = reference.attributes();
+        Map<String, Object> attributes = reference.getAttributes();
         for (String key : attributes.keySet()) {
             Object value = attributes.get(key);
             if(value != null && !value.equals("")) {

@@ -46,8 +46,8 @@ public class Book extends Reference {
 //    }
 
     @Override
-    public Map<String, Object> attributes() {
-        final Map<String, Object> attributes = super.attributes();
+    public Map<String, Object> getAttributes() {
+        final Map<String, Object> attributes = super.getAttributes();
         attributes.put("editor", editor);
         attributes.put("publisher", publisher);
         return attributes;

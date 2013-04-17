@@ -6,7 +6,7 @@ div.hidden {
     padding:15px;
     background-color:rgb(230,230,230);
     border:1px solid black;
-  /*  resize:none;*/
+    resize:none;
     overflow-y:hidden;
     overflow-x:hidden;
     width:100%;

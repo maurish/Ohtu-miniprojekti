@@ -18,7 +18,7 @@
         <div>
             <c:forEach var="reference" items="${references}">
                 <ul>
-                    <c:forEach var="attribute" items="${reference.attributes()}">
+                    <c:forEach var="attribute" items="${reference.attributes}">
                         <c:if test="${not empty attribute.value}">
                             <li>${attribute.key} : ${attribute.value}</li>
                         </c:if>
