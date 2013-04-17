@@ -20,11 +20,7 @@ public class BibtexServiceImpl implements BibtexService {
             }
         }
         rakennettava+="}\n";
-        
-        rakennettava = rakennettava.replaceAll("ä", "{\"a}").replaceAll("ö", "{\"o}");
-        System.out.println(rakennettava);
-        
-        
+        rakennettava = fixAeaekkoset(rakennettava);
         return rakennettava;
     }
 
@@ -35,5 +31,11 @@ public class BibtexServiceImpl implements BibtexService {
             bibtexList.add(generate(ref));
         }
         return bibtexList;
+    }
+
+    private String fixAeaekkoset(String rakennettava) {
+        rakennettava = rakennettava.replaceAll("ä", "{\"a}");
+        rakennettava = rakennettava.replaceAll("ö", "{\"o}");
+        return rakennettava;
     }
 }
