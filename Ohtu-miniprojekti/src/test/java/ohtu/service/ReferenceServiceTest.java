@@ -75,6 +75,7 @@ public class ReferenceServiceTest {
         Reference ref = new Reference();
         ref.setAuthor("testAuthor " + UUID.randomUUID());
         ref.setTitle("testTitle " + UUID.randomUUID());
+        ref.setPubYear(2012);
         return ref;
     }
 }

@@ -44,6 +44,24 @@
             })
         })
     }
+
+
+
+
+    $.fn.easterEgg = function(codes){
+        var $this = $(this)
+        var index =0
+        $this.keyup(function(e){
+            
+            if (codes[index]==e.originalEvent.keyCode){
+                if (++index >=codes.length){
+                    $this.addClass('easter')
+                }
+            }else{
+                index=0
+            }
+        })
+    }
 }
     
 )(jQuery)

@@ -82,12 +82,16 @@ public class BibtexServiceTest {
     }
     
     private void checkAuthorAndTitle(String bibtex, String name, String value){
-        assertTrue(bibtex.matches("[\\s\\S]*"+name+"\\s+=\\s+\""+value+"\\s[0-9a-z\\-]*\"[\\s\\S]*"));
+        String regex = "[\\s\\S]*"+name+"\\s+=\\s+\""+value+"\\s[0-9a-z\\-]*\"[\\s\\S]*";
+        assertTrue(bibtex.matches(regex));
         // [\s\S]*author\s+=\s+"testAuthor\s[0-9a-z\-]*"[\s\S]*
     }
     
     private void checkTagAndBrackets(String bibtex, String tag){
-        assertTrue(bibtex.toLowerCase().matches("@"+tag+"\\{[\\s\\S]*\\}"));
+        String regex = "@"+tag+"\\{(\\s|\\S)*\\}";
+        System.out.println(regex);
+        System.out.println("");
+        assertTrue(bibtex.toLowerCase().matches(regex));
         // [\s\S]*author\s+=\s+"testAuthor\s[0-9a-z\-]*"[\s\S]*
     }
 

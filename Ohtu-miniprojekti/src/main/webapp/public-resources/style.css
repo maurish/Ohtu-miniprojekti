@@ -24,3 +24,15 @@ div.wrapper{
     padding-right:15px;
     cursor:pointer;
 }
+
+
+.error{
+    color:red;
+    font-weight: bold;
+
+}
+
+body.easter{
+    background-color:red;
+
+}

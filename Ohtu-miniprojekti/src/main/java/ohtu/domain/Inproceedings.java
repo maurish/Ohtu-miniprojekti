@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ohtu.domain;
 
 import java.util.Map;
@@ -10,10 +6,6 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
-/**
- *
- * @author svanteha
- */
 @Entity
 @Table
 public class Inproceedings extends Reference {
@@ -47,13 +39,8 @@ public class Inproceedings extends Reference {
     public void setBookTitle(String bookTitle) {
         this.bookTitle = bookTitle;
     }
-//
-//    public String toBibtex() {
-//        return "@inproceeding" + super.toBibtex() + ", \n "
-//                + "book title =  \"" + bookTitle + "\", \n"
-//                + "publish month = \"" + pubMonth + "\", \n"
-//                + "organisation = \"" + organisation + "\"}\n";
-//    }
+
+
 
     @Override
     public Map<String, Object> attributes() {
@@ -63,4 +50,11 @@ public class Inproceedings extends Reference {
         attributes.put("organisation", organisation);
         return attributes;
     }
+
+    @Override
+    public String toString() {
+        return "Inproceedings{" + "bookTitle=" + bookTitle + ", pubMonth=" + pubMonth + ", organisation=" + organisation + '}';
+    }
+
+    
 }

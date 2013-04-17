@@ -58,7 +58,7 @@ public class OhtuController {
     }
 
     @RequestMapping(value = "addArticle", method = RequestMethod.POST)
-    public String createArticle(@ModelAttribute @Valid Article article, BindingResult bindingresult, Model model) {
+    public String createArticle(@ModelAttribute("article") @Valid Article article, BindingResult bindingresult, Model model) {
         if (bindingresult.hasErrors()) {
             model.addAttribute("article", article);
             addAll(model);
@@ -69,7 +69,7 @@ public class OhtuController {
     }
 
     @RequestMapping(value = "addBook", method = RequestMethod.POST)
-    public String createBook(@ModelAttribute @Valid Book book, BindingResult bindingresult, Model model) {
+    public String createBook(@ModelAttribute("book") @Valid Book book, BindingResult bindingresult, Model model) {
         if (bindingresult.hasErrors()) {
             model.addAttribute("book", book);
             addAll(model);
@@ -80,7 +80,7 @@ public class OhtuController {
     }
 
     @RequestMapping(value = "addInproc", method = RequestMethod.POST)
-    public String createInproc(@ModelAttribute @Valid Inproceedings inproc, BindingResult bindingresult, Model model) {
+    public String createInproc(@ModelAttribute("inproc") @Valid Inproceedings inproc, BindingResult bindingresult, Model model) {
         if (bindingresult.hasErrors()) {
             model.addAttribute("inproc", inproc);
             addAll(model);
@@ -103,15 +103,9 @@ public class OhtuController {
     }
 
     private void addAll(Model model) {
-        if (!model.containsAttribute("book")) {
-            model.addAttribute("book", new Book());
-        }
-        if (!model.containsAttribute("article")) {
-            model.addAttribute("article", new Article());
-        }
-        if (!model.containsAttribute("inproc")) {
-            model.addAttribute("inproc", new Inproceedings());
-        }
+        addOne(model, "book", new Book());
+        addOne(model, "article", new Article());
+        addOne(model, "inproc", new Inproceedings());
     }
 
     @RequestMapping(value = "list", method = RequestMethod.GET)
@@ -138,5 +132,11 @@ public class OhtuController {
     @ResponseBody
     public List<Reference> listAll() {
         return references.listAll();
+    }
+
+    private void addOne(Model model, String key, Reference reference) {
+        if (!model.containsAttribute(key)) {
+            model.addAttribute(key, reference);
+        }
     }
 }
