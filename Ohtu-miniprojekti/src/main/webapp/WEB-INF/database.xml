@@ -22,6 +22,14 @@
             <bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter"/>
         </property>
     </bean>
+    
+<!--    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="pgsql:host=localhost;dbname=svanteha"/>
+        <property name="username" value="svanteha"/>
+        <property name="password" value="9c9daaf68a655bb6"/>
+    </bean>-->
+    
  
     <!-- Hallinnoidaan transaktioita automaattisesti -->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">

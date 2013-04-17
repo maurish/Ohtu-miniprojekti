@@ -15,4 +15,3 @@ jQuery(function(){
 
     jQuery('body').easterEgg([77,76,85,85,75, 75,65,73])
 })
-

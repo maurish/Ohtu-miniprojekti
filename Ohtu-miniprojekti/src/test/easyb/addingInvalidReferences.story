@@ -92,13 +92,13 @@ scenario "user can't add an inproceeding with invalid parameters", {
     }
 }
 
-scenario "user can add an article", {
+scenario "user can't add an article with invalid parameters", {
     given 'article selected as a reference', {
         getAddpageAndSelectReference("Artikkeli")
     }
 
     when 'valid parameters for an article are given', {
-        author = "Anttiina"
+
         element = driver.findElement(By.name("author"))
         element.sendKeys("")
 

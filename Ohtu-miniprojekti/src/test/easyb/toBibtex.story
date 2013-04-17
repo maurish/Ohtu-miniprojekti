@@ -2,12 +2,10 @@ import org.openqa.selenium.*
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.Select;
 
-description 'User can use the offered functionality'
-
 def getAddpageAndSelectReference(reference){
     driver = new HtmlUnitDriver()
     driver.get("http://localhost:8090/")
-    element = element = driver.findElement(By.linkText("Lisää lähde"))
+    element = driver.findElement(By.linkText("Lisää lähde"))
     element.click()
     WebElement select = driver.findElement(By.id("dropDown"));
     List<WebElement> options = select.findElements(By.tagName("option"));
@@ -18,14 +16,17 @@ def getAddpageAndSelectReference(reference){
 
 }
 
+def clickBibtexPage() {
+    element = driver.findElement(By.linkText("Listaa kaikki bibtexinä"))
+    element.click()
+}
 
-scenario "user can add a book", {
+description 'User can see added references bibtex'
 
-    given 'book selected as a reference', {
-        getAddpageAndSelectReference("Kirja")  
-    }
+scenario "user sees book's bibtex", {
 
-    when 'valid parameters for a book are given', {
+    given 'book has been added to references', {
+        getAddpageAndSelectReference("Kirja")
         element = driver.findElement(By.name("author"))
         element.sendKeys("Antti")
 
@@ -41,22 +42,21 @@ scenario "user can add a book", {
         element = driver.findElement(By.id("bookSubmit"))
         element.submit();
     }
+
+    when 'bibtex listing page link is pressed', {
+        clickBibtexPage()
+    }
  
-    then 'submitted book will be visible', {
-        driver.getPageSource().contains("Antti").shouldBe true
-        driver.getPageSource().contains("Do you even code?").shouldBe true
-        driver.getPageSource().contains("1995").shouldBe true
-        driver.getPageSource().contains("Otava").shouldBe true
+    then 'bibtex of the submitted book will be visible', {
+        driver.getPageSource().contains("Hello Bibtex").shouldBe true
+        driver.getPageSource().contains("book").shouldBe true
     }
 }
 
-scenario "user can add an inproceeding", {
+scenario "user sees inproceeding's bibtex", {
 
-    given 'inproceeding selected as a reference', {
+    given 'inproceeding is added to references', {
         getAddpageAndSelectReference("Inproceedings")
-    }
-
-    when 'valid parameters for an inproceeding are given', {
 
         element = driver.findElement(By.xpath("//form[@id='inprocForm']/input[@name='author']"))
         element.sendKeys("Pauli Perala")
@@ -73,22 +73,21 @@ scenario "user can add an inproceeding", {
         element = driver.findElement(By.id("inprocSubmit"))
         element.submit();
     }
+
+    when 'bibtex listing page link is pressed', {
+        clickBibtexPage()
+    }
     
-    then 'submitted inproceeding will be visible', {
-        driver.getPageSource().contains("Pauli Perala").shouldBe true
-        driver.getPageSource().contains("Improceedings wait what?").shouldBe true
-        driver.getPageSource().contains("2005").shouldBe true
-        driver.getPageSource().contains("Big book of improceedings").shouldBe true
+    then 'bibtex of the submitted inproceeding will be visible', {
+        driver.getPageSource().contains("Hello Bibtex").shouldBe true
+        driver.getPageSource().contains("Inproceedings").shouldBe true
     }
 }
 
 scenario "user can add an article", {
-    given 'article selected as a reference', {
+    given 'article is added as a reference', {
         getAddpageAndSelectReference("Artikkeli")
-    }
 
-    when 'valid parameters for an article are given', {
-        
         element = driver.findElement(By.xpath("//form[@id='articleForm']/input[@name='author']"))
         element.sendKeys("Anniina Sallinen")
 
@@ -104,11 +103,13 @@ scenario "user can add an article", {
         element = driver.findElement(By.id("articleSubmit"))
         element.submit()
     }
+
+    when 'bibtex listing page link is pressed', {
+        clickBibtexPage()
+    }
     
-    then 'submitted article will be visible', {
-        driver.getPageSource().contains("Anniina Sallinen").shouldBe true
-        driver.getPageSource().contains("Coding and modern society").shouldBe true
-        driver.getPageSource().contains("2011").shouldBe true
-        driver.getPageSource().contains("People magazine").shouldBe true
+    then 'bibtex of the submitted article will be visible', {
+        driver.getPageSource().contains("Hello Bibtex").shouldBe true
+        driver.getPageSource().contains("Article").shouldBe true
     }
 }
