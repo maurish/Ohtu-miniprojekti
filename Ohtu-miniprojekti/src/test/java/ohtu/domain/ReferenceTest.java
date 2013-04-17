@@ -85,8 +85,8 @@ public class ReferenceTest {
     @Test
     public void setIdChangesIdCorrectly() {
         Reference ref = createReference();
-        ref.setId(Long.MIN_VALUE);
-        assertTrue(Long.MIN_VALUE == ref.getId());
+        ref.setId(Long.MIN_VALUE+"");
+        assertTrue((Long.MIN_VALUE+"").equals(ref.getId()));
     }
 
     @Test

@@ -11,12 +11,15 @@ public class BibtexServiceImpl implements BibtexService {
 
     @Override
     public String generate(Reference reference) {
-        String rakennettava = "@" + reference.getClass().getSimpleName().toLowerCase() + "{\n";
+        String rakennettava = "@" + reference.getClass().getSimpleName().toLowerCase();
+        rakennettava+="{"+reference.getId();
+
         Map<String, Object> attributes = reference.getAttributes();
+
         for (String key : attributes.keySet()) {
             Object value = attributes.get(key);
-            if(value != null && !value.equals("")) {
-                rakennettava+=" "+key+" = \""+value+"\", \n";
+            if(!blank(value)) {
+                rakennettava+=",\n"+" "+key+" = \""+value+"\"";
             }
         }
         rakennettava+="}\n";
@@ -37,5 +40,9 @@ public class BibtexServiceImpl implements BibtexService {
         rakennettava = rakennettava.replaceAll("ä", "{\"a}");
         rakennettava = rakennettava.replaceAll("ö", "{\"o}");
         return rakennettava;
+    }
+
+    private boolean blank(Object value) {
+        return value == null || value.equals("");
     }
 }

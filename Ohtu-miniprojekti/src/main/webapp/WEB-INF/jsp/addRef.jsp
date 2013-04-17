@@ -36,6 +36,8 @@
                     <form:input path="publisher" />*<form:errors path="publisher" cssClass="error"/><br/>
                     <p>Editoija:</p>
                     <form:input path="editor" /><form:errors path="editor" cssClass="error"/><br/>
+                    <p>ID: (autogeneroituu, jos jätät tyhjäksi)</p>
+                    <form:input path="id" /><form:errors path="id" cssClass="error"/><br/>
                     <input id="bookSubmit"type="submit">
                 </form:form>
             </div>
@@ -61,6 +63,8 @@
                     <form:input path="number" /><form:errors path="number" cssClass="error"/><br/>
                     <p>Julkaisupaikka:</p>
                     <form:input path="address" /><form:errors path="address" cssClass="error"/><br/>
+                    <p>ID: (autogeneroituu, jos jätät tyhjäksi)</p>
+                    <form:input path="id" /><form:errors path="id" cssClass="error"/><br/>
                     <input id="articleSubmit"type="submit">
                 </form:form>
             </div>
@@ -78,6 +82,8 @@
                     <form:input path="bookTitle" />*<form:errors path="bookTitle" cssClass="error"/><br/>
                     <p>Organisaatio: </p>
                     <form:input path="organisation" /><form:errors path="organisation" cssClass="error"/><br/>
+                    <p>ID: (autogeneroituu, jos jätät tyhjäksi)</p>
+                    <form:input path="id" /><form:errors path="id" cssClass="error"/><br/>
                     <input id="inprocSubmit"type="submit">
 
                 </form:form>   

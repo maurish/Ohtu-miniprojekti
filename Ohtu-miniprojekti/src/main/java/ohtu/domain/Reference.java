@@ -23,7 +23,7 @@ public class Reference {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    String id;
     @NotBlank(message = "author must be defined")
     @Length(max = 250, min = 1)
     private String author;
@@ -51,11 +51,11 @@ public class Reference {
     public Reference() {
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

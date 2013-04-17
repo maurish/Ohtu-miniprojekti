@@ -32,9 +32,5 @@
     </bean>
  
     <import resource="database.xml" />
-    
-    <!-- trying to fix cobertura:cobertura phase-->
-<!--    <aop:config proxy-target-class="true"/>
-    <aop:aspectj-autoproxy proxy-target-class="true" />-->
 
 </beans>

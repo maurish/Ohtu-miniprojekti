@@ -67,7 +67,6 @@ public class BibtexServiceTest {
     public void bookBibtexSyntaxContainsTagAndBrackets() {
         Reference ref1 = createBook();
         String bibtex = service.generate(ref1);
-        System.out.println(bibtex);
         checkTagAndBrackets(bibtex, "book");
         
     }
@@ -89,8 +88,7 @@ public class BibtexServiceTest {
     
     private void checkTagAndBrackets(String bibtex, String tag){
         String regex = "@"+tag+"\\{(\\s|\\S)*\\}";
-        System.out.println(regex);
-        System.out.println("");
+        bibtex=bibtex.replaceAll("\n", "");
         assertTrue(bibtex.toLowerCase().matches(regex));
         // [\s\S]*author\s+=\s+"testAuthor\s[0-9a-z\-]*"[\s\S]*
     }
