@@ -10,7 +10,6 @@
         <title>Add Page</title>
         <%@include file="libraries.jsp" %>
 
-        <script src="resources/script.js"></script>
 
     </head>
     <body>
@@ -37,7 +36,7 @@
                     <p>Editoija:</p>
                     <form:input path="editor" /><form:errors path="editor" cssClass="error"/><br/>
                     <p>ID: (autogeneroituu, jos jätät tyhjäksi)</p>
-                    <form:input path="id" /><form:errors path="id" cssClass="error"/><br/>
+                    <form:input path="refId" /><form:errors path="refId" cssClass="error"/><br/>
                     <input id="bookSubmit"type="submit">
                 </form:form>
             </div>
@@ -64,7 +63,7 @@
                     <p>Julkaisupaikka:</p>
                     <form:input path="address" /><form:errors path="address" cssClass="error"/><br/>
                     <p>ID: (autogeneroituu, jos jätät tyhjäksi)</p>
-                    <form:input path="id" /><form:errors path="id" cssClass="error"/><br/>
+                    <form:input path="refId" /><form:errors path="refId" cssClass="error"/><br/>
                     <input id="articleSubmit"type="submit">
                 </form:form>
             </div>
@@ -83,7 +82,7 @@
                     <p>Organisaatio: </p>
                     <form:input path="organisation" /><form:errors path="organisation" cssClass="error"/><br/>
                     <p>ID: (autogeneroituu, jos jätät tyhjäksi)</p>
-                    <form:input path="id" /><form:errors path="id" cssClass="error"/><br/>
+                    <form:input path="refId" /><form:errors path="refId" cssClass="error"/><br/>
                     <input id="inprocSubmit"type="submit">
 
                 </form:form>   

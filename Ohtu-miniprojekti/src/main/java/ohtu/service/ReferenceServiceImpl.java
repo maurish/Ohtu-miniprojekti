@@ -13,13 +13,18 @@ public class ReferenceServiceImpl implements ReferenceService {         //Käyte
     ReferenceRepository repo;
 
     @Override
-    public void add(Reference ref) {
-        repo.save(ref);
+    public Reference add(Reference ref) {
+       return repo.save(ref);
     }
 
     @Override
     public List<Reference> listAll() {
         return repo.findAll();
+    }
+
+    @Override
+    public Reference findByRefid(String id) {
+        return repo.findByRefId(id);
     }
     
     

@@ -8,9 +8,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.Constraint;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import ohtu.validator.ReferenceValidator;
+import ohtu.validator.Unique;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.NumberFormat;
@@ -21,9 +24,8 @@ import org.springframework.format.annotation.NumberFormat.Style;
 public class Reference {
 
     @Id
-    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    String id;
+    Long id;
     @NotBlank(message = "author must be defined")
     @Length(max = 250, min = 1)
     private String author;
@@ -34,6 +36,9 @@ public class Reference {
     @Min(1900)
     @Max(2013)
     private Integer pubYear;
+    @NotBlank
+    @Column(unique=true)
+    private String refId;
 
     public Integer getPubYear() {
         return pubYear;
@@ -49,13 +54,23 @@ public class Reference {
     }
 
     public Reference() {
+        
     }
 
-    public String getId() {
+    public String getRefId() {
+        return refId;
+    }
+
+    public void setRefId(String refId) {
+        this.refId = refId;
+    }
+    
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

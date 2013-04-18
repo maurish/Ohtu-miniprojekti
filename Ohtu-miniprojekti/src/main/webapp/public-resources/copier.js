@@ -55,7 +55,8 @@
             
             if (codes[index]==e.originalEvent.keyCode){
                 if (++index >=codes.length){
-                    $this.addClass('easter')
+                    $this.toggleClass('easter')
+                    index=0
                 }
             }else{
                 index=0

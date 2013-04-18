@@ -83,17 +83,6 @@ public class Article extends Reference {
     public void setJournal(String journal) {
         this.journal = journal;
     }
-    
-//     public String toBibtex() {
-//        return "@article"+super.toBibtex()
-//                + " journal =  \"" + journal + "\", \n"
-//                + "  number = \"" + number + "\", \n"
-//                + "  publish month = \"" + pubMonth + "\", \n"
-//                + "  pages = \"" + pages + "\", \n"
-//                + "  publisher = \"" + publisher + "\", \n"
-//                + "  address = \"" + address + "\", \n"
-//                + "  volume = \"" + volume + "\"}\n";
-//    }
      
       @Override
     public Map<String, Object> getAttributes() {

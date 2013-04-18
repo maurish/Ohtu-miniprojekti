@@ -33,6 +33,43 @@ div.wrapper{
 }
 
 body.easter{
-    background-color:red;
+    -webkit-transition: 1000ms background-color linear;
+    -webkit-animation-name:'background';
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 1.8s;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation-timing-function: linear;
+}
 
+body.easter * {
+    -webkit-transform:rotate(2deg);
+    -webkit-animation-name:'easter';
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 1.5s;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation-timing-function: linear;
+    -webkit-transition:all 0.2s;
+}
+
+@-webkit-keyframes background{
+        0%   { background-color:white;}
+	20%  { background-color:green; }
+	40%  { background-color:yellow; }
+	60%  { background-color:blue; }
+	80%  { background-color:black; }
+	100% { background-color:white; }
+
+}
+@-webkit-keyframes easter {
+	0%   { -webkit-transform: translate(2px, 1px)   rotate(0deg); }
+	10%  { -webkit-transform: translate(-1px, -2px) rotate(-2deg); }
+	20%  { -webkit-transform: translate(-3px, 0px)  rotate(2deg); }
+	30%  { -webkit-transform: translate(0px, 2px)   rotate(0deg); }
+	40%  { -webkit-transform: translate(2px, -1px)  rotate(2deg); }
+	50%  { -webkit-transform: translate(-1px, 1px)  rotate(-2deg); }
+	60%  { -webkit-transform: translate(-3px, -2px)  rotate(0deg); }
+	70%  { -webkit-transform: translate(2px, 1px)   rotate(-2deg); }
+	80%  { -webkit-transform: translate(-1px, -2px) rotate(2deg); }
+	90%  { -webkit-transform: translate(4px, -2px)   rotate(0deg); }
+	100% { -webkit-transform: translate(4px, -5px)  rotate(-2deg); }
 }
