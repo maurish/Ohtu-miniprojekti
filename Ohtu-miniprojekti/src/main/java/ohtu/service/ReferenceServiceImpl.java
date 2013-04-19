@@ -14,7 +14,11 @@ public class ReferenceServiceImpl implements ReferenceService {         //Käyte
 
     @Override
     public Reference add(Reference ref) {
-       return repo.save(ref);
+        if (containsRefId(ref.getRefId())) {
+            return null;
+        }
+        generateRefId(ref);
+        return repo.save(ref);
     }
 
     @Override
@@ -26,6 +30,43 @@ public class ReferenceServiceImpl implements ReferenceService {         //Käyte
     public Reference findByRefid(String id) {
         return repo.findByRefId(id);
     }
-    
-    
+
+    @Override
+    public boolean delete(Reference ref) {
+        return delete(ref.getId());
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        if (!repo.exists(id)) {
+
+            return false;
+        }
+        repo.delete(id);
+        return true;
+    }
+
+    @Override
+    public Reference update(Reference ref) {
+        if (containsRefId(ref.getRefId()) || !ref.getId().equals(repo.findByRefId(ref.getRefId()))) {
+            return null;
+        }
+        return repo.saveAndFlush(ref);
+
+    }
+
+    @Override
+    public boolean containsRefId(String id) {
+        return repo.findByRefId(id) != null;
+    }
+
+    private void generateRefId(Reference ref) {
+        if (blank(ref.getRefId())){
+            // @TODO auto generation for refid
+        }
+    }
+
+    private boolean blank(String refId) {
+        return refId==null || refId.isEmpty() || refId.equals("");
+    }
 }

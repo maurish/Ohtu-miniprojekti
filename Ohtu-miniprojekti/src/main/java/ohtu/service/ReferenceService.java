@@ -8,5 +8,9 @@ public interface ReferenceService {                                             
     Reference add(Reference ref);
     List<Reference> listAll();
     Reference findByRefid(String id);
+    boolean delete(Reference ref);
+    boolean delete(Long id);
+    Reference update(Reference ref);
+    boolean containsRefId(String id);
     
 }

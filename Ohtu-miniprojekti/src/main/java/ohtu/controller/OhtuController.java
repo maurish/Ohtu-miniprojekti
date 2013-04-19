@@ -118,19 +118,19 @@ public class OhtuController {
     }
 
     private String add(String name, Reference reference, BindingResult result, Model model) {
+        if (references.containsRefId(reference.getRefId())) {
+            result.addError(new FieldError(name, "refId", "ID must Be Unique!"));
+        }
         if (result.hasErrors()) {
             model.addAttribute(name, reference);
             addAll(model);
             return "addRef";
         }
-        try {
-            references.add(reference);
-        } catch (Exception e) {
-            result.addError(new FieldError(name, "refId", "ID must Be Unique!"));
-            model.addAttribute(name,reference);
-            addAll(model);
-            return "addRef";
-        }
+
+        references.add(reference);
+
+
+
         return "redirect:list";
     }
 }
