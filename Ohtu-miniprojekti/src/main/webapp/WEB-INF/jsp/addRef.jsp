@@ -77,7 +77,7 @@
                     <form:input path="pubMonth" /><form:errors path="pubMonth" cssClass="error"/><br/>
                     <p>Julkaisuvuosi: </p>
                     <form:input path="pubYear" />*<form:errors path="pubYear" cssClass="error"/><br/>
-                    <p>Kirjan nimi nimi: </p>
+                    <p>Kirjan nimi: </p>
                     <form:input path="bookTitle" />*<form:errors path="bookTitle" cssClass="error"/><br/>
                     <p>Organisaatio: </p>
                     <form:input path="organisation" /><form:errors path="organisation" cssClass="error"/><br/>
