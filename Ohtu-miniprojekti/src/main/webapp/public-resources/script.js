@@ -23,6 +23,7 @@ jQuery(function($){
         var url = getBaseHref()+"/"+ids
         $('.generate.human').attr('href',url)
         $('.generate.bibtex').attr('href',url.replace('listIds','downloadIds'))
+        $('.generate button').attr('disabled', !ids)
 
 
         function getBaseHref(){

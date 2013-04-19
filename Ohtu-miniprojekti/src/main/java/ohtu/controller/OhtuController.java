@@ -42,7 +42,7 @@ public class OhtuController {
         return "login";                 //Palauttaa WEB-INF/jsp/login.jsp:n 
     }
 
-   // @RequestMapping(value = "*")
+    // @RequestMapping(value = "*")
     public String redir() {
         return "redirect:/list";
     }
@@ -53,8 +53,8 @@ public class OhtuController {
         return "purebibtex";
     }
 
-    @RequestMapping(value="listIds/{id}")
-    public String listSelected(Model model, @PathVariable(value="id") Long... id){
+    @RequestMapping(value = "listIds/{id}")
+    public String listSelected(Model model, @PathVariable(value = "id") Long... id) {
         model.addAttribute("references", references.findByIds(id));
         return "listAll";
     }
@@ -63,7 +63,6 @@ public class OhtuController {
     public String createArticle(@ModelAttribute("article") @Valid Article article, BindingResult bindingresult, Model model) {
         return add("article", article, bindingresult, model);
     }
-    
 
     @RequestMapping(value = "addBook", method = RequestMethod.POST)
     public String createBook(@ModelAttribute("book") @Valid Book book, BindingResult bindingresult, Model model) {
@@ -93,9 +92,9 @@ public class OhtuController {
         return "listAll";
     }
 
-    @RequestMapping(value= "downloadIds/{id}")
+    @RequestMapping(value = "downloadIds/{id}")
     public ResponseEntity<byte[]> downloadAttachmentByIds(@PathVariable("id") Long... ids) {
-        String content = bibtex.generateString(references.listAll());
+        String content = bibtex.generateString(references.findByIds(ids));
         return fileDownload(content);
     }
 
@@ -137,7 +136,7 @@ public class OhtuController {
     }
 
     private ResponseEntity<byte[]> fileDownload(String content) {
-         byte[] bytes = content.getBytes();
+        byte[] bytes = content.getBytes();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentLength(bytes.length);
         headers.set("Content-Disposition", "attachment; filename=\"list" + System.currentTimeMillis() + ".BIB\"");

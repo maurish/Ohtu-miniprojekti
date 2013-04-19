@@ -31,7 +31,7 @@
             </c:forEach>
 
         </div>
-        <a class="generate human"href="${pageContext.request.contextPath}/app/listIds/"> <button >select</button></a>
-        <a class="generate bibtex"href="${pageContext.request.contextPath}/app/downloadIds/"> <button>generate bibtex</button></a>
+        <a class="generate human"href="${pageContext.request.contextPath}/app/listIds/"> <button disabled>select</button></a>
+        <a class="generate bibtex"href="${pageContext.request.contextPath}/app/downloadIds/"> <button disabled>generate bibtex</button></a>
     </body>
 </html>
