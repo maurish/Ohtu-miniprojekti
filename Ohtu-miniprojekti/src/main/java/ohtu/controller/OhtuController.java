@@ -94,7 +94,7 @@ public class OhtuController {
         byte[] content = ret.getBytes();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentLength(content.length);
-        headers.set("Content-Disposition", "attachment; filename=\"list" + System.currentTimeMillis() + ".BIBTEX\"");
+        headers.set("Content-Disposition", "attachment; filename=\"list" + System.currentTimeMillis() + ".BIB\"");
         headers.setContentType(MediaType.parseMediaType("text/plain"));
         return new ResponseEntity<byte[]>(content, headers, HttpStatus.OK);
     }
@@ -126,11 +126,7 @@ public class OhtuController {
             addAll(model);
             return "addRef";
         }
-
         references.add(reference);
-
-
-
         return "redirect:list";
     }
 }
