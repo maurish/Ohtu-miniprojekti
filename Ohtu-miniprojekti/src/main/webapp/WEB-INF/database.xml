@@ -21,7 +21,7 @@
     
 
     
-    
+    <!-- @TODO remove unused code-->
     <!--    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="org.postgresql.Driver"/>
         <property name="url" value="pgsql:host=localhost;dbname=svanteha"/>
@@ -30,17 +30,17 @@
     </bean>-->
     
  
-    <!-- Hallinnoidaan transaktioita automaattisesti -->
+    <!-- use orm to control objects -->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
- 
+    <!-- find objects to map using annotations  -->
     <tx:annotation-driven transaction-manager="transactionManager" />
  
-    <!-- Käytetään geneerisiä poikkeuksia -->
+    <!-- find and post-process beans to be managed by jpa -->
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
     <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
- 
+    <!-- find entity-objects from following package -->
     <jpa:repositories base-package="ohtu.repository" />
 
 
@@ -55,7 +55,6 @@
 
     <beans profile="default">
         <context:property-placeholder location="classpath:properties/default.properties"/>
-
         <jdbc:embedded-database id="dataSource" type="H2"/>
 
     </beans>

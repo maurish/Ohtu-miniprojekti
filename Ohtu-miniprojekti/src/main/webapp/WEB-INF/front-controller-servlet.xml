@@ -20,16 +20,34 @@
                             http://www.springframework.org/schema/aop/spring-aop-3.1.xsd  ">
     <mvc:annotation-driven />
    
-    
+<!--    map /public-resources/ inside application to app/resources -->
     <mvc:resources mapping="/resources/**" location="/public-resources/"/>
- 
+ <!-- find spring-context beans automaticly under base-package -->
     <context:component-scan base-package="ohtu" />
  
-
+<!-- use jsp-pages -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
+
+
+<!-- find localizated messages and use them in jsp using tags -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:bundles/messages" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
+<!--resolve locale automaticly from cookies -->
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="fi" />
+    </bean>
+
+
+<!-- use ?locale=en or ?locale=fi etc on address to change locale-->
+    <mvc:interceptors>
+        <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+    </mvc:interceptors>
+
  
     <import resource="database.xml" />
 

@@ -37,7 +37,7 @@ public class Reference {
     @Max(2013)
     private Integer pubYear;
     @NotBlank
-    @Column(unique=true)
+    @Column(unique = true)
     private String refId;
 
     public Integer getPubYear() {
@@ -54,7 +54,6 @@ public class Reference {
     }
 
     public Reference() {
-        
     }
 
     public String getRefId() {
@@ -64,7 +63,6 @@ public class Reference {
     public void setRefId(String refId) {
         this.refId = refId;
     }
-    
 
     public Long getId() {
         return id;

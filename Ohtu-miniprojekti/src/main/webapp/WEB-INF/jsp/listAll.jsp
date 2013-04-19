@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,6 +16,7 @@
     </head>
     <body>
         <%@include file="naviBar.jsp" %>
+        <h1><spring:message code="label.welcome"/></h1>
         <h1>Listing of all References</h1>
         <div>
             <c:forEach var="reference" items="${references}">

@@ -20,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -43,7 +44,7 @@ public class OhtuController {
 
     @RequestMapping(value = "*")
     public String redir() {
-        return "redirect:list";
+        return "redirect:/list";
     }
 
     @RequestMapping(value = "bibtex")
@@ -52,10 +53,17 @@ public class OhtuController {
         return "purebibtex";
     }
 
+    @RequestMapping(value="listIds/{id}")
+    public String listSelected(Model model, @PathVariable(value="id") Long id){
+        model.addAttribute("references", references.findByIds(id));
+        return "listAll";
+    }
+
     @RequestMapping(value = "addArticle", method = RequestMethod.POST)
     public String createArticle(@ModelAttribute("article") @Valid Article article, BindingResult bindingresult, Model model) {
         return add("article", article, bindingresult, model);
     }
+    
 
     @RequestMapping(value = "addBook", method = RequestMethod.POST)
     public String createBook(@ModelAttribute("book") @Valid Book book, BindingResult bindingresult, Model model) {

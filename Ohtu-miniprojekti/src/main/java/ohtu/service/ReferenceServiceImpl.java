@@ -1,5 +1,6 @@
 package ohtu.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import ohtu.domain.Reference;
 import ohtu.repository.ReferenceRepository;
@@ -68,5 +69,19 @@ public class ReferenceServiceImpl implements ReferenceService {         //Käyte
 
     private boolean blank(String refId) {
         return refId==null || refId.isEmpty() || refId.equals("");
+    }
+
+    @Override
+    public Reference findById(Long id) {
+        return repo.findOne(id);
+    }
+
+    @Override
+    public List<Reference> findByIds(Long... ids) {
+        List<Reference> ret = new ArrayList<Reference>();
+        for (Long id : ids) {
+            ret.add(findById(id));
+        }
+        return ret;
     }
 }

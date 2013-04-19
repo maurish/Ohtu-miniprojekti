@@ -12,5 +12,8 @@ public interface ReferenceService {                                             
     boolean delete(Long id);
     Reference update(Reference ref);
     boolean containsRefId(String id);
+
+    Reference findById(Long id);
+    List<Reference> findByIds(Long... ids);
     
 }
