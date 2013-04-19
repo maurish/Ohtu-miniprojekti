@@ -12,24 +12,26 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-         <%@include file="libraries.jsp" %>
+        <%@include file="libraries.jsp" %>
     </head>
     <body>
         <%@include file="naviBar.jsp" %>
         <h1><spring:message code="label.welcome"/></h1>
         <h1>Listing of all References</h1>
-        <div>
+        <div class="list">
             <c:forEach var="reference" items="${references}">
-                <ul>
+                <div data-id="${reference.id}">
                     <c:forEach var="attribute" items="${reference.attributes}">
                         <c:if test="${not empty attribute.value}">
-                            <li>${attribute.key} : ${attribute.value}</li>
+                            ${attribute.key} : ${attribute.value}<br/>
                         </c:if>
 
                     </c:forEach>
-                </ul>
+                </div>
             </c:forEach>
 
         </div>
+        <a class="generate human"href="${pageContext.request.contextPath}/app/listIds/"> <button >select</button></a>
+        <a class="generate bibtex"href="${pageContext.request.contextPath}/app/downloadIds/"> <button>generate bibtex</button></a>
     </body>
 </html>

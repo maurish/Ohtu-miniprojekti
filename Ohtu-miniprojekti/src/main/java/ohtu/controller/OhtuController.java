@@ -54,7 +54,7 @@ public class OhtuController {
     }
 
     @RequestMapping(value="listIds/{id}")
-    public String listSelected(Model model, @PathVariable(value="id") Long id){
+    public String listSelected(Model model, @PathVariable(value="id") Long... id){
         model.addAttribute("references", references.findByIds(id));
         return "listAll";
     }
@@ -93,18 +93,16 @@ public class OhtuController {
         return "listAll";
     }
 
+    @RequestMapping(value= "downloadIds/{id}")
+    public ResponseEntity<byte[]> downloadAttachmentByIds(@PathVariable("id") Long... ids) {
+        String content = bibtex.generateString(references.listAll());
+        return fileDownload(content);
+    }
+
     @RequestMapping(value = "downloadBibtex", method = RequestMethod.GET)
     public ResponseEntity<byte[]> downloadAttachment() {
-        String ret = "";
-        for (String string : bibtex.generate(references.listAll())) {
-            ret += string;
-        }
-        byte[] content = ret.getBytes();
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentLength(content.length);
-        headers.set("Content-Disposition", "attachment; filename=\"list" + System.currentTimeMillis() + ".BIB\"");
-        headers.setContentType(MediaType.parseMediaType("text/plain"));
-        return new ResponseEntity<byte[]>(content, headers, HttpStatus.OK);
+        String content = bibtex.generateString(references.listAll());
+        return fileDownload(content);
     }
 
     @RequestMapping(value = "listAll", method = RequestMethod.GET, produces = "application/json")
@@ -136,5 +134,14 @@ public class OhtuController {
         }
         references.add(reference);
         return "redirect:list";
+    }
+
+    private ResponseEntity<byte[]> fileDownload(String content) {
+         byte[] bytes = content.getBytes();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentLength(bytes.length);
+        headers.set("Content-Disposition", "attachment; filename=\"list" + System.currentTimeMillis() + ".BIB\"");
+        headers.setContentType(MediaType.parseMediaType("text/plain"));
+        return new ResponseEntity<byte[]>(bytes, headers, HttpStatus.OK);
     }
 }

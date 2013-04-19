@@ -45,4 +45,13 @@ public class BibtexServiceImpl implements BibtexService {
     private boolean blank(Object value) {
         return value == null || value.equals("");
     }
+
+    @Override
+    public String generateString(List<Reference> listAll) {
+        StringBuilder builder = new StringBuilder();
+        for (String string : generate(listAll)) {
+            builder.append(string);
+        }
+        return builder.toString();
+    }
 }

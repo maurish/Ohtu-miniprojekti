@@ -62,13 +62,13 @@ public class ReferenceServiceImpl implements ReferenceService {         //Käyte
     }
 
     private void generateRefId(Reference ref) {
-        if (blank(ref.getRefId())){
+        if (blank(ref.getRefId())) {
             // @TODO auto generation for refid
         }
     }
 
     private boolean blank(String refId) {
-        return refId==null || refId.isEmpty() || refId.equals("");
+        return refId == null || refId.isEmpty() || refId.equals("");
     }
 
     @Override
@@ -80,7 +80,10 @@ public class ReferenceServiceImpl implements ReferenceService {         //Käyte
     public List<Reference> findByIds(Long... ids) {
         List<Reference> ret = new ArrayList<Reference>();
         for (Long id : ids) {
-            ret.add(findById(id));
+            Reference found = findById(id);
+            if (found != null) {
+                ret.add(found);
+            }
         }
         return ret;
     }
