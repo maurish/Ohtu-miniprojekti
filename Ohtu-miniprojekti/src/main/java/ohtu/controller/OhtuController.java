@@ -42,7 +42,7 @@ public class OhtuController {
         return "login";                 //Palauttaa WEB-INF/jsp/login.jsp:n 
     }
 
-    @RequestMapping(value = "*")
+   // @RequestMapping(value = "*")
     public String redir() {
         return "redirect:/list";
     }
