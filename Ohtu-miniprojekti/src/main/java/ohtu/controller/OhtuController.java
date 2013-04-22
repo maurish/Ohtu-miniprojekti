@@ -79,6 +79,18 @@ public class OhtuController {
         model.addAttribute("bibtexs", bibtex.generate(references.listAll()));
         return "bibtex";
     }
+    
+    @RequestMapping(value="removeRef")
+    public String removeReference(Model model) {
+        
+        return "listAll";
+    }
+    
+    @RequestMapping(value="updateRef")
+    public String updateReference(Model model) {
+        
+        return "listAll";
+    }
 
     @RequestMapping(value = "addRef", method = RequestMethod.GET)
     public String addRef(Model model) {

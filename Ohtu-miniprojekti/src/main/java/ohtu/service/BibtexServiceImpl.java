@@ -23,6 +23,7 @@ public class BibtexServiceImpl implements BibtexService {
             }
         }
         rakennettava+="\n}\n";
+        
         rakennettava = fixAeaekkoset(rakennettava);
         return rakennettava;
     }

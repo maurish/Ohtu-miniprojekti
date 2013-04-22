@@ -28,7 +28,7 @@
                 <span class="plus ui">+</span><span class="minus ui">-</span>
             </div>
             <textarea class="code" autofocus readonly><c:forEach var="bibtex" items="${bibtexs}">${bibtex}</c:forEach></textarea>
-
+            
         </div>
     </body>
 </html>
