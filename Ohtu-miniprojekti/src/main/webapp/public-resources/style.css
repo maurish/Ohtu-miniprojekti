@@ -90,3 +90,6 @@ body.easter * {
     border-color: blue;
     box-shadow: 0px 0px 15px blue;
 }
+.locale{
+    float:right;
+}
