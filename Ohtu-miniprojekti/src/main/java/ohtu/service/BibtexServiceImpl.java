@@ -11,7 +11,7 @@ public class BibtexServiceImpl implements BibtexService {
 
     @Override
     public String generate(Reference reference) {
-        String rakennettava = "\n@" + reference.getClass().getSimpleName().toLowerCase();
+        String rakennettava = "@" + reference.getClass().getSimpleName().toLowerCase();
         rakennettava+="{"+reference.getRefId();
 
         Map<String, Object> attributes = reference.getAttributes();
@@ -25,6 +25,7 @@ public class BibtexServiceImpl implements BibtexService {
         rakennettava+="\n}\n";
         
         rakennettava = fixAeaekkoset(rakennettava);
+        rakennettava+="\n";
         return rakennettava;
     }
 
