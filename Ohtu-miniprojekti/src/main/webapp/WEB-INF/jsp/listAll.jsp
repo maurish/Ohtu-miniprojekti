@@ -23,7 +23,7 @@
                 <div data-id="${reference.id}">
                     <c:forEach var="attribute" items="${reference.attributes}">
                         <c:if test="${not empty attribute.value}">
-                            ${attribute.key} : ${attribute.value}<br/>
+                            <spring:message code="${attribute.key}"/>: ${attribute.value}<br/>
                         </c:if>
 
                     </c:forEach>
