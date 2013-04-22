@@ -53,15 +53,16 @@
         var index =0
         $this.keyup(function(e){
             
-            if (codes[index]==e.originalEvent.keyCode){
+            if (codes[index]==e.which){
                 if (++index >=codes.length){
-                    $this.toggleClass('easter')
+                    $('body').toggleClass('easter')
                     index=0
                 }
             }else{
                 index=0
             }
         })
+        return $this;
     }
 }
     
