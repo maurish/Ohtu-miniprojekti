@@ -76,8 +76,8 @@ public class ReferenceTest {
         assertTrue(inproc.getAttributes().containsKey("author"));
         assertTrue(inproc.getAttributes().containsKey("title"));
         assertTrue(inproc.getAttributes().containsKey("pubYear"));
-        assertTrue(inproc.getAttributes().containsKey("publish month"));
-        assertTrue(inproc.getAttributes().containsKey("book title"));
+        assertTrue(inproc.getAttributes().containsKey("month"));
+        assertTrue(inproc.getAttributes().containsKey("booktitle"));
         assertTrue(inproc.getAttributes().containsKey("organisation"));
 
     }
