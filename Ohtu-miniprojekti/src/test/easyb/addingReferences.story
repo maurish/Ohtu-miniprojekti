@@ -37,12 +37,17 @@ scenario "user can add a book", {
 
         element = driver.findElement(By.name("publisher"))
         element.sendKeys("Otava")
-
+        
+        element = driver.findElement(By.name("refId"))
+        element.sendKeys("andy")
+        
         element = driver.findElement(By.id("bookSubmit"))
         element.submit();
+      
     }
  
     then 'submitted book will be visible', {
+        System.out.println(driver.getPageSource())
         driver.getPageSource().contains("Antti").shouldBe true
         driver.getPageSource().contains("Do you even code?").shouldBe true
         driver.getPageSource().contains("1995").shouldBe true
@@ -69,6 +74,9 @@ scenario "user can add an inproceeding", {
         
         element = driver.findElement(By.xpath("//form[@id='inprocForm']/input[@name='bookTitle']"))
         element.sendKeys("Big book of improceedings")
+        
+        element = driver.findElement(By.xpath("//form[@id='inprocForm']/input[@name='refId']"))
+        element.sendKeys("pp89")
 
         element = driver.findElement(By.id("inprocSubmit"))
         element.submit();
@@ -100,6 +108,9 @@ scenario "user can add an article", {
         
         element = driver.findElement(By.xpath("//form[@id='articleForm']/input[@name='journal']"))
         element.sendKeys("People magazine")
+        
+        element = driver.findElement(By.xpath("//form[@id='articleForm']/input[@name='refId']"))
+        element.sendKeys("as91")
         
         element = driver.findElement(By.id("articleSubmit"))
         element.submit()
