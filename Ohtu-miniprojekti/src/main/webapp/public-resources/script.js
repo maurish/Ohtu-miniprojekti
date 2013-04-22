@@ -15,7 +15,7 @@ jQuery(function($){
     $('input:visible:first').focus()
 
 
-    $(window).easterEgg([77,76,85,85,75, 75,65,73])
+    $(document).easterEgg([77,76,85,85,75, 75,65,73])
 
     $('.list>div').click(function(){
         $(this).toggleClass('selected')

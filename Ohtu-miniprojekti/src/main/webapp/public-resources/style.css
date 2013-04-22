@@ -56,7 +56,7 @@ body.easter * {
 20%  { background-color:green; }
 40%  { background-color:yellow; }
 60%  { background-color:blue; }
-80%  { background-color:black; }
+80%  { background-color:red; }
 100% { background-color:white; }
 
 }
@@ -72,6 +72,42 @@ body.easter * {
 80%  { -webkit-transform: translate(-1px, -2px) rotate(2deg); }
 90%  { -webkit-transform: translate(4px, -2px)   rotate(0deg); }
 100% { -webkit-transform: translate(4px, -5px)  rotate(-2deg); }
+}
+
+@-webkit-keyframes walk {
+
+    0%   { }
+
+
+10%  { -webkit-transform:rotateY(40deg) translate(-20px);
+}
+
+20%  {-webkit-transform:rotateY(0deg) translate(-70px);
+}
+
+30%  { -webkit-transform:rotateY(40deg) translate(-150px);
+}
+
+40%  {-webkit-transform:rotateY(90deg) translate(0px);
+}
+
+50% {-webkit-transform:rotateY(180deg) translate(100px);
+}
+
+60% {-webkit-transform:rotateY(220deg) translate(80px);
+}
+70% {-webkit-transform:rotateY(160deg) translate(40px);
+}
+80% {-webkit-transform:rotateY(180deg) translate(0px) ;
+}
+85% {
+    -webkit-transform:rotateY(180deg) translate(0px) rotate(-180deg);
+
+}
+90% {-webkit-transform:rotateY(180deg) translate(0px) rotate(-360deg);
+}
+100% {-webkit-transform:rotateY(0deg) translate(0px);
+}
 }
 .list{
     white-space:pre-line;
@@ -92,4 +128,31 @@ body.easter * {
 }
 .locale{
     float:right;
+}
+
+#luke{
+    width:316px;
+    height:480px;
+    background-position:0 0;
+    background-image:url('lukemerge.png');
+    background-repeat: no-repeat;
+    opacity:.02;
+    position:fixed;
+    right:100px;
+    bottom:50px;
+    -webkit-transition:opacity .5s;
+}
+#luke:hover{
+    background-position:-326px 0;
+    opacity:.5;
+    cursor:url('beer.png'), crosshair;
+}
+
+body.easter #luke{
+    -webkit-animation-name:'walk';
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 5s;
+    opacity:.7;
+    border-color:green;
+    border-radius:10px 0 0 ;
 }

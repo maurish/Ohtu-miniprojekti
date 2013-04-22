@@ -14,10 +14,10 @@
         <title>JSP Page</title>
         <%@include file="libraries.jsp" %>
     </head>
-    <body>
+    <body >
         <%@include file="naviBar.jsp" %>
         <h1><spring:message code="label.welcome"/></h1>
-        <h1>Listing of all References</h1>
+        <h1><spring:message code="label.list"/></h1>
         <div class="list">
             <c:forEach var="reference" items="${references}">
                 <div data-id="${reference.id}">
@@ -33,5 +33,6 @@
         </div>
         <a class="generate human"href="${pageContext.request.contextPath}/app/listIds/"> <button disabled>select</button></a>
         <a class="generate bibtex"href="${pageContext.request.contextPath}/app/downloadIds/"> <button disabled>generate bibtex</button></a>
+        <div id="luke" class="easter"></div>
     </body>
 </html>
