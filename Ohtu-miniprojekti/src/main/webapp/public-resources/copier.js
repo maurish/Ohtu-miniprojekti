@@ -70,6 +70,12 @@
         var textbox = $this.find(':text')
         var checkbox = $this.find(':checkbox')
         textbox.keyup(function(e){
+            showSelected()
+        })
+        checkbox.change(function(e){
+            showSelected()
+        })
+        function showSelected(){
             var data = textbox.val()
             if (checkbox.is(':checked'))data=data.toLowerCase()
             console.log(data)
@@ -85,7 +91,7 @@
                     $(this).addClass('hidden')
                 }
             })
-        })
+        }
         function showAll(){
             $('.list>.ref').removeClass('hidden')
         }
