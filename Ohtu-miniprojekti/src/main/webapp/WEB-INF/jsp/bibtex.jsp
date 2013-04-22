@@ -27,7 +27,7 @@
             <div class="fontcontrol">
                 <span class="plus ui">+</span><span class="minus ui">-</span>
             </div>
-            <textarea class="code" autofocus readonly><c:forEach var="bibtex" items="${bibtexs}">${bibtex}<br></c:forEach></textarea>
+            <textarea class="code" autofocus readonly><c:forEach var="bibtex" items="${bibtexs}">${bibtex}\n</c:forEach></textarea>
             
         </div>
     </body>
