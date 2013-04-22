@@ -18,9 +18,13 @@
         <%@include file="naviBar.jsp" %>
         <h1><spring:message code="label.welcome"/></h1>
         <h1><spring:message code="label.list"/></h1>
+        <div class="search">
+            <input type="text" ><br/>
+            ignorecase:<input type="checkbox">
+        </div>
         <div class="list">
             <c:forEach var="reference" items="${references}">
-                <div data-id="${reference.id}">
+                <div data-id="${reference.id}" class="ref">
                     <c:forEach var="attribute" items="${reference.attributes}">
                         <c:if test="${not empty attribute.value}">
                             <spring:message code="${attribute.key}"/>: ${attribute.value}<br/>

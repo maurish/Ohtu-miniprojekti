@@ -1,5 +1,5 @@
 div.hidden {
-    display: none;
+    display: none !important;
 }
 
 .code{
@@ -134,7 +134,7 @@ body.easter * {
     width:316px;
     height:480px;
     background-position:0 0;
-    background-image:url('lukemerge.png');
+        background-image:url('lukedisko.png');
     background-repeat: no-repeat;
     opacity:.02;
     position:fixed;

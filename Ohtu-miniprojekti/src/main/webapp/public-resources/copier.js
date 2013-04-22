@@ -64,6 +64,32 @@
         })
         return $this;
     }
+
+    $.fn.hideBySelection = function(){
+        var $this = $(this)
+        var textbox = $this.find(':text')
+        var checkbox = $this.find(':checkbox')
+        textbox.keyup(function(e){
+            var data = textbox.val()
+            if (checkbox.is(':checked'))data=data.toLowerCase()
+            console.log(data)
+            if(!data){
+                showAll();
+            }
+            $('.list>.ref').each(function(i, elem){
+                var html = $(this).html()
+                if (checkbox.is(':checked'))html=html.toLowerCase()
+                if (html.indexOf(data)!==-1 || $(this).hasClass('selected')){
+                    $(this).removeClass('hidden')
+                }else{
+                    $(this).addClass('hidden')
+                }
+            })
+        })
+        function showAll(){
+            $('.list>.ref').removeClass('hidden')
+        }
+    }
 }
     
 )(jQuery)
