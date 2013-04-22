@@ -25,7 +25,6 @@ public class BibtexServiceImpl implements BibtexService {
         rakennettava+="\n}\n";
         
         rakennettava = fixAeaekkoset(rakennettava);
-        rakennettava+="\n";
         return rakennettava;
     }
 
