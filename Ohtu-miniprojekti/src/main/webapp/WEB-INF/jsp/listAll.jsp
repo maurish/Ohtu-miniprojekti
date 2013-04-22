@@ -19,8 +19,8 @@
         <h1><spring:message code="label.welcome"/></h1>
         <h1><spring:message code="label.list"/></h1>
         <div class="search">
-            <input type="text" ><br/>
-            ignorecase:<input type="checkbox">
+            <input type="text" placeholder="<spring:message code="search.text" />">
+            <input type="checkbox" checked> <spring:message code="search.ignorecase"/>
         </div>
         <div class="list">
             <c:forEach var="reference" items="${references}">
