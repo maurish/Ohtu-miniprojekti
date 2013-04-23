@@ -49,11 +49,10 @@ public class ReferenceServiceImpl implements ReferenceService {         //Käyte
 
     @Override
     public Reference update(Reference ref) {
-        if (containsRefId(ref.getRefId()) || !ref.getId().equals(repo.findByRefId(ref.getRefId()))) {
+        if (breaksReferenceConstraint(ref)) {
             return null;
         }
-        return repo.saveAndFlush(ref);
-
+        return repo.save(ref);
     }
 
     @Override
@@ -87,4 +86,27 @@ public class ReferenceServiceImpl implements ReferenceService {         //Käyte
         }
         return ret;
     }
+
+    @Override
+    public void deleteMany(Long... ids) {
+        for (Long id : ids) {
+            delete(id);
+        }
+    }
+
+    @Override
+    public boolean breaksReferenceConstraint(Reference ref) {
+        String refId = ref.getRefId();
+        Reference found = repo.findByRefId(refId);
+        if (found==null){
+            return false;
+        }
+        if (found.getId().equals(ref.getId())){
+            return false;
+        }
+        return true;
+    }
+
+
+
 }

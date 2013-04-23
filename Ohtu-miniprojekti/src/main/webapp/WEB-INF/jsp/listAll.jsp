@@ -25,18 +25,21 @@
         <div class="list">
             <c:forEach var="reference" items="${references}">
                 <div data-id="${reference.id}" class="ref">
+                    <span class="bold">${reference.refId}</span><br/>
                     <c:forEach var="attribute" items="${reference.attributes}">
                         <c:if test="${not empty attribute.value}">
                             <spring:message code="${attribute.key}"/>: ${attribute.value}<br/>
                         </c:if>
 
                     </c:forEach>
+                    <a href="${pageContext.request.contextPath}/app/updateRef/${reference.id}"> <button><spring:message code="update"/></button></a>
                 </div>
             </c:forEach>
 
         </div>
-        <a class="generate human"href="${pageContext.request.contextPath}/app/listIds/"> <button disabled>select</button></a>
-        <a class="generate bibtex"href="${pageContext.request.contextPath}/app/downloadIds/"> <button disabled>generate bibtex</button></a>
+        <a class="generate human"href="${pageContext.request.contextPath}/app/listIds/"> <button disabled><spring:message code="select"/></button></a>
+        <a class="generate bibtex"href="${pageContext.request.contextPath}/app/downloadIds/"> <button disabled><spring:message code="download"/></button></a>
+        <a class="generate delete"href="${pageContext.request.contextPath}/app/deleteRef/"> <button disabled><spring:message code="delete"/></button></a>
         <div id="luke" class="easter"></div>
     </body>
 </html>

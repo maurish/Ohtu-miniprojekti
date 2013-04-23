@@ -34,7 +34,6 @@ public class Reference {
     @Max(2013)
     private Integer pubYear;
     @NotBlank
-    @Column(unique = true)
     private String refId;
 
     public Integer getPubYear() {

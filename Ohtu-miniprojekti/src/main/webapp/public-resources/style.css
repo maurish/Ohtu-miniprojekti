@@ -169,3 +169,9 @@ body.easter #luke{
     border-color:green;
     border-radius:10px 0 0 ;
 }
+
+
+.bold{
+    font-weight:bold;
+    clear:left;
+}

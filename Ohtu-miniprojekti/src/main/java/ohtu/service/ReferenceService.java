@@ -10,8 +10,10 @@ public interface ReferenceService {                                             
     Reference findByRefid(String id);
     boolean delete(Reference ref);
     boolean delete(Long id);
+    void deleteMany(Long... ids);
     Reference update(Reference ref);
     boolean containsRefId(String id);
+    boolean breaksReferenceConstraint(Reference ref);
 
     Reference findById(Long id);
     List<Reference> findByIds(Long... ids);
