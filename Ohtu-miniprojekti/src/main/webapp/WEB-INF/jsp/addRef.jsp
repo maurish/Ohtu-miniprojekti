@@ -7,7 +7,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Add Page</title>
+        <title><spring:message code="title.add" /></title>
         <%@include file="libraries.jsp" %>
 
 
@@ -17,9 +17,9 @@
         <h1>Tässä lisätään lähteitä, huraa!</h1>
         <nav>
             <select id="dropDown" class="formDrop">
-                <option>Kirja</option>
-                <option>Artikkeli</option>
-                <option>Inproceedings</option>
+                <option><spring:message code="Book" /></option>
+                <option><spring:message code="Article" /></option>
+                <option><spring:message code="Inproceedings" /></option>
             </select>
         </nav>
         <div class="forms">
