@@ -17,7 +17,7 @@ scenario 'default locale is finnish',{
     }
 }
 
-scenario 'after changing locale messages should be in english',{
+scenario 'after changing locale to en messages should be in english',{
     given 'Default page is loaded',{
         init()
     }
@@ -27,5 +27,17 @@ scenario 'after changing locale messages should be in english',{
     then 'Welcome message should be in english',{
         driver.getPageSource().contains("Tervetuloa").shouldBe false
         driver.getPageSource().contains("Welcome").shouldBe true
+    }
+}
+scenario 'after changing locale to sv messages should be in swedish',{
+    given 'Default page is loaded',{
+        init()
+    }
+    when 'change locale through url',{
+        driver.get("http://localhost:8090/app/list?locale=sv")
+    }
+    then 'Welcome message should be in swedish',{
+        driver.getPageSource().contains("Tervetuloa").shouldBe false
+        driver.getPageSource().contains("Välkommen").shouldBe true
     }
 }
