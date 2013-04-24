@@ -21,6 +21,7 @@
     </head>
     <body id="bibtexPage">
         <%@include file="naviBar.jsp" %>
+        <h1><spring:message code="header.bibtex" /></h1>
         <div class="wrapper">
             <a href="bibtex"><spring:message code="label.pureBibtex" /></a>
             <a href="downloadBibtex"><spring:message code="label.downloadBibtex" /></a>
