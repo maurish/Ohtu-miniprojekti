@@ -23,6 +23,15 @@ public class Book extends Reference {
     private String publisher;
     private String editor;
 
+    public Book(String publisher, String author, String title, Integer pubYear, String refId) {
+        super(author, title, pubYear, refId);
+        this.publisher = publisher;
+    }
+
+    public Book() {
+    }
+    
+
     public String getEditor() {
         return editor;
     }

@@ -89,13 +89,7 @@ public class ReferenceTest {
         assertTrue(Long.MIN_VALUE==ref.getId());
     }
 
-    @Test
-    public void constructerCreatesCorrectReference() {
-        Reference ref = new Reference("Anniina", "testiKirja");
-        assertEquals("Anniina", ref.getAuthor());
-        assertEquals("testiKirja", ref.getTitle());
-        assertNotNull(ref);
-    }
+ 
 
     private Reference createReference() {           //Luo uuden referencen jolle se antaa testauthorin ja titlen
         Reference ref = new Reference();

@@ -1,6 +1,7 @@
 package ohtu.controller;
 
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 import ohtu.domain.Article;
 import ohtu.domain.Book;
@@ -29,23 +30,28 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class OhtuController {
 
     @Autowired
-    ReferenceValidator validator;
-    @Autowired
     BibtexService bibtex;
     @Autowired
     UserService users;
     @Autowired
     ReferenceService references;
 
+    @PostConstruct
+    public void init(){
+        references.add(new Book("WSOY", "PauliP", "Koodivinkit", 2012, "koodivPP"));
+        references.add(new Book("omakustanne", "Anttiina", "Kokkauksen taito, osa1", 2013, "kokkitaito"));
+    }
+
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String login() {
         return "login";                 //Palauttaa WEB-INF/jsp/login.jsp:n 
     }
 
-    // @RequestMapping(value = "*")
+     @RequestMapping(value = "/")
     public String redir() {
         return "redirect:/list";
     }
+
 
     @RequestMapping(value = "bibtex")
     public String pureBibtex(Model model) {

@@ -44,10 +44,14 @@ public class Reference {
         this.pubYear = pubYear;
     }
 
-    public Reference(String author, String title) {
+    public Reference(String author, String title, Integer pubYear, String refId) {
         this.author = author;
         this.title = title;
+        this.pubYear = pubYear;
+        this.refId = refId;
     }
+
+
 
     public Reference() {
     }
@@ -92,9 +96,5 @@ public class Reference {
         return ret;
     }
 
-    public Reference(String author, String title, Integer pubYear) {
-        this.author = author;
-        this.title = title;
-        this.pubYear = pubYear;
-    }
+ 
 }
