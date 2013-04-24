@@ -45,7 +45,7 @@ public class Inproceedings extends Reference {
     @Override
     public Map<String, Object> getAttributes() {
         Map<String, Object> attributes = super.getAttributes();
-        attributes.put("month", pubMonth);
+        attributes.put("pubMonth", pubMonth);
         attributes.put("booktitle", bookTitle);
         attributes.put("organisation", organisation);
         return attributes;
