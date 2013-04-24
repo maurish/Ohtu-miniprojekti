@@ -21,7 +21,7 @@ jQuery(function($){
     $('.list>div').click(function(){
         $(this).toggleClass('selected')
         var ids = collectIds()
-        var url = baseUrl+"/"+ids+"/"
+        var url = baseUrl+ids+"/"
         $('.generate.human').attr('href',url)
         $('.generate.bibtex').attr('href',url.replace('listIds','downloadIds'))
         $('.update').attr('href',url.replace('listIds','updateRef'))
