@@ -48,11 +48,6 @@ public class Book extends Reference {
         this.publisher = publisher;
     }
 
-//    public String toBibtex() {
-//        return "@book" + super.toBibtex() + ""
-//                + " publisher = \"" + publisher + "\",\n"
-//                + " editor = \"" + editor + "\"}\n";
-//    }
 
     @Override
     public Map<String, Object> getAttributes() {
