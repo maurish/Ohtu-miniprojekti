@@ -16,6 +16,6 @@
     </head>
     <body id="pureBibtexPage">
         <pre><c:forEach var="bibtex" items="${bibtexs}">${bibtex}
-            </c:forEach></pre>
+</c:forEach></pre>
     </body>
 </html>
