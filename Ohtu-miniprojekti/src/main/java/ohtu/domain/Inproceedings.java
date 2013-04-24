@@ -8,7 +8,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table
-public class Inproc extends Reference {
+public class Inproceedings extends Reference {
 
     @NotBlank
     @Length(max = 35, min = 1)

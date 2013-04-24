@@ -18,7 +18,7 @@
         <h1>Hello World!</h1>
         <c:if test="${not empty book}"><%@include file="bookForm.jsp" %></c:if>
         <c:if test="${not empty article}"><%@include file="articleForm.jsp" %></c:if>
-        <c:if test="${not empty inproc}"><%@include file="inprocForm.jsp" %></c:if>
+        <c:if test="${not empty inproceedings}"><%@include file="inprocForm.jsp" %></c:if>
         
         
     </body>

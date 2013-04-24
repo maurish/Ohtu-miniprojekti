@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<form:form id="inprocForm" commandName="inproc" action="addInproc" method="POST">
+<form:form id="inprocForm" commandName="inproceedings" action="addInproc" method="POST">
     <p><spring:message code="author" />: </p>
     <form:input path="author" />*<form:errors path="author" cssClass="error"/><br/>
     <p><spring:message code="title" />: </p>
