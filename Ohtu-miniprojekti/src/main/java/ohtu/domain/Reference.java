@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import ohtu.validator.WhiteSpaceless;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.NumberFormat;
@@ -33,6 +34,7 @@ public class Reference {
     @Min(1900)
     @Max(2013)
     private Integer pubYear;
+    @WhiteSpaceless
     @NotBlank
     private String refId;
 

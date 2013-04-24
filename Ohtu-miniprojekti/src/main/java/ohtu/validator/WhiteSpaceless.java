@@ -11,14 +11,14 @@ import javax.validation.Payload;
 import javax.validation.ReportAsSingleViolation;
 import javax.validation.constraints.NotNull;
 @Documented
-@Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER})
-@Constraint(validatedBy = { ReferenceValidator.class })
+@Target({ FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER})
+@Constraint(validatedBy = { WhiteSpaceValidator.class })
 @Retention(RUNTIME)
 @ReportAsSingleViolation
 @NotNull
-public @interface Unique {
+public @interface WhiteSpaceless {
 
-    String message() default "must be unique";
+    String message() default "Field must not contain whitespaces";
 
     Class<?>[] groups() default {};
 

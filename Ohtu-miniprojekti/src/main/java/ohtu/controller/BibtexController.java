@@ -36,9 +36,15 @@ public class BibtexController {
         return "purebibtex";
     }
 
-    @RequestMapping(value = "listIds/{id}")
-    public String listSelected(Model model, @PathVariable(value = "id") Long... id) {
-        model.addAttribute("bibtexs", bibtex.generate(references.findByIds(id)));
+    @RequestMapping(value = "listIds/{ids}")
+    public String listSelected(Model model, @PathVariable(value = "ids") Long... ids) {
+        model.addAttribute("bibtexs", bibtex.generate(references.findByIds(ids)));
         return "bibtex";
+    }
+
+    @RequestMapping("listIds/{ids}/bibtex")
+    public String listSelectedPureBibtex(Model model, @PathVariable("ids")Long... ids){
+        model.addAttribute("bibtexs",bibtex.generate(references.findByIds(ids)));
+        return "purebibtex";
     }
 }

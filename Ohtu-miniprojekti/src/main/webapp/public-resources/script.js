@@ -17,10 +17,11 @@ jQuery(function($){
 
     $(document).easterEgg([77,76,85,85,75, 75,65,73])
     $('.search').hideBySelection()
+    var baseUrl = $('.generate.human').attr('href')
     $('.list>div').click(function(){
         $(this).toggleClass('selected')
         var ids = collectIds()
-        var url = getBaseHref()+"/"+ids
+        var url = baseUrl+"/"+ids+"/"
         $('.generate.human').attr('href',url)
         $('.generate.bibtex').attr('href',url.replace('listIds','downloadIds'))
         $('.update').attr('href',url.replace('listIds','updateRef'))
@@ -28,9 +29,7 @@ jQuery(function($){
         $('.generate button').attr('disabled', !ids)
 
 
-        function getBaseHref(){
-           return  $('.generate.human').attr('href').replace(/\/[^/]*$/ , '')
-        }
+      
         function collectIds(){
             var string = ""
             $('.selected').each(function(i,elem){

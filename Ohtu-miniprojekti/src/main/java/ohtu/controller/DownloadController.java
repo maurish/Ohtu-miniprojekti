@@ -48,4 +48,10 @@ public class DownloadController {
         String content = bibtex.generateString(references.listAll());
         return fileDownload(content);
     }
+
+     @RequestMapping("listIds/{ids}/downloadBibtex")
+    public ResponseEntity<byte[]> listSelectedPureBibtex( @PathVariable("ids")Long... ids){
+        String content = bibtex.generateString(references.findByIds(ids));
+        return fileDownload(content);
+    }
 }
