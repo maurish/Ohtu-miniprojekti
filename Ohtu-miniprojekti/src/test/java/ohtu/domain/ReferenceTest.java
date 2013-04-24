@@ -21,14 +21,14 @@ public class ReferenceTest {
     private Reference ref;
     private Book book;
     private Article art;
-    private Inproceedings inproc;
+    private Inproc inproc;
 
     @Before
     public void setUp() {
         ref = createReference();
         book = new Book();
         art = new Article();
-        inproc = new Inproceedings();
+        inproc = new Inproc();
     }
 
     @Test

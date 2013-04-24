@@ -5,7 +5,7 @@ import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 import ohtu.domain.Article;
 import ohtu.domain.Book;
-import ohtu.domain.Inproceedings;
+import ohtu.domain.Inproc;
 import ohtu.domain.Reference;
 import ohtu.service.ReferenceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +53,7 @@ public class ReferenceController {
     }
 
     @RequestMapping(value = "addInproc", method = RequestMethod.POST)
-    public String createInproc(@ModelAttribute("inproc") @Valid Inproceedings inproc, BindingResult bindingresult, Model model) {
+    public String createInproc(@ModelAttribute("inproc") @Valid Inproc inproc, BindingResult bindingresult, Model model) {
         return add("inproc", inproc, bindingresult, model);
     }
 
@@ -84,7 +84,7 @@ public class ReferenceController {
     }
 
     @RequestMapping(value = "updateRef/addInproc", method = RequestMethod.POST)
-    public String updateInproc(@ModelAttribute("inproc") @Valid Inproceedings inproc, BindingResult bindingresult, Model model) {
+    public String updateInproc(@ModelAttribute("inproc") @Valid Inproc inproc, BindingResult bindingresult, Model model) {
         return update("inproc", inproc, bindingresult, model);
     }
 
@@ -111,7 +111,7 @@ public class ReferenceController {
     private void addAll(Model model) {
         addOne(model, "book", new Book());
         addOne(model, "article", new Article());
-        addOne(model, "inproc", new Inproceedings());
+        addOne(model, "inproc", new Inproc());
     }
 
     private void addOne(Model model, String key, Reference reference) {
