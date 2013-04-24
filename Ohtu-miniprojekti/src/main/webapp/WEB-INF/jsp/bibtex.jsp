@@ -19,7 +19,7 @@
             })
         </script>
     </head>
-    <body>
+    <body id="bibtexPage">
         <%@include file="naviBar.jsp" %>
         <h1>Hello Bibtex</h1>
         <div class="wrapper">

@@ -12,7 +12,7 @@
 
 
     </head>
-    <body>
+    <body id="addPage">
         <%@include file="naviBar.jsp" %>
         <h1>Tässä lisätään lähteitä, huraa!</h1>
         <nav>

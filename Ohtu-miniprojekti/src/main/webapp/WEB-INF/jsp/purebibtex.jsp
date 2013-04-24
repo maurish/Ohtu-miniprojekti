@@ -14,7 +14,8 @@
         <title>JSP Page</title>
         <%@include file="libraries.jsp" %>
     </head>
-    <body>
-        <pre><c:forEach var="bibtex" items="${bibtexs}">${bibtex}</c:forEach></pre>
+    <body id="pureBibtexPage">
+        <pre><c:forEach var="bibtex" items="${bibtexs}">${bibtex}
+            </c:forEach></pre>
     </body>
 </html>

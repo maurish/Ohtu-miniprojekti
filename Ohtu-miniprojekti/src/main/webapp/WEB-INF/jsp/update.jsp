@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
+    <body id="updatePage">
         <h1>Hello World!</h1>
         <c:if test="${not empty book}"><%@include file="bookForm.jsp" %></c:if>
         <c:if test="${not empty article}"><%@include file="articleForm.jsp" %></c:if>

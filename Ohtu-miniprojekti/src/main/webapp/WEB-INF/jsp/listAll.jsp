@@ -14,7 +14,7 @@
         <title><spring:message code="title.list" /></title>
         <%@include file="libraries.jsp" %>
     </head>
-    <body >
+    <body id="listPage">
         <%@include file="naviBar.jsp" %>
         <h1><spring:message code="label.welcome"/></h1>
         <h1><spring:message code="label.list"/></h1>
