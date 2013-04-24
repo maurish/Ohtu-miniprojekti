@@ -137,6 +137,9 @@ body.easter * {
 .locale{
     float:right;
 }
+.locale a {
+    padding-left:5px;
+}
 
 #luke{
     width:316px;
