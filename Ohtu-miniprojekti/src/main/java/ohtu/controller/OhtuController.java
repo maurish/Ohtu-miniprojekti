@@ -10,7 +10,6 @@ import ohtu.domain.Reference;
 import ohtu.service.BibtexService;
 import ohtu.service.ReferenceService;
 import ohtu.service.UserService;
-import ohtu.validator.ReferenceValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -37,7 +36,7 @@ public class OhtuController {
     ReferenceService references;
 
     @PostConstruct
-    public void init(){
+    public void init() {
         references.add(new Book("WSOY", "PauliP", "Koodivinkit", 2012, "koodivPP"));
         references.add(new Book("omakustanne", "Anttiina", "Kokkauksen taito, osa1", 2013, "kokkitaito"));
     }
@@ -47,11 +46,10 @@ public class OhtuController {
         return "login";                 //Palauttaa WEB-INF/jsp/login.jsp:n 
     }
 
-     @RequestMapping(value = "/")
+    @RequestMapping(value = "/")
     public String redir() {
         return "redirect:/list";
     }
-
 
     @RequestMapping(value = "bibtex")
     public String pureBibtex(Model model) {
@@ -61,8 +59,8 @@ public class OhtuController {
 
     @RequestMapping(value = "listIds/{id}")
     public String listSelected(Model model, @PathVariable(value = "id") Long... id) {
-        model.addAttribute("references", references.findByIds(id));
-        return "listAll";
+        model.addAttribute("bibtexs", bibtex.generate(references.findByIds(id)));
+        return "bibtex";
     }
 
     @RequestMapping(value = "addArticle", method = RequestMethod.POST)
@@ -81,50 +79,38 @@ public class OhtuController {
     }
 
     @RequestMapping(value = "listBibtex")
-    public String createBibtex(Model model) {
+    public String listAllAsBibtex(Model model) {
         model.addAttribute("bibtexs", bibtex.generate(references.listAll()));
         return "bibtex";
     }
-    
-    @RequestMapping(value="removeRef/{Ids}")
+
+    @RequestMapping(value = "removeRef/{Ids}")
     public String removeReference(Model model, @PathVariable("Ids") Long... ids) {
         references.deleteMany(ids);
         return "redirect:/app/list";
     }
-    
-    @RequestMapping(value="updateRef/{id}")
+
+    @RequestMapping(value = "updateRef/{id}")
     public String updateReference(Model model, @PathVariable("id") Long id) {
         Reference found = references.findById(id);
         String nimi = found.getClass().getSimpleName().toLowerCase();
         model.addAttribute(nimi, found);
         return "update";
     }
-    
-   @RequestMapping(value = "updateRef/addBook", method = RequestMethod.POST)
+
+    @RequestMapping(value = "updateRef/addBook", method = RequestMethod.POST)
     public String updateBook(@ModelAttribute("book") @Valid Book book, BindingResult bindingresult, Model model) {
         return update("book", book, bindingresult, model);
     }
-   
-   @RequestMapping(value = "updateRef/addArticle", method = RequestMethod.POST)
+
+    @RequestMapping(value = "updateRef/addArticle", method = RequestMethod.POST)
     public String updateArticle(@ModelAttribute("article") @Valid Article article, BindingResult bindingresult, Model model) {
         return update("article", article, bindingresult, model);
     }
-   
-   @RequestMapping(value = "updateRef/addInproc", method = RequestMethod.POST)
+
+    @RequestMapping(value = "updateRef/addInproc", method = RequestMethod.POST)
     public String updateInproc(@ModelAttribute("inproc") @Valid Inproceedings inproc, BindingResult bindingresult, Model model) {
         return update("inproc", inproc, bindingresult, model);
-    }
-   
-   private String update(String name, Reference reference, BindingResult result, Model model) {
-        if (references.breaksReferenceConstraint(reference)) {
-            result.addError(new FieldError(name, "refId", reference.getRefId(), true, new String[]{}, new Object[]{}, "ID must Be Unique!"));
-        }
-        if (result.hasErrors()) {
-            model.addAttribute(name, reference);
-            return "update";
-        }
-        references.update(reference);
-        return "redirect:/app/list";
     }
 
     @RequestMapping(value = "addRef", method = RequestMethod.GET)
@@ -180,6 +166,18 @@ public class OhtuController {
         }
         references.add(reference);
         return "redirect:list";
+    }
+
+    private String update(String name, Reference reference, BindingResult result, Model model) {
+        if (references.breaksReferenceConstraint(reference)) {
+            result.addError(new FieldError(name, "refId", reference.getRefId(), true, new String[]{}, new Object[]{}, "ID must Be Unique!"));
+        }
+        if (result.hasErrors()) {
+            model.addAttribute(name, reference);
+            return "update";
+        }
+        references.update(reference);
+        return "redirect:/app/list";
     }
 
     private ResponseEntity<byte[]> fileDownload(String content) {

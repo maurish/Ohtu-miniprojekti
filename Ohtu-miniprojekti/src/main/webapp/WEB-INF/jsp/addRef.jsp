@@ -14,7 +14,7 @@
     </head>
     <body id="addPage">
         <%@include file="naviBar.jsp" %>
-        <h1>Tässä lisätään lähteitä, huraa!</h1>
+        <h1><spring:message code="label.welcome" /></h1>
         <nav>
             <select id="dropDown" class="formDrop">
                 <option><spring:message code="Book" /></option>
