@@ -17,7 +17,7 @@ def getAddpageAndSelectReference(reference){
 }
 
 def clickBibtexPage() {
-    element = driver.findElement(By.linkText("Listaa kaikki bibtexinä"))
+    element = driver.findElement(By.linkText("Listaa lähteet bibtexinä"))
     element.click()
 }
 
@@ -27,20 +27,23 @@ scenario "user sees book's bibtex", {
 
     given 'book has been added to references', {
         getAddpageAndSelectReference("Kirja")
-        element = driver.findElement(By.name("author"))
-        element.sendKeys("Antti")
+        element = driver.findElement(By.xpath("//form[@id='bookForm']/input[@name='author']"))
+        element.sendKeys("Antti KooKoski")
 
-        element = driver.findElement(By.name("title"))
+        element = driver.findElement(By.xpath("//form[@id='bookForm']/input[@name='title']"))
         element.sendKeys("Do you even code?")
-
-        element = driver.findElement(By.name("pubYear"))
+        
+        element = driver.findElement(By.xpath("//form[@id='bookForm']/input[@name='pubYear']"))
         element.sendKeys("1995")
-
-        element = driver.findElement(By.name("publisher"))
+        
+        element = driver.findElement(By.xpath("//form[@id='bookForm']/input[@name='publisher']"))
         element.sendKeys("Otava")
+        
+        element = driver.findElement(By.xpath("//form[@id='bookForm']/input[@name='refId']"))
+        element.sendKeys("Ak89Bib")
 
         element = driver.findElement(By.id("bookSubmit"))
-        element.submit();
+        element.submit(); 
     }
 
     when 'bibtex listing page link is pressed', {
@@ -48,8 +51,9 @@ scenario "user sees book's bibtex", {
     }
  
     then 'bibtex of the submitted book will be visible', {
-        driver.getPageSource().contains("Hello Bibtex").shouldBe true
+        driver.findElements(By.id("bibtexPage")).size().shouldNotBe 0
         driver.getPageSource().contains("book").shouldBe true
+        driver.getPageSource().contains("Ak89Bib").shouldBe true
     }
 }
 
@@ -70,6 +74,9 @@ scenario "user sees inproceeding's bibtex", {
         element = driver.findElement(By.xpath("//form[@id='inprocForm']/input[@name='bookTitle']"))
         element.sendKeys("Big book of improceedings")
 
+        element = driver.findElement(By.xpath("//form[@id='inprocForm']/input[@name='refId']"))
+        element.sendKeys("ppImproBib")
+
         element = driver.findElement(By.id("inprocSubmit"))
         element.submit();
     }
@@ -79,12 +86,14 @@ scenario "user sees inproceeding's bibtex", {
     }
     
     then 'bibtex of the submitted inproceeding will be visible', {
-        driver.getPageSource().contains("Hello Bibtex").shouldBe true
-        driver.getPageSource().contains("Inproceedings").shouldBe true
+        driver.findElements(By.id("bibtexPage")).size().shouldNotBe 0
+        driver.getPageSource().contains("inproceedings").shouldBe true
+        driver.getPageSource().contains("ppImproBib").shouldBe true
     }
 }
 
-scenario "user can add an article", {
+scenario "user can see bibtex of an article", {
+
     given 'article is added as a reference', {
         getAddpageAndSelectReference("Artikkeli")
 
@@ -100,6 +109,9 @@ scenario "user can add an article", {
         element = driver.findElement(By.xpath("//form[@id='articleForm']/input[@name='journal']"))
         element.sendKeys("People magazine")
         
+        element = driver.findElement(By.xpath("//form[@id='articleForm']/input[@name='refId']"))
+        element.sendKeys("ASMagazineBib")
+
         element = driver.findElement(By.id("articleSubmit"))
         element.submit()
     }
@@ -109,7 +121,8 @@ scenario "user can add an article", {
     }
     
     then 'bibtex of the submitted article will be visible', {
-        driver.getPageSource().contains("Hello Bibtex").shouldBe true
-        driver.getPageSource().contains("Article").shouldBe true
+        driver.findElements(By.id("bibtexPage")).size().shouldNotBe 0
+        driver.getPageSource().contains("article").shouldBe true
+        driver.getPageSource().contains("ASMagazineBib").shouldBe true
     }
 }

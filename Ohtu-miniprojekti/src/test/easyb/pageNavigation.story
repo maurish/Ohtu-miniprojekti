@@ -14,7 +14,8 @@ scenario "user sees the correct front page", {
     }
  
     then 'front page will be visible', {
-        driver.getPageSource().contains("Listing of all References").shouldBe true
+        
+        driver.findElements(By.id("listPage")).size().shouldNotBe 0
     }
 }
 
@@ -30,7 +31,7 @@ scenario "user sees the reference adding page", {
     }
     
     then 'reference add page will be visible', {
-        driver.getPageSource().contains("Tässä lisätään lähteitä, huraa!").shouldBe true
+        driver.findElements(By.id("addPage")).size().shouldNotBe 0
     }
 }
 
@@ -41,11 +42,11 @@ scenario "user sees the bibtex listing page", {
     }
 
     when 'user navigates to bibtex page', {
-        element = driver.findElement(By.linkText("Listaa kaikki bibtexinä"))
+        element = driver.findElement(By.linkText("Listaa lähteet bibtexinä"))
         element.click()
     }
     
     then 'reference add page will be visible', {
-        driver.getPageSource().contains("Hello Bibtex").shouldBe true
+        driver.findElements(By.id("bibtexPage")).size().shouldNotBe 0
     }
 }

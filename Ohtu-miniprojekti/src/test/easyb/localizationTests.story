@@ -22,7 +22,7 @@ scenario 'after changing locale messages should be in english',{
         init()
     }
     when 'change locale through url',{
-        driver.get("http://localhost:8090?locale=en")
+        driver.get("http://localhost:8090/app/list?locale=en")
     }
     then 'Welcome message should be in english',{
         driver.getPageSource().contains("Tervetuloa").shouldBe false
