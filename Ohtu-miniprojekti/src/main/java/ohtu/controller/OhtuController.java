@@ -28,17 +28,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class OhtuController {
 
-    @Autowired
-    BibtexService bibtex;
-    @Autowired
-    UserService users;
+    
     @Autowired
     ReferenceService references;
 
     @PostConstruct
     public void init() {
-        references.add(new Book("WSOY", "PauliP", "Koodivinkit", 2012, "koodivPP"));
-        references.add(new Book("omakustanne", "Anttiina", "Kokkauksen taito, osa1", 2013, "kokkitaito"));
     }
 
     @RequestMapping(value = "login", method = RequestMethod.GET)
@@ -51,17 +46,7 @@ public class OhtuController {
         return "redirect:/list";
     }
 
-    @RequestMapping(value = "bibtex")
-    public String pureBibtex(Model model) {
-        model.addAttribute("bibtexs", bibtex.generate(references.listAll()));
-        return "purebibtex";
-    }
 
-    @RequestMapping(value = "listIds/{id}")
-    public String listSelected(Model model, @PathVariable(value = "id") Long... id) {
-        model.addAttribute("bibtexs", bibtex.generate(references.findByIds(id)));
-        return "bibtex";
-    }
 
     @RequestMapping(value = "addArticle", method = RequestMethod.POST)
     public String createArticle(@ModelAttribute("article") @Valid Article article, BindingResult bindingresult, Model model) {
@@ -78,11 +63,7 @@ public class OhtuController {
         return add("inproc", inproc, bindingresult, model);
     }
 
-    @RequestMapping(value = "listBibtex")
-    public String listAllAsBibtex(Model model) {
-        model.addAttribute("bibtexs", bibtex.generate(references.listAll()));
-        return "bibtex";
-    }
+  
 
     @RequestMapping(value = "removeRef/{Ids}")
     public String removeReference(Model model, @PathVariable("Ids") Long... ids) {
@@ -125,17 +106,7 @@ public class OhtuController {
         return "listAll";
     }
 
-    @RequestMapping(value = "downloadIds/{id}")
-    public ResponseEntity<byte[]> downloadAttachmentByIds(@PathVariable("id") Long... ids) {
-        String content = bibtex.generateString(references.findByIds(ids));
-        return fileDownload(content);
-    }
 
-    @RequestMapping(value = "downloadBibtex", method = RequestMethod.GET)
-    public ResponseEntity<byte[]> downloadAttachment() {
-        String content = bibtex.generateString(references.listAll());
-        return fileDownload(content);
-    }
 
     @RequestMapping(value = "listAll", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
@@ -180,12 +151,5 @@ public class OhtuController {
         return "redirect:/app/list";
     }
 
-    private ResponseEntity<byte[]> fileDownload(String content) {
-        byte[] bytes = content.getBytes();
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentLength(bytes.length);
-        headers.set("Content-Disposition", "attachment; filename=\"list" + System.currentTimeMillis() + ".BIB\"");
-        headers.setContentType(MediaType.parseMediaType("text/plain"));
-        return new ResponseEntity<byte[]>(bytes, headers, HttpStatus.OK);
-    }
+ 
 }
