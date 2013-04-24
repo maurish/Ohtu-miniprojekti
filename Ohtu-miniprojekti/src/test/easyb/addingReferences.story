@@ -26,29 +26,27 @@ scenario "user can add a book", {
     }
 
     when 'valid parameters for a book are given', {
-        element = driver.findElement(By.name("author"))
-        element.sendKeys("Antti")
+        element = driver.findElement(By.xpath("//form[@id='bookForm']/input[@name='author']"))
+        element.sendKeys("Antti KooKoski")
 
-        element = driver.findElement(By.name("title"))
+        element = driver.findElement(By.xpath("//form[@id='bookForm']/input[@name='title']"))
         element.sendKeys("Do you even code?")
-
-        element = driver.findElement(By.name("pubYear"))
+        
+        element = driver.findElement(By.xpath("//form[@id='bookForm']/input[@name='pubYear']"))
         element.sendKeys("1995")
-
-        element = driver.findElement(By.name("publisher"))
+        
+        element = driver.findElement(By.xpath("//form[@id='bookForm']/input[@name='publisher']"))
         element.sendKeys("Otava")
         
-        element = driver.findElement(By.name("refId"))
-        element.sendKeys("andy")
-        
+        element = driver.findElement(By.xpath("//form[@id='bookForm']/input[@name='refId']"))
+        element.sendKeys("Ak89")
+
         element = driver.findElement(By.id("bookSubmit"))
-        element.submit();
-      
+        element.submit();   
     }
  
     then 'submitted book will be visible', {
-        System.out.println(driver.getPageSource())
-        driver.getPageSource().contains("Antti").shouldBe true
+        driver.getPageSource().contains("Antti KooKoski").shouldBe true
         driver.getPageSource().contains("Do you even code?").shouldBe true
         driver.getPageSource().contains("1995").shouldBe true
         driver.getPageSource().contains("Otava").shouldBe true

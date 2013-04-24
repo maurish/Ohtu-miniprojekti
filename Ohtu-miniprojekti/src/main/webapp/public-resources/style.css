@@ -118,7 +118,7 @@ body.easter * {
 }
 }
 .list{
-    white-space:pre-line;
+    /*white-space:pre-line;*/
 }
 .list>div{
     border-width:1px;
