@@ -41,4 +41,8 @@ jQuery(function($){
         }
     })
 
+    $('#deselect').click(function(){
+        $('.list>div').removeClass('selected')
+    })
+
 })

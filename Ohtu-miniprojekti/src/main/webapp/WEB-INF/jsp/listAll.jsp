@@ -40,6 +40,7 @@
         <a class="generate human"href="${pageContext.request.contextPath}/app/listIds/"> <button disabled><spring:message code="select"/></button></a>
         <a class="generate bibtex"href="${pageContext.request.contextPath}/app/downloadIds/"> <button disabled><spring:message code="download"/></button></a>
         <a class="generate delete"href="${pageContext.request.contextPath}/app/deleteRef/"> <button disabled><spring:message code="delete"/></button></a>
+        <button id="deselect"><spring:message code="deselect"/></button>
         <div id="luke" class="easter"></div>
     </body>
 </html>

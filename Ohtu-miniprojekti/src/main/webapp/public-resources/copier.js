@@ -86,9 +86,11 @@
                 var html = $(this).html()
                 if (checkbox.is(':checked'))html=html.toLowerCase()
                 if (html.indexOf(data)!==-1 || $(this).hasClass('selected')){
-                    $(this).removeClass('hidden')
+                    //$(this).removeClass('hidden')
+                    $(this).slideDown()
                 }else{
-                    $(this).addClass('hidden')
+                    //$(this).addClass('hidden')
+                    $(this).slideUp()
                 }
             })
         }
