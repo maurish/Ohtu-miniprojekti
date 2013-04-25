@@ -178,4 +178,11 @@ public class ReferenceServiceTest {
         assertNull(repo.findById(added2.getId()));
         assertEquals(0, repo.findByIds(added1.getId(), added2.getId()).size());
     }
+
+    @Test
+    public void braeksRefIdConstraintReturnsIfItIsNotInDatabase() {
+        Reference reference = new Reference();
+        reference.setRefId("somethingInvali");
+        assertFalse(repo.breaksReferenceConstraint(reference));
+    }
 }
