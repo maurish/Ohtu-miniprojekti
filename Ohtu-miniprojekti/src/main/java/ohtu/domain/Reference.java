@@ -98,5 +98,44 @@ public class Reference {
         return ret;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + (this.id != null ? this.id.hashCode() : 0);
+        hash = 67 * hash + (this.author != null ? this.author.hashCode() : 0);
+        hash = 67 * hash + (this.title != null ? this.title.hashCode() : 0);
+        hash = 67 * hash + (this.pubYear != null ? this.pubYear.hashCode() : 0);
+        hash = 67 * hash + (this.refId != null ? this.refId.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Reference other = (Reference) obj;
+        if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
+            return false;
+        }
+        if ((this.author == null) ? (other.author != null) : !this.author.equals(other.author)) {
+            return false;
+        }
+        if ((this.title == null) ? (other.title != null) : !this.title.equals(other.title)) {
+            return false;
+        }
+        if (this.pubYear != other.pubYear && (this.pubYear == null || !this.pubYear.equals(other.pubYear))) {
+            return false;
+        }
+        if ((this.refId == null) ? (other.refId != null) : !this.refId.equals(other.refId)) {
+            return false;
+        }
+        return true;
+    }
+
+    
  
 }
