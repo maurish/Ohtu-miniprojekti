@@ -148,4 +148,34 @@ public class ReferenceServiceTest {
         added2.setRefId(added.getRefId());
         assertTrue(repo.breaksReferenceConstraint(added2));
     }
+
+    @Test
+    public void deleteToInvalidIdDoesntCrash() {
+        Reference added = create();
+        assertFalse(repo.delete(invalidId));
+    }
+
+    @Test
+    public void containsRefIdWorks() {
+        Reference added = create();
+        assertFalse(repo.containsRefId("someInvalidId"));
+        assertTrue(repo.containsRefId(added.getRefId()));
+    }
+
+    @Test
+    public void deleteManyWorksForOneId() {
+        Reference added = create();
+        repo.deleteMany(added.getId());
+        assertNull(repo.findById(added.getId()));
+    }
+
+    @Test
+    public void deleteManyWorksForTwoIds() {
+        Reference added1 = create();
+        Reference added2 = create();
+        repo.deleteMany(added1.getId(), added2.getId());
+        assertNull(repo.findById(added1.getId()));
+        assertNull(repo.findById(added2.getId()));
+        assertEquals(0, repo.findByIds(added1.getId(), added2.getId()).size());
+    }
 }

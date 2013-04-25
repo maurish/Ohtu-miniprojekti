@@ -43,16 +43,13 @@ public class BibtexServiceTest {
 
     @Test
     public void generateListReturnsEmptyList() {
-        List list = service.generate(new ArrayList());
-        assertEquals(0, list.size());
+        List blank = service.generate(list);
+        assertEquals(0, blank.size());
     }
 
     @Test
     public void generatingAndAddingIncreasesSize() {
-        Reference ref1 = createBook();
-        Reference ref2 = createBook();
-        list.add(ref2);
-        list.add(ref1);
+        populateList(2);
         List<String> bibtexs = service.generate(list);
         assertEquals(2, bibtexs.size());
         for (int i = 0; i < bibtexs.size(); i++) {
@@ -98,6 +95,25 @@ public class BibtexServiceTest {
         ref.setAuthor("testAuthor " + UUID.randomUUID());
         ref.setTitle("testTitle " + UUID.randomUUID());
         return ref;
+    }
+    private void populateList(int amount){
+        for (int i = 0; i < amount; i++) {
+            list.add(createBook());
+        }
+    }
+
+
+    @Test
+    public void generateStringUsingOneReferenceWorks(){
+        populateList(1);
+        assertEquals(service.generate(list.get(0)),service.generateString(list));
+    }
+    @Test
+    public void generateStringUsingTwoReferenceWorks(){
+        populateList(2);
+        String combined = service.generateString(list);
+        assertTrue(combined.contains(service.generate(list.get(0))));
+        assertTrue(combined.contains(service.generate(list.get(1))));
     }
     
     
