@@ -14,3 +14,6 @@ https://docs.google.com/spreadsheet/ccc?key=0AsgqthH8YHFWdGt1emwwb3R5ME5OajlwckZ
 
 Deployed software:
 http://t-pperala.users.cs.helsinki.fi/miniprojekti/app/list
+
+Projektin raportti:
+https://docs.google.com/document/d/1D1DntmaCq4qF-PCt170fQo0b_N4VCs1e_m7SYbCQenc/
