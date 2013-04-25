@@ -20,6 +20,7 @@ public class ReferenceServiceTest {
     ApplicationContext context;
     ReferenceService repo;
     int preSize;                                            //Kertoo kuinka paljon kamaa ennenku lisättii jtn
+    Long invalidId = Long.valueOf("123123123123");
 
     @Before
     public void setUp() {
@@ -40,7 +41,7 @@ public class ReferenceServiceTest {
 
     @Test
     public void addingOneReferenceShowsUpOnList() {
-        repo.add(createReference());
+        create();
         assertEquals(preSize + 1, repo.listAll().size());
         assertTrue(repo.listAll().get(preSize).getAuthor().contains("testAuthor"));
     }
@@ -49,7 +50,7 @@ public class ReferenceServiceTest {
     public void addingMultipleReferenceShowsUpOnList() {
         int amount = 50;
         for (int i = 0; i < amount; i++) {
-            repo.add(createReference());
+            create();
         }
         assertEquals(preSize + amount, repo.listAll().size());
         List<Reference> list = repo.listAll();
@@ -62,8 +63,8 @@ public class ReferenceServiceTest {
 
     @Test
     public void addingReferenceGivesItUniqueId() {
-        repo.add(createReference());
-        repo.add(createReference());
+        create();
+        create();
         List<Reference> list = repo.listAll();
         assertEquals(preSize + 2, list.size());
         assertFalse(list.get(preSize).equals(list.get(preSize + 1)));
@@ -74,7 +75,77 @@ public class ReferenceServiceTest {
         ref.setAuthor("testAuthor " + UUID.randomUUID());
         ref.setTitle("testTitle " + UUID.randomUUID());
         ref.setPubYear(2012);
-        ref.setRefId("testID"+ UUID.randomUUID());
+        ref.setRefId("testID" + UUID.randomUUID());
         return ref;
+    }
+
+    @Test
+    public void creatingOneAndDeletingOneShouldEqualZero() {
+        Reference added = create();
+        repo.delete(added);
+        assertEquals(preSize, repo.listAll().size());
+    }
+
+    @Test
+    public void updateWorks() {
+        Integer year = 1988;
+        Reference added = create();
+        added.setPubYear(year);
+        repo.update(added);
+        assertEquals(year, repo.findById(added.getId()).getPubYear());
+    }
+
+    @Test
+    public void findByIdFoundNothingIfDeleted() {
+        Reference added = create();
+        repo.delete(added);
+        assertNull(repo.findById(added.getId()));
+    }
+
+    @Test
+    public void findByIdsWorks() {
+        Reference added1 = create();
+        Reference added2 = create();
+        List<Reference> findByIds = repo.findByIds(added1.getId(), added2.getId());
+        assertEquals(2, findByIds.size());
+    }
+
+    @Test
+    public void findOneByIdsAndIdIsSame() {
+        Reference added1 = create();
+        assertEquals(repo.findById(added1.getId()), repo.findByIds(added1.getId()).get(0));
+
+    }
+
+    @Test
+    public void findByIdsWithInvalidIdsReturnsEmptyList() {
+        create();
+        assertEquals(0, repo.findByIds(invalidId).size());
+    }
+
+    @Test
+    public void finByIdsWithValidAndInvalidIdsReturnsCorrectList() {
+        Reference added = create();
+        List<Reference> list = repo.findByIds(added.getId(), invalidId);
+        assertEquals(1, list.size());
+        assertEquals(added, list.get(0));
+    }
+
+    private Reference create() {
+        return repo.add(createReference());
+    }
+
+    @Test
+    public void breaksReferenceConstraintUsingUniqueRefIdWorks() {
+        Reference added = create();
+        assertFalse(repo.breaksReferenceConstraint(added));
+    }
+
+    @Test
+    public void breaksReferenceConstraintUsingSameId() {
+        Reference added = create();
+        Reference added2 = new Reference();
+        added2.setRefId(added.getRefId());
+        assertTrue(repo.breaksReferenceConstraint(added2));
     }
 }
