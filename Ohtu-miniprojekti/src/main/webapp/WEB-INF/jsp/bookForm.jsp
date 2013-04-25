@@ -12,7 +12,7 @@
     <form:input path="author" />*<form:errors path="author" cssClass="error"/><br/>
     <p><spring:message code="booktitle" />: </p>
     <form:input path="title" />*<form:errors path="title" cssClass="error"/><br/>
-    <p><spring:message code="pubYear" />:</p>
+    <p><spring:message code="year" />:</p>
     <form:input path="pubYear" />*<form:errors path="pubYear" cssClass="error"/><br/>
     <p><spring:message code="publisher" />:</p>
     <form:input path="publisher" />*<form:errors path="publisher" cssClass="error"/><br/>
@@ -21,5 +21,5 @@
     <p>ID: </p>
     <form:input path="refId" />*<form:errors path="refId" cssClass="error"/><br/>
     <form:hidden path="id"/><form:errors path="id"/>
-    <input id="bookSubmit"type="submit">
+    <input id="bookSubmit"type="submit" value="<spring:message code="submit" />">
 </form:form>

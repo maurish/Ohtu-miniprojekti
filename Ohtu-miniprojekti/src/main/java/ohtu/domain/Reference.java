@@ -94,7 +94,7 @@ public class Reference {
         HashMap<String, Object> ret = new HashMap<String, Object>();
         ret.put("title", title);
         ret.put("author", author);
-        ret.put("pubYear", pubYear);
+        ret.put("year", pubYear);
         return ret;
     }
 

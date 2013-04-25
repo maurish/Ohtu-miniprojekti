@@ -11,6 +11,7 @@
         <a href="?locale=en">en</a>
         <a href="?locale=fi">fi</a>
         <a href="?locale=sv">sv</a>
+        <a href="?locale=ar">lol</a>
     </div>
 
 </header>

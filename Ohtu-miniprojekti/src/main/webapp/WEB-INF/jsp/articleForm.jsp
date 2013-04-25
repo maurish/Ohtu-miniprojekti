@@ -14,9 +14,9 @@
     <form:input path="title" />*<form:errors path="title" cssClass="error"/><br/>
     <p><spring:message code="publisher" />:</p>
     <form:input path="publisher" /><form:errors path="publisher" cssClass="error"/><br/>
-    <p><spring:message code="pubMonth" />:</p>
+    <p><spring:message code="month" />:</p>
     <form:input path="pubMonth" /><form:errors path="pubMonth" cssClass="error"/><br/>
-    <p><spring:message code="pubYear" />:</p>
+    <p><spring:message code="year" />:</p>
     <form:input path="pubYear" />*<form:errors path="pubYear" cssClass="error"/><br/>
     <p><spring:message code="pagesFromTo" />:</p>
     <form:input path="pages" /><form:errors path="pages" cssClass="error"/><br/>
@@ -31,5 +31,5 @@
     <p>ID: </p>
     <form:input path="refId" />*<form:errors path="refId" cssClass="error"/><br/>
      <form:hidden path="id"/><form:errors path="id"/>
-    <input id="articleSubmit"type="submit">
+    <input id="articleSubmit"type="submit" value="<spring:message code="submit" />">
 </form:form>

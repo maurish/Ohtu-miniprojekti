@@ -40,7 +40,7 @@ public class ReferenceTest {
         assertEquals(book.getAttributes().size(), 5, 0.00001);
         assertTrue(book.getAttributes().containsKey("author"));
         assertTrue(book.getAttributes().containsKey("title"));
-        assertTrue(book.getAttributes().containsKey("pubYear"));
+        assertTrue(book.getAttributes().containsKey("year"));
         assertTrue(book.getAttributes().containsKey("editor"));
         assertTrue(book.getAttributes().containsKey("publisher"));
 
@@ -55,12 +55,12 @@ public class ReferenceTest {
         assertEquals(art.getAttributes().size(), 10, 0.00001);
         assertTrue(art.getAttributes().containsKey("author"));
         assertTrue(art.getAttributes().containsKey("title"));
-        assertTrue(art.getAttributes().containsKey("pubYear"));
+        assertTrue(art.getAttributes().containsKey("year"));
         assertTrue(art.getAttributes().containsKey("journal"));
         assertTrue(art.getAttributes().containsKey("publisher"));
         assertTrue(art.getAttributes().containsKey("volume"));
         assertTrue(art.getAttributes().containsKey("number"));
-        assertTrue(art.getAttributes().containsKey("pubMonth"));
+        assertTrue(art.getAttributes().containsKey("month"));
         assertTrue(art.getAttributes().containsKey("pages"));
         assertTrue(art.getAttributes().containsKey("address"));
 
@@ -75,8 +75,8 @@ public class ReferenceTest {
         assertEquals(inproc.getAttributes().size(), 6, 0.00001);
         assertTrue(inproc.getAttributes().containsKey("author"));
         assertTrue(inproc.getAttributes().containsKey("title"));
-        assertTrue(inproc.getAttributes().containsKey("pubYear"));
-        assertTrue(inproc.getAttributes().containsKey("pubMonth"));
+        assertTrue(inproc.getAttributes().containsKey("year"));
+        assertTrue(inproc.getAttributes().containsKey("month"));
         assertTrue(inproc.getAttributes().containsKey("booktitle"));
         assertTrue(inproc.getAttributes().containsKey("organisation"));
 

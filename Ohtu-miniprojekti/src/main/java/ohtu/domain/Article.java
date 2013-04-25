@@ -91,7 +91,7 @@ public class Article extends Reference {
         attributes.put("publisher", publisher);
         attributes.put("volume", volume);
         attributes.put("number", number);
-        attributes.put("pubMonth", pubMonth);
+        attributes.put("month", pubMonth);
         attributes.put("pages", pages);
         attributes.put("address", address);
         return attributes;
